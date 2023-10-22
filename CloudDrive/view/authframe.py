@@ -136,7 +136,7 @@ class AuthFrame():
             text_color="#E3F5FD",
             hover_color="#1B387C",
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"))),
-            command=lambda: self.login(self.auth_username.get(), self.auth_password.get())
+            command=lambda: AuthLogic.auth_user_register(self.auth_name.get(), self.auth_username.get(), self.auth_password.get(), self.auth_cloud_provider.get(), self.auth_api_key.get())
         )
 
         # back button widget
