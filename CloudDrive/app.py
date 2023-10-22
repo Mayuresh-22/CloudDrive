@@ -3,7 +3,7 @@
 """
 
 # import modules
-from authframe import AuthFrame
+from view.authframe import AuthFrame
 import os
 import tkinter as tk
 import customtkinter as ctk
