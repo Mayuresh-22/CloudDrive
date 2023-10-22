@@ -20,8 +20,6 @@ To get started with CloudDrive, follow these steps:
 
 3. **File Management**: Start uploading and managing your files and photos across your devices.
 
-For more detailed instructions, please refer to our [User Guide](user-guide.md).
-
 ## Contributing
 
 We welcome contributions from the community. If you'd like to contribute to CloudDrive, please follow these guidelines:
