@@ -63,9 +63,10 @@ class HomeFrame():
             fg_color="transparent",
             hover=False,
             text=os.getenv("APP_TITLE"),
-            font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT2_SIZE"), 12)),
+            font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 12)),
             text_color="white"
         ).pack(pady=60, side=tk.TOP, padx=10)
+
         # My Account
         self.my_account = ctk.CTkFrame(self.left_sidebar,
             width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.18,
