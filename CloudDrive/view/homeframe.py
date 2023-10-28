@@ -1,3 +1,4 @@
+from calendar import c
 import os
 from dotenv import load_dotenv
 import tkinter as tk
@@ -31,7 +32,7 @@ class HomeFrame():
         """
             build() method builds the Home frame.
         """
-        self.frame.configure(fg_color="#023e8a")
+        self.frame.configure(fg_color="#023e8a", corner_radius=0)
         self.build_sidebar()
         self.build_main_content()
 
