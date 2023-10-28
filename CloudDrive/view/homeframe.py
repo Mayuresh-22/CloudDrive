@@ -66,7 +66,7 @@ class HomeFrame():
             text="My Account",
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10), "bold"),
             text_color="white"
-        ).pack(pady=2, side=tk.LEFT)
+        ).pack(pady=2, side=tk.LEFT, padx=5)
 
         # # User Username
         # ctk.CTkLabel(self.my_account,
