@@ -69,7 +69,7 @@ class HomeFrame():
             text="My Account",
             image=user_icon_img,
             corner_radius=10,
-            text_color=="white",
+            text_color="white",
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"))),
             command=lambda: print("My Account")
         ).pack(side=tk.LEFT, padx=10)
