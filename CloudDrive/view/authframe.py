@@ -76,6 +76,7 @@ class AuthFrame():
         )
         self.login_btn.pack(pady=5)
         
+        # Register button widget
         self.register_btn = ctk.CTkButton(self.frame,
             text="I don't have an account. Register?",
             width=300,
