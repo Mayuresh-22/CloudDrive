@@ -43,9 +43,6 @@ class HomeFrame():
             fg_color="#023e8a",
             corner_radius=10
         )
-        self.left_sidebar.pack_propagate(False)
-        self.left_sidebar.pack(side=tk.LEFT, pady=10, padx=10)
-        self.left_sidebar.tkraise()
 
         # Main Content
         self.main_content = ctk.CTkFrame(self.frame,
@@ -82,6 +79,10 @@ class HomeFrame():
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"))),
             text_color="white"
         ).pack()
+
+        self.left_sidebar.pack_propagate(False)
+        self.left_sidebar.pack(side=tk.LEFT, pady=10, padx=10)
+        self.left_sidebar.tkraise()
 
 
     def build_main_content(self):
