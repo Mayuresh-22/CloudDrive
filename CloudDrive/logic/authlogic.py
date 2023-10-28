@@ -49,10 +49,13 @@ class AuthLogic():
         # Hit the register API if fields are not empty
         if kwargs["name"] != "" and kwargs["username"] != "" and kwargs["password"] != "" and kwargs["cloud_provider"] != "" and kwargs["api_key"] != "":
             url = os.getenv("APP_BASE_URL")+os.getenv("USERS_ENDPOINT")+os.getenv("REGISTER_ENDPOINT")
-            resp = requests.post(url,
-                        headers={"Content-Type": "application/json"},
-                        json={"name": kwargs["name"], "username": kwargs["username"], "password": kwargs["password"], "cloud_provider": kwargs["cloud_provider"], "cloud_provider_api_key": kwargs["api_key"]}
-                    )
-            if resp.status_code == 200:
-                # Redirect to Home frame
-                HomeFrame(parent, current, resp.json())
+            try:
+                resp = requests.post(url,
+                            headers={"Content-Type": "application/json"},
+                            json={"name": kwargs["name"], "username": kwargs["username"], "password": kwargs["password"], "cloud_provider": kwargs["cloud_provider"], "cloud_provider_api_key": kwargs["api_key"]}
+                        )
+                if resp.status_code == 200:
+                    # Redirect to Home frame
+                    HomeFrame(parent, current, resp.json())
+            except:
+                kwargs["errorlabel"].configure(text="Server error occurred. Try again after sometime.")
