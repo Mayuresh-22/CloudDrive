@@ -63,11 +63,15 @@ class HomeFrame():
         self.my_account.tkraise()
 
         # My Account Label
-        self.my_account_button = ctk.CTkLabel(self.my_account,
+        self.my_account_button = ctk.CTkButton(self.my_account,
+            image=os.getenv("USER_ICON"),
             text="My Account",
-            font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10), "bold"),
-            text_color="white"
-        ).pack(pady=2, side=tk.LEFT, padx=10)
+            font=(os.getenv("DEFAULT_FONT"), int(os.getenv("DEFAULT_FONT_SIZE"))),
+            text_color="white",
+            bg_color="#03045E",
+            corner_radius=10,
+            command=lambda: print("My Account")
+        )
 
         # # User Username
         # ctk.CTkLabel(self.my_account,
