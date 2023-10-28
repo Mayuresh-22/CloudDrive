@@ -62,6 +62,17 @@ class HomeFrame():
         self.my_account.pack(side=tk.BOTTOM, pady=10)
         self.my_account.tkraise()
 
+        # App Title Logo
+        cloud_img = ctk.CTkImage(Image.open(os.getenv("CLOUD_ICON")), size=(45, 45))
+        ctk.CTkButton(master=self.frame,
+            image=cloud_img,
+            fg_color="transparent",
+            hover=False,
+            text=os.getenv("APP_TITLE"),
+            font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT2_SIZE"), 12)),
+            text_color=os.getenv("PRIMARY_COLOR_MED")
+        ).pack(pady=60)
+
         # My Account Label
         user_icon_img = ctk.CTkImage(Image.open(os.getenv("USER_ICON")), size=(30, 30))
         ctk.CTkButton(self.my_account,
