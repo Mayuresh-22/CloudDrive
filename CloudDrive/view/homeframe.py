@@ -68,7 +68,6 @@ class HomeFrame():
         ctk.CTkButton(self.my_account,
             text="My Account",
             image=user_icon_img,
-            bg_color="#03045E",
             corner_radius=10,
             command=lambda: print("My Account")
         ).pack(side=tk.LEFT, padx=10)
