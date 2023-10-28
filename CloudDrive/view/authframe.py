@@ -39,7 +39,7 @@ class AuthFrame():
             text="Login or Register",
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT4_SIZE"))),
             text_color="#1B387C"
-        ).pack(pady=15)
+        ).pack(pady=0)
         
         # Auth details form
         self.auth_username = ctk.CTkEntry(self.frame,
@@ -87,6 +87,8 @@ class AuthFrame():
             command=lambda: self.build_register()
         )
         self.register_btn.pack(pady=10)
+
+
 
     def build_register(self):
         """This method builds the register form."""
