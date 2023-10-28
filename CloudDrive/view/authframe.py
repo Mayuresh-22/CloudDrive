@@ -1,5 +1,5 @@
+from tkinter import Image
 from logic.authlogic import AuthLogic
-import tkinter as tk
 import customtkinter as ctk
 from PIL import Image
 from dotenv import load_dotenv
@@ -37,7 +37,7 @@ class AuthFrame():
             text=os.getenv("APP_TITLE"),
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT2_SIZE"), 12)),
             text_color=os.getenv("PRIMARY_COLOR_MED")
-        ).pack(side=tk.LEFT, pady=60)
+        ).pack(pady=60)
         
         ctk.CTkLabel(self.frame,
             text="Login or Register",
