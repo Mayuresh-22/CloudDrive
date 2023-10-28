@@ -34,7 +34,7 @@ class AuthLogic():
                     # Redirect to Home frame
                     HomeFrame(parent, current, resp.json())
             except:
-                pass
+                kwargs["errorlabel"].config(text="Invalid username or password", text_color="red")
 
 
     def auth_user_register(parent, current, **kwargs):
