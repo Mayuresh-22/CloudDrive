@@ -82,6 +82,7 @@ class HomeFrame():
             height=int(os.getenv("DEFAULT_APP_HEIGHT")),
             fg_color="black",
             bg_color="black"
+                        corner_radius=10
         )
         self.main_content.pack_propagate(False)
         self.main_content.pack(side=tk.RIGHT, pady=10, padx=10)
