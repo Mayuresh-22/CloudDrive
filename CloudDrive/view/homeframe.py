@@ -37,7 +37,11 @@ class HomeFrame():
 
 
     def build_sidebar(self):
-                # Left Sidebar
+        """
+            build_sidebar() method builds the sidebar of the Home frame.
+            This sidebar contains the user details and the cloud provider details.
+        """
+        # Left Sidebar
         self.left_sidebar = ctk.CTkFrame(self.frame,
             width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.2,
             height=int(os.getenv("DEFAULT_APP_HEIGHT")),
