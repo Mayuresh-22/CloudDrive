@@ -63,14 +63,7 @@ class HomeFrame():
         self.my_account.tkraise()
 
         # My Account Label
-        user_icon_img = tk.PhotoImage(file="assets/user.png")
-        self.my_account_button = ctk.CTkButton(master = self.my_account,
-            image=user_icon_img,
-            font=(os.getenv("DEFAULT_FONT"), int(os.getenv("DEFAULT_FONT_SIZE"))),
-            text_color="white",
-            corner_radius=10,
-            command=lambda: print("My Account")
-        ).pack(side=tk.LEFT, padx=10, pady=10)
+        user_icon_img = ctk.CTkImage(Image.open("assets/yourimage.png"), size=(50, 50))
 
         # # User Username
         # ctk.CTkLabel(self.my_account,
