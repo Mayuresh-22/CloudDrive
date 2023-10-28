@@ -80,7 +80,7 @@ class HomeFrame():
             text_color="white"
         ).pack()
 
-        # self.left_sidebar.pack_propagate(False)
+        self.left_sidebar.pack_propagate(False)
         self.left_sidebar.pack(side=tk.LEFT, pady=10, padx=10)
         self.left_sidebar.tkraise()
 
