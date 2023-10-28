@@ -105,6 +105,7 @@ class AuthFrame():
         )
         self.register_btn.pack(pady=10)
 
+
     def build_register(self):
         """
         This method builds the register form.
