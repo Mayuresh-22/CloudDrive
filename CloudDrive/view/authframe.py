@@ -52,6 +52,7 @@ class AuthFrame():
         )
         self.error_msg.pack(pady=10)
 
+
     def build_login(self):
         """
             This method builds the login form.
