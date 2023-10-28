@@ -179,7 +179,6 @@ class AuthFrame():
             This method is called when the user selects a cloud provider from the combobox.
         """
         if value != "Choose your Cloud Provider" and self.api_entry_widget_track != 1:
-            print("selected: ", value)
             self.back_btn.pack_forget()
             self.auth_api_key.pack(pady=5)
             self.register_btn.pack(pady=5)
