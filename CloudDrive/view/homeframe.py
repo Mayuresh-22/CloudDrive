@@ -81,6 +81,10 @@ class HomeFrame():
 
 
     def build_main_content(self):
+        """
+            build_main_content() method builds the main content of the Home frame.
+            This main content contains the uploaded files and folders of the user.
+        """
         # Main Content
         self.main_content = ctk.CTkFrame(self.frame,
             width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.8,
