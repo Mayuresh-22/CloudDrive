@@ -63,7 +63,7 @@ class HomeFrame():
         self.my_account.tkraise()
 
         # My Account Label
-        user_icon_img = ctk.CTkImage(Image.open("assets/yourimage.png"), size=(50, 50))
+        user_icon_img = ctk.CTkImage(tk.Image.open("assets/yourimage.png"), size=(50, 50))
 
         # # User Username
         # ctk.CTkLabel(self.my_account,
