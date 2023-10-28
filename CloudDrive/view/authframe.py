@@ -74,7 +74,7 @@ class AuthFrame():
             text_color="#E3F5FD",
             hover_color="#1B387C",
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"))),
-            command=lambda: AuthLogic.auth_user_login(self.parent, self.frame, username = self.auth_username.get(), self.auth_password.get())
+            command=lambda: AuthLogic.auth_user_login(self.parent, self.frame, username = self.auth_username.get(), password = self.auth_password.get())
         )
         self.login_btn.pack(pady=5)
         
