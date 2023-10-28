@@ -150,7 +150,7 @@ class AuthFrame():
             text_color="#E3F5FD",
             hover_color="#1B387C",
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"))),
-            command=lambda: AuthLogic.auth_user_register(self.parent, self.frame, name = self.auth_name.get(), username = self.auth_username.get(), password = self.auth_password.get(), cloud_provider = self.auth_cloud_provider.get(), api_key = self.auth_api_key.get())
+            command=lambda: AuthLogic.auth_user_register(self.parent, self.frame, name = self.auth_name.get(), username = self.auth_username.get(), password = self.auth_password.get(), cloud_provider = self.auth_cloud_provider.get(), api_key = self.auth_api_key.get(), , errorlabel = self.error_msg)
         )
 
         # back button widget
