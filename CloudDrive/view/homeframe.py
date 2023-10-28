@@ -64,7 +64,7 @@ class HomeFrame():
             hover=False,
             text=os.getenv("APP_TITLE"),
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT4_SIZE"), 12)),
-            text_color="white"
+            text_color=os.getenv("WHITE_COLOR")
         ).pack(pady=60, side=tk.TOP, padx=10)
 
         # My Account
@@ -83,7 +83,7 @@ class HomeFrame():
         ctk.CTkButton(self.my_account,
             text="My Account",
             image=user_icon_img,
-            text_color="white",
+            text_color=os.getenv("WHITE_COLOR"),
             fg_color="#023e8a",
             hover_color="#023e8a",
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 12)),
