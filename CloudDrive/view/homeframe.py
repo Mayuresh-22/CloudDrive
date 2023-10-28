@@ -1,9 +1,8 @@
-from calendar import c
 import os
 from dotenv import load_dotenv
 import tkinter as tk
 import customtkinter as ctk
-from PIL import Image, ImageTk
+from PIL import Image
 load_dotenv(".env")
 
 class HomeFrame():
