@@ -79,7 +79,7 @@ class HomeFrame():
         self.my_account.tkraise()
 
         # My Account Label
-        user_icon_img = ctk.CTkImage(Image.open(os.getenv("USER_ICON")), size=(os.getenv("DEFAULT_ICON_SIZE"), os.getenv("DEFAULT_ICON_SIZE")))
+        user_icon_img = ctk.CTkImage(Image.open(os.getenv("USER_ICON")), size=(int(os.getenv("DEFAULT_ICON_SIZE")), int(os.getenv("DEFAULT_ICON_SIZE"))))
         ctk.CTkButton(self.my_account,
             text="My Account",
             image=user_icon_img,
