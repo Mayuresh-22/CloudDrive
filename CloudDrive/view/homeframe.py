@@ -63,7 +63,7 @@ class HomeFrame():
         self.my_account.tkraise()
 
         # My Account Label
-        user_icon_img = tk.PhotoImage(file=os.getenv("USER_ICON"))
+        user_icon_img = tk.PhotoImage(file="assets/user_icon.png")
         self.my_account_button = ctk.CTkButton(master = self.my_account,
             image=user_icon_img,
             text="My Account",
