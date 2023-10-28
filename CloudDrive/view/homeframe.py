@@ -31,7 +31,7 @@ class HomeFrame():
         """
             build() method builds the Home frame.
         """
-        self.frame.configure(fg_color="#f7fcfe")
+        self.frame.configure(fg_color="white")
         self.build_sidebar()
         self.build_main_content()
 
@@ -81,6 +81,7 @@ class HomeFrame():
         self.main_content = ctk.CTkFrame(self.frame,
             width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.8,
             height=int(os.getenv("DEFAULT_APP_HEIGHT")),
+            fg_color="#f7fcfe",
             corner_radius=10
         )
         self.main_content.pack_propagate(False)
