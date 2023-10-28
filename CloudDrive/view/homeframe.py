@@ -89,7 +89,7 @@ class HomeFrame():
         self.main_content = ctk.CTkFrame(self.frame,
             width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.8,
             height=int(os.getenv("DEFAULT_APP_HEIGHT")),
-            fg_color="#f7fcfe"
+            fg_color="#f7fcfe",
             border_color="grey",
             border_width=1
         )
