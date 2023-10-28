@@ -41,7 +41,7 @@ class AuthFrame():
             text_color="#1B387C"
         ).pack(pady=0)
         
-        # Auth details form
+        # Auth details form login/register
         self.auth_username = ctk.CTkEntry(self.frame,
             width=300,
             height=40,
