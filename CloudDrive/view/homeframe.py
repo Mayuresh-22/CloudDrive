@@ -82,7 +82,7 @@ class HomeFrame():
 
         self.left_sidebar.pack_propagate(False)
         self.left_sidebar.pack(side=tk.LEFT, pady=10, padx=10)
-        # self.left_sidebar.tkraise()
+        self.left_sidebar.tkraise()
 
 
     def build_main_content(self):
