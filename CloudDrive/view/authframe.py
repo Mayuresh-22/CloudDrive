@@ -83,6 +83,7 @@ class AuthFrame():
             placeholder_text_color="#adb5bd",
         )
         self.auth_password.pack(pady=5)
+        self.auth_password.configure(show="*")
         
         # Login button widget
         self.login_btn = ctk.CTkButton(self.frame,
