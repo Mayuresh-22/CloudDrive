@@ -25,6 +25,7 @@ class App:
         self.root.title(os.getenv("APP_TITLE"))
         self.root.geometry(f"{os.getenv('DEFAULT_APP_WIDTH')}x{os.getenv('DEFAULT_APP_HEIGHT')}")
         self.root.resizable(False, False)
+        # Build the Auth frame
         AuthFrame(self.root)
         self.root.mainloop()
     
