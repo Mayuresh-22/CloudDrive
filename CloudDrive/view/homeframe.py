@@ -1,8 +1,9 @@
+from calendar import c
 import os
 from dotenv import load_dotenv
 import tkinter as tk
 import customtkinter as ctk
-from PIL import Image
+from PIL import Image, ImageTk
 load_dotenv(".env")
 
 class HomeFrame():
@@ -73,7 +74,7 @@ class HomeFrame():
             hover_color="#023e8a",
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"))),
             command=lambda: ()
-        ).pack(padx=10)
+        ).pack(side=tk.LEFT, padx=10)
 
         # # User Username
         # ctk.CTkLabel(self.my_account,
