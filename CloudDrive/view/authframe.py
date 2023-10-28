@@ -88,6 +88,13 @@ class AuthFrame():
         )
         self.register_btn.pack(pady=10)
 
+        # Error message label
+        self.error_msg = ctk.CTkLabel(self.frame,
+            text="",
+            font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"))),
+            text_color="red"
+        )
+        self.error_msg.pack(pady=10)
 
 
     def build_register(self):
