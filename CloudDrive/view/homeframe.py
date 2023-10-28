@@ -18,6 +18,12 @@ class HomeFrame():
         - parent: the parent of the frame
     """
     def __init__(self, parent, prev, userObj):
+        """
+            This is the constructor of the HomeFrame class.
+            - parent: the parent of the frame
+            - prev: the previous frame
+            - userObj: the user object
+        """
         self.remove_frame(prev)
         self.parent = parent
         self.frame = prev
