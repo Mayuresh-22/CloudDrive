@@ -1,4 +1,3 @@
-from tkinter import Image
 from logic.authlogic import AuthLogic
 import customtkinter as ctk
 from PIL import Image
