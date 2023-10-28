@@ -64,7 +64,7 @@ class HomeFrame():
 
         # My Account Label
         user_icon_img = tk.PhotoImage(file="assets/user.png")
-        self.my_account_button = ctk.CTkButton(master = self.my_account,
+        self.my_account_button = ctk.CTkButton(master=self.my_account,
             image=user_icon_img
         ).pack(side=tk.LEFT, padx=10, pady=10)
 
