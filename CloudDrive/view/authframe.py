@@ -173,7 +173,11 @@ class AuthFrame():
         )
         self.back_btn.pack(pady=10)
 
+
     def on_cloud_provider_selected(self, value):
+        """
+        This method is called when the user selects a cloud provider from the combobox.
+        """
         if value != "Choose your Cloud Provider" and self.api_entry_widget_track != 1:
             print("selected: ", value)
             self.back_btn.pack_forget()
