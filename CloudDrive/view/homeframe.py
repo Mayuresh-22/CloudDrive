@@ -50,18 +50,12 @@ class HomeFrame():
             corner_radius=0
         )
 
-        # Left Sidebar Content
-        # My Account
-        self.my_account = ctk.CTkFrame(self.left_sidebar,
-            width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.18,
-            height=int(os.getenv("DEFAULT_APP_HEIGHT"))*0.1,
-            fg_color="#023e8a",
-            corner_radius=10
-        )
-        self.my_account.pack_propagate(False)
-        self.my_account.pack(side=tk.BOTTOM, pady=10)
-        self.my_account.tkraise()
-
+        """
+            Left Sidebar Content
+            - App Title Logo
+            - Upload Button
+            - My Account
+        """
         # App Title Logo
         cloud_img = ctk.CTkImage(Image.open(os.getenv("CLOUD_ICON")), size=(45, 45))
         ctk.CTkButton(master=self.left_sidebar,
@@ -72,6 +66,16 @@ class HomeFrame():
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT2_SIZE"), 12)),
             text_color="white"
         ).pack(pady=60, side=tk.TOP, padx=10)
+        # My Account
+        self.my_account = ctk.CTkFrame(self.left_sidebar,
+            width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.18,
+            height=int(os.getenv("DEFAULT_APP_HEIGHT"))*0.1,
+            fg_color="#023e8a",
+            corner_radius=10
+        )
+        self.my_account.pack_propagate(False)
+        self.my_account.pack(side=tk.BOTTOM, pady=10)
+        self.my_account.tkraise()
 
         # My Account Label
         user_icon_img = ctk.CTkImage(Image.open(os.getenv("USER_ICON")), size=(30, 30))
