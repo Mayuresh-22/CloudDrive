@@ -42,6 +42,17 @@ class AuthFrame():
         ).pack(pady=0)
         
         # Auth details form login/register
+        self.build_login()
+        
+        # Error message label
+        self.error_msg = ctk.CTkLabel(self.frame,
+            text="",
+            font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"))),
+            text_color="red"
+        )
+        self.error_msg.pack(pady=10)
+
+    def build_login(self):
         self.auth_username = ctk.CTkEntry(self.frame,
             width=300,
             height=40,
@@ -90,15 +101,6 @@ class AuthFrame():
             command=lambda: self.build_register()
         )
         self.register_btn.pack(pady=10)
-
-        # Error message label
-        self.error_msg = ctk.CTkLabel(self.frame,
-            text="",
-            font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"))),
-            text_color="red"
-        )
-        self.error_msg.pack(pady=10)
-
 
     def build_register(self):
         """This method builds the register form."""
