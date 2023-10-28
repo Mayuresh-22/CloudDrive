@@ -22,7 +22,7 @@ class HomeFrame():
             This is the constructor of the HomeFrame class.
             - parent: the parent of the frame
             - prev: the previous frame
-            - userObj: the user object
+            - userObj: the user object, which contains the user details
         """
         self.remove_frame(prev)
         self.parent = parent
