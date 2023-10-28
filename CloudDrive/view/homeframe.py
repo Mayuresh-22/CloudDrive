@@ -70,7 +70,7 @@ class HomeFrame():
             hover=False,
             text=os.getenv("APP_TITLE"),
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT2_SIZE"), 12)),
-            text_color=os.getenv("PRIMARY_COLOR_MED")
+            text_color="white"
         ).pack(pady=60, side=tk.TOP, padx=10)
 
         # My Account Label
