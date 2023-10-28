@@ -193,6 +193,7 @@ class AuthFrame():
     def on_back_btn_clicked(self):
         """
             This method is called when the user clicks on the back button.
+            It removes the register form and builds the login form.
         """
         for widget in self.frame.winfo_children():
             widget.destroy()
