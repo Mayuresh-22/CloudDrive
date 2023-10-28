@@ -4,8 +4,11 @@
 
 # import modules
 import os
+from view.homeframe import HomeFrame
 from dotenv import load_dotenv
 import requests
+
+from view.homeframe import HomeFrame
 load_dotenv(".env")
 
 class AuthLogic():
@@ -13,25 +16,26 @@ class AuthLogic():
         This class handels the logic behind the auth frame
         (Login/Register), selecting cloud provider, validating API etc
     """
-    def auth_user_login(username, password):
+    def auth_user_login(parent, current, username, password):
         """
             This method authenticates the user.
             - username: the username of the user
             - password: the password of the user
+            - current: the current frame
+            - parent: the parent of the frame
         """
         # Hit the login API if fields are not empty
         if username != "" and password != "":
             url = os.getenv("APP_BASE_URL")+os.getenv("USERS_ENDPOINT")+os.getenv("LOGIN_ENDPOINT")
-            print(url)
             resp =  requests.post(url,
                         headers={"Content-Type": "application/json"},
                         json={"username": username, "password": password}
                     )
             if resp.status_code == 200:
-                # Login successful
-                print("Login status", resp.json())
+                # Redirect to Home frame
+                HomeFrame(parent, current, resp.json())
 
-    def auth_user_register(name, username, password, cloud_provider, api_key):
+    def auth_user_register(parent, current, **kwargs):
         """
             This method registers the user.
             - name: the name of the user
@@ -41,13 +45,12 @@ class AuthLogic():
             - api_key: the api key of the user
         """
         # Hit the register API if fields are not empty
-        if name != "" and username != "" and password != "" and cloud_provider != "" and api_key != "":
+        if kwargs["name"] != "" and kwargs["username"] != "" and kwargs["password"] != "" and kwargs["cloud_provider"] != "" and kwargs["api_key"] != "":
             url = os.getenv("APP_BASE_URL")+os.getenv("USERS_ENDPOINT")+os.getenv("REGISTER_ENDPOINT")
-            print(url)
             resp = requests.post(url,
                         headers={"Content-Type": "application/json"},
-                        json={"name": name, "username": username, "password": password, "cloud_provider": cloud_provider, "cloud_provider_api_key": api_key}
+                        json={"name": kwargs["name"], "username": kwargs["username"], "password": kwargs["password"], "cloud_provider": kwargs["cloud_provider"], "cloud_provider_api_key": kwargs["api_key"]}
                     )
             if resp.status_code == 200:
-                # Registration successful
-                print("Registration status", resp.json())
+                # Redirect to Home frame
+                HomeFrame(parent, current, resp.json())

@@ -16,7 +16,7 @@ class AuthFrame():
     def __init__(self, parent):
         self.parent = parent
         self.frame = ctk.CTkFrame(self.parent, 
-            fg_color="#E3F5FD",
+            fg_color="#f7fcfe",
             width=int(os.getenv("DEFAULT_APP_WIDTH")),
             height=int(os.getenv("DEFAULT_APP_HEIGHT"))
         )
@@ -51,6 +51,7 @@ class AuthFrame():
             placeholder_text_color="#adb5bd"
         )
         self.auth_username.pack(pady=10)
+        self.auth_username.insert(0, "admin")
         
         self.auth_password = ctk.CTkEntry(self.frame,
             width=300,
@@ -61,6 +62,7 @@ class AuthFrame():
             placeholder_text_color="#adb5bd",
         )
         self.auth_password.pack(pady=5)
+        self.auth_password.insert(0, "admin")
         
         self.login_btn = ctk.CTkButton(self.frame,
             text="Login",
@@ -70,7 +72,7 @@ class AuthFrame():
             text_color="#E3F5FD",
             hover_color="#1B387C",
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"))),
-            command=lambda: AuthLogic.auth_user_login(self.auth_username.get(), self.auth_password.get())
+            command=lambda: AuthLogic.auth_user_login(self.parent, self.frame, self.auth_username.get(), self.auth_password.get())
         )
         self.login_btn.pack(pady=5)
         
@@ -136,7 +138,7 @@ class AuthFrame():
             text_color="#E3F5FD",
             hover_color="#1B387C",
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"))),
-            command=lambda: AuthLogic.auth_user_register(self.auth_name.get(), self.auth_username.get(), self.auth_password.get(), self.auth_cloud_provider.get(), self.auth_api_key.get())
+            command=lambda: AuthLogic.auth_user_register(self.parent, self.frame, name = self.auth_name.get(), username = self.auth_username.get(), password = self.auth_password.get(), cloud_provider = self.auth_cloud_provider.get(), api_key = self.auth_api_key.get())
         )
 
         # back button widget
@@ -169,3 +171,7 @@ class AuthFrame():
         for widget in self.frame.winfo_children():
             widget.destroy()
         self.build()
+
+    def remove_frame(self, frame):
+        for widget in frame.winfo_children():
+            widget.destroy()
