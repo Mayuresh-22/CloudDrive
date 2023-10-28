@@ -80,7 +80,7 @@ class HomeFrame():
         self.main_content = ctk.CTkFrame(self.frame,
             width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.8,
             height=int(os.getenv("DEFAULT_APP_HEIGHT")),
-            corner_radius=10,
+            corner_radius=10
         )
         self.main_content.pack_propagate(False)
         self.main_content.pack(side=tk.RIGHT, pady=10, padx=10)
