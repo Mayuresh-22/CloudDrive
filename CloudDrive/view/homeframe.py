@@ -32,7 +32,7 @@ class HomeFrame():
         """
             build() method builds the Home frame.
         """
-        self.frame.configure(fg_color="#023e8a", corner_radius=0)
+        self.frame.configure(fg_color=os.getenv("HOME_SCREEN_BG_COLOR"), corner_radius=0)
         self.build_sidebar()
         self.build_main_content()
 
@@ -46,7 +46,7 @@ class HomeFrame():
         self.left_sidebar = ctk.CTkFrame(self.frame,
             width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.2,
             height=int(os.getenv("DEFAULT_APP_HEIGHT")),
-            fg_color="#023e8a",
+            fg_color=os.getenv("HOME_SCREEN_BG_COLOR"),
             corner_radius=0
         )
 
@@ -71,7 +71,7 @@ class HomeFrame():
         self.my_account = ctk.CTkFrame(self.left_sidebar,
             width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.18,
             height=int(os.getenv("DEFAULT_APP_HEIGHT"))*0.1,
-            fg_color="#023e8a",
+            fg_color=os.getenv("HOME_SCREEN_BG_COLOR"),
             corner_radius=10
         )
         self.my_account.pack_propagate(False)
@@ -84,8 +84,8 @@ class HomeFrame():
             text="My Account",
             image=user_icon_img,
             text_color=os.getenv("WHITE_COLOR"),
-            fg_color="#023e8a",
-            hover_color="#023e8a",
+            fg_color=os.getenv("HOME_SCREEN_BG_COLOR"),
+            hover_color=os.getenv("HOME_SCREEN_BG_COLOR"),
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 12)),
             command=lambda: ()
         ).pack(padx=10)
