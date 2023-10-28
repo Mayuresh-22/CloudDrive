@@ -67,6 +67,7 @@ class HomeFrame():
         user_icon_img = ctk.CTkImage(Image.open("assets/yourimage.png"), size=(50, 50))
         ctk.CTkButton(self.my_account,
             text="My Account",
+            image=user_icon_img,
             bg_color="#03045E",
             corner_radius=10,
             command=lambda: print("My Account")
