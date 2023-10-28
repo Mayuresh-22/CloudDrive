@@ -39,7 +39,7 @@ class HomeFrame():
     def build_sidebar(self):
         """
             build_sidebar() method builds the sidebar of the Home frame.
-            This sidebar contains the user details and the cloud provider details.
+            This sidebar contains the My Account tab and Upload button.
         """
         # Left Sidebar
         self.left_sidebar = ctk.CTkFrame(self.frame,
