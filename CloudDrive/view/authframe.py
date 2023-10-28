@@ -53,6 +53,7 @@ class AuthFrame():
         self.auth_username.pack(pady=10)
         self.auth_username.insert(0, "admin")
         
+        # Auth password form
         self.auth_password = ctk.CTkEntry(self.frame,
             width=300,
             height=40,
