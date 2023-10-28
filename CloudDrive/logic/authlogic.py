@@ -16,7 +16,7 @@ class AuthLogic():
         This class handels the logic behind the auth frame
         (Login/Register), selecting cloud provider, validating API etc
     """
-    def auth_user_login(parent, current, username, password):
+    def auth_user_login(parent, current, **kwargs):
         """
             This method authenticates the user.
             - username: the username of the user
