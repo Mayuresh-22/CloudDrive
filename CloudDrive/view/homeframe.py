@@ -31,7 +31,7 @@ class HomeFrame():
         """
             build() method builds the Home frame.
         """
-        self.frame.configure(fg_color="white")
+        self.frame.configure(fg_color="#023e8a")
         self.build_sidebar()
         self.build_main_content()
 
