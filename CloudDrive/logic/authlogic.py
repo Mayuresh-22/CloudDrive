@@ -30,7 +30,7 @@ class AuthLogic():
             try:
                 resp =  requests.post(url,
                             headers={"Content-Type": "application/json"},
-                            json={"username": username, "password": password}
+                            json={"username": kwargs["username"], "password": kwargs["password"]}
                         )
                 if resp.status_code == 200:
                     # Redirect to Home frame
