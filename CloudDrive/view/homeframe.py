@@ -69,7 +69,6 @@ class HomeFrame():
             text="My Account",
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("DEFAULT_FONT_SIZE"))),
             text_color="white",
-            bg_color="#03045E",
             corner_radius=10,
             command=lambda: print("My Account")
         ).pack(side=tk.LEFT, padx=10, pady=10)
