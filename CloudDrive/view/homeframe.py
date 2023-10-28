@@ -90,8 +90,7 @@ class HomeFrame():
             width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.8,
             height=int(os.getenv("DEFAULT_APP_HEIGHT")),
             fg_color="black",
-            border_color="grey",
-            border_width=1
+            bg_color="black"
         )
         # self.main_content.pack_propagate(False)
         self.main_content.pack(side=tk.LEFT)
