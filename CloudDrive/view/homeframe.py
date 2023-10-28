@@ -65,7 +65,7 @@ class HomeFrame():
 
         # My Account Label
         user_icon_img = ctk.CTkImage(Image.open("assets/yourimage.png"), size=(50, 50))
-        ctk.CTkImage(self.my_account,
+        ctk.CTkImage(master=self.my_account,
             image=user_icon_img,
         ).pack(side=tk.LEFT, padx=10)
 
