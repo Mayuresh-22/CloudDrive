@@ -64,7 +64,7 @@ class HomeFrame():
 
         # App Title Logo
         cloud_img = ctk.CTkImage(Image.open(os.getenv("CLOUD_ICON")), size=(45, 45))
-        ctk.CTkButton(master=self.my_account,
+        ctk.CTkButton(master=self.left_sidebar,
             image=cloud_img,
             fg_color="transparent",
             hover=False,
