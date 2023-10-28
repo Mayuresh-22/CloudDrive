@@ -199,6 +199,10 @@ class AuthFrame():
             widget.destroy()
         self.build()
 
+
     def remove_frame(self, frame):
+        """
+            remove_frame() method removes the current frame
+        """
         for widget in frame.winfo_children():
             widget.destroy()
