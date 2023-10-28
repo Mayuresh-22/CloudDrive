@@ -1,4 +1,5 @@
 from logic.authlogic import AuthLogic
+import tkinter as tk
 import customtkinter as ctk
 from PIL import Image
 from dotenv import load_dotenv
