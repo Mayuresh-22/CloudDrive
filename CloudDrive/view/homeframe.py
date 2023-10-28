@@ -65,6 +65,11 @@ class HomeFrame():
 
         # My Account Label
         user_icon_img = ctk.CTkImage(Image.open("assets/yourimage.png"), size=(50, 50))
+        ctk.CTkImageLabel(self.my_account,
+            image=user_icon_img,
+            bg_color="#03045E",
+            corner_radius=10
+        ).pack(side=tk.LEFT, padx=10)
 
         # # User Username
         # ctk.CTkLabel(self.my_account,
