@@ -86,7 +86,7 @@ class HomeFrame():
             text_color="white",
             fg_color="#023e8a",
             hover_color="#023e8a",
-            font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE")), 12),
+            font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 12)),
             command=lambda: ()
         ).pack(padx=10)
 
