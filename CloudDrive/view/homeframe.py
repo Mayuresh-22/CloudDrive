@@ -92,8 +92,8 @@ class HomeFrame():
             fg_color="black",
             bg_color="black"
         )
-        # self.main_content.pack_propagate(False)
-        self.main_content.pack(side=tk.LEFT)
+        self.main_content.pack_propagate(False)
+        self.main_content.pack(side=tk.RIGHT)
         self.main_content.tkraise()
 
 
