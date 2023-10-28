@@ -18,11 +18,10 @@ class AuthLogic():
     """
     def auth_user_login(parent, current, **kwargs):
         """
-            This method authenticates the user.
+            This method authenticates the user by hitting the login API.
             - username: the username of the user
             - password: the password of the user
-            - current: the current frame
-            - parent: the parent of the frame
+
         """
         # Hit the login API if fields are not empty
         if kwargs["username"] != "" and kwargs["password"] != "":
