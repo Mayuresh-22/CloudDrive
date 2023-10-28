@@ -33,8 +33,8 @@ class AuthFrame():
         """
         cloud_img = ctk.CTkImage(Image.open(os.getenv("CLOUD_ICON")), size=(30, 30))
         ctk.CTkLabel(self.frame,
+                                 image=cloud_img,
             text=os.getenv("APP_TITLE"),
-            image=cloud_img,
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT2_SIZE"), 12)),
             text_color=os.getenv("PRIMARY_COLOR_MED")
         ).pack(pady=60)
