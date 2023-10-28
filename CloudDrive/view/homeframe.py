@@ -93,7 +93,7 @@ class HomeFrame():
             border_color="grey",
             border_width=1
         )
-        self.main_content.pack_propagate(False)
+        # self.main_content.pack_propagate(False)
         self.main_content.pack(side=tk.LEFT)
         self.main_content.tkraise()
 
