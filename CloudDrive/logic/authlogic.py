@@ -41,6 +41,11 @@ class AuthLogic():
     def auth_user_register(parent, current, **kwargs):
         """
             This method registers the user by hitting the register API.
+            - name: the name of the user
+            - username: the username of the user
+            - password: the password of the user
+            - cloud_provider: the cloud provider of the user
+            - api_key: the api key of the user
         """
         # Hit the register API if fields are not empty
         if kwargs["name"] != "" and kwargs["username"] != "" and kwargs["password"] != "" and kwargs["cloud_provider"] != "" and kwargs["api_key"] != "":
