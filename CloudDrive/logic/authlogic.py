@@ -25,7 +25,7 @@ class AuthLogic():
             - parent: the parent of the frame
         """
         # Hit the login API if fields are not empty
-        if username != "" and password != "":
+        if kwargs["username"] != "" and password != "":
             url = os.getenv("APP_BASE_URL")+os.getenv("USERS_ENDPOINT")+os.getenv("LOGIN_ENDPOINT")
             try:
                 resp =  requests.post(url,
