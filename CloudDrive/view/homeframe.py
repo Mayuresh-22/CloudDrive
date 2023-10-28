@@ -74,13 +74,6 @@ class HomeFrame():
             command=lambda: ()
         ).pack(padx=10)
 
-        # # User Username
-        # ctk.CTkLabel(self.my_account,
-        #     text=self.userObj['username'],
-        #     font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"))),
-        #     text_color="white"
-        # ).pack()
-
         self.left_sidebar.pack_propagate(False)
         self.left_sidebar.pack(side=tk.LEFT, pady=10, padx=10)
         self.left_sidebar.tkraise()
