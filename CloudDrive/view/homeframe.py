@@ -46,7 +46,7 @@ class HomeFrame():
             width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.2,
             height=int(os.getenv("DEFAULT_APP_HEIGHT")),
             fg_color="#023e8a",
-            corner_radius=10
+            corner_radius=0
         )
 
         # Left Sidebar Content
