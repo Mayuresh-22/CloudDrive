@@ -65,7 +65,7 @@ class HomeFrame():
         # My Account Label
         user_icon_img = tk.PhotoImage(file=os.getenv("USER_ICON"))
         self.my_account_button = ctk.CTkButton(self.my_account,
-            image=os.getenv("USER_ICON"),
+            image=user_icon_img,
             text="My Account",
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("DEFAULT_FONT_SIZE"))),
             text_color="white",
