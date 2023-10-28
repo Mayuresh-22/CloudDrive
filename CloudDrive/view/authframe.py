@@ -53,6 +53,9 @@ class AuthFrame():
         self.error_msg.pack(pady=10)
 
     def build_login(self):
+        """
+            This method builds the login form.
+        """
         self.auth_username = ctk.CTkEntry(self.frame,
             width=300,
             height=40,
@@ -103,7 +106,9 @@ class AuthFrame():
         self.register_btn.pack(pady=10)
 
     def build_register(self):
-        """This method builds the register form."""
+        """
+        This method builds the register form.
+        """
 
         self.api_entry_widget_track = 0 # track variable for api entry widget
 
