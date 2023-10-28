@@ -69,7 +69,7 @@ class HomeFrame():
             text="My Account",
             image=user_icon_img,
             corner_radius=10,
-            fg_color="white"
+            fg_color="white",
             command=lambda: print("My Account")
         ).pack(side=tk.LEFT, padx=10)
 
