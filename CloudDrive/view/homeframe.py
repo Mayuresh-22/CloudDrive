@@ -67,7 +67,6 @@ class HomeFrame():
         ctk.CTkButton(self.my_account,
             text="My Account",
             image=user_icon_img,
-            corner_radius=10,
             text_color="white",
             fg_color="#023e8a",
             hover_color="#023e8a",
