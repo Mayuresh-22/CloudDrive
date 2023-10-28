@@ -63,7 +63,7 @@ class HomeFrame():
             fg_color="transparent",
             hover=False,
             text=os.getenv("APP_TITLE"),
-            font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 12)),
+            font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT4_SIZE"), 12)),
             text_color="white"
         ).pack(pady=60, side=tk.TOP, padx=10)
 
