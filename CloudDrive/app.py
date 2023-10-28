@@ -5,7 +5,6 @@
 # import modules
 from view.authframe import AuthFrame
 import os
-from PIL import Image
 import customtkinter as ctk
 from dotenv import load_dotenv
 load_dotenv(".env")
