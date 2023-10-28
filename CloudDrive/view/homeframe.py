@@ -93,7 +93,7 @@ class HomeFrame():
             bg_color="black"
         )
         self.main_content.pack_propagate(False)
-        self.main_content.pack(side=tk.RIGHT)
+        self.main_content.pack(side=tk.RIGHT, pady=10, padx=10)
         self.main_content.tkraise()
 
 
