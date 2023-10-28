@@ -27,13 +27,17 @@ class AuthLogic():
         # Hit the login API if fields are not empty
         if username != "" and password != "":
             url = os.getenv("APP_BASE_URL")+os.getenv("USERS_ENDPOINT")+os.getenv("LOGIN_ENDPOINT")
-            resp =  requests.post(url,
-                        headers={"Content-Type": "application/json"},
-                        json={"username": username, "password": password}
-                    )
-            if resp.status_code == 200:
-                # Redirect to Home frame
-                HomeFrame(parent, current, resp.json())
+            try:
+                resp =  requests.post(url,
+                            headers={"Content-Type": "application/json"},
+                            json={"username": username, "password": password}
+                        )
+                if resp.status_code == 200:
+                    # Redirect to Home frame
+                    HomeFrame(parent, current, resp.json())
+            except:
+                pass
+
 
     def auth_user_register(parent, current, **kwargs):
         """
