@@ -30,9 +30,10 @@ class AuthFrame():
         """
             build() method builds the auth frame
         """
-        cloud_img = ctk.CTkImage(Image.open(os.getenv("CLOUD_IMG_PATH")), size=(30, 30)), Image.ANTIALIAS))
+        cloud_img = ctk.CTkImage(Image.open(os.getenv("CLOUD_IMG_PATH")), size=(30, 30))
         ctk.CTkLabel(self.frame,
             text=os.getenv("APP_TITLE"),
+            image=cloud_img,
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT2_SIZE"), 12)),
             text_color=os.getenv("PRIMARY_COLOR_MED")
         ).pack(pady=60)
