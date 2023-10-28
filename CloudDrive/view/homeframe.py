@@ -56,7 +56,7 @@ class HomeFrame():
         self.my_account = ctk.CTkFrame(self.left_sidebar,
             width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.18,
             height=int(os.getenv("DEFAULT_APP_HEIGHT"))*0.1,
-            fg_color="#03045E",
+            fg_color="#023e8a",
             corner_radius=10
         )
         self.my_account.pack_propagate(False)
