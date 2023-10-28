@@ -21,7 +21,6 @@ class AuthLogic():
             This method authenticates the user by hitting the login API.
             - username: the username of the user
             - password: the password of the user
-
         """
         # Hit the login API if fields are not empty
         if kwargs["username"] != "" and kwargs["password"] != "":
