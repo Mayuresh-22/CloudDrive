@@ -189,7 +189,11 @@ class AuthFrame():
             self.auth_api_key.pack_forget()
             self.register_btn.pack_forget()
 
+
     def on_back_btn_clicked(self):
+        """
+            This method is called when the user clicks on the back button.
+        """
         for widget in self.frame.winfo_children():
             widget.destroy()
         self.build()
