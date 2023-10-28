@@ -93,7 +93,7 @@ class AuthFrame():
 
         # Error message label
         self.error_msg = ctk.CTkLabel(self.frame,
-            text="Error",
+            text="",
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"))),
             text_color="red"
         )
