@@ -86,20 +86,20 @@ class HomeFrame():
             command=lambda: ()
         ).pack(padx=10, pady=20)
 
-        # My Account
-        self.my_account = ctk.CTkFrame(self.left_sidebar,
-            width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.18,
-            height=int(os.getenv("DEFAULT_APP_HEIGHT"))*0.1,
-            fg_color=os.getenv("HOME_SCREEN_BG_COLOR"),
-            corner_radius=10
-        )
-        self.my_account.pack_propagate(False)
-        self.my_account.pack(side=tk.BOTTOM, pady=10)
-        self.my_account.tkraise()
+        # # My Account
+        # self.my_account = ctk.CTkFrame(self.left_sidebar,
+        #     width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.18,
+        #     height=int(os.getenv("DEFAULT_APP_HEIGHT"))*0.1,
+        #     fg_color=os.getenv("HOME_SCREEN_BG_COLOR"),
+        #     corner_radius=10
+        # )
+        # self.my_account.pack_propagate(False)
+        # self.my_account.pack(side=tk.BOTTOM, pady=10)
+        # self.my_account.tkraise()
 
         # My Account Label
         user_icon_img = ctk.CTkImage(Image.open(os.getenv("USER_ICON")), size=(int(os.getenv("DEFAULT_ICON_SIZE")), int(os.getenv("DEFAULT_ICON_SIZE"))))
-        ctk.CTkButton(self.my_account,
+        ctk.CTkButton(self.left_sidebar,
             text="My Account",
             image=user_icon_img,
             text_color=os.getenv("WHITE_COLOR"),
