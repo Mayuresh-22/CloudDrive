@@ -12,7 +12,7 @@ class HomeLogic:
             This method launches the file explorer of the system.
             Opens the file dialog to select the file.
         """
-        file = filedialog.askopenfilename(initialdir="/", filetypes=['pdf', 'jpg'], title="Select a File")
+        file = filedialog.askopenfilename(initialdir="/", filetypes=(("Text Files", "*.txt"), title="Select a File")
         
         if file:
             print(file)
