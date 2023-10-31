@@ -2,7 +2,7 @@
     HomeLogic is rhe class that handles the logic for the home page.
 """
 
-import os
+from tkinter import filedialog
 
 
 class HomeLogic:
@@ -14,4 +14,5 @@ class HomeLogic:
             This method launches the file explorer of the system.
             Opens the file dialog to select the file.
         """
+
 
