@@ -18,5 +18,4 @@ class HomeLogic:
         
         if file:
             print(file)
-            
 
