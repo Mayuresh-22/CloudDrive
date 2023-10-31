@@ -17,6 +17,7 @@ class HomeLogic:
         if file:
             self.upload_file(file)
 
+
     def upload_file(self, file):
         """
             This method uploads the file to the cloud.
