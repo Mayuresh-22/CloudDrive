@@ -1,10 +1,9 @@
 import os
 from dotenv import load_dotenv
+from logic.homelogic import HomeLogic
 import tkinter as tk
 import customtkinter as ctk
 from PIL import Image
-
-from logic.homelogic import HomeLogic
 load_dotenv(".env")
 
 class HomeFrame():
