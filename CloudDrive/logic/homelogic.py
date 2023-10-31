@@ -15,5 +15,8 @@ class HomeLogic:
             Opens the file dialog to select the file.
         """
         file = filedialog.askopenfilename(initialdir="/", title="Select a File")
-        return file
+        
+        if file:
+            print(file)
+            
 
