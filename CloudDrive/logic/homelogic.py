@@ -6,11 +6,9 @@ class HomeLogic:
     """
         This class handles the logic behind the Home fram (after successfull authentication).
     """
-    def __init__(self):
-        pass
-
-    def get_home_page(self):
+    def launch_file_explorer():
         """
-            Returns the home page.
+            This method launches the file explorer of the system.
         """
-        return "home.html"
+        os.system("xdg-open "+os.getenv("DEFAULT_APP_DOWNLOAD_PATH"))
+        
