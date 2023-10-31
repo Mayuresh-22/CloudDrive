@@ -14,7 +14,7 @@ class HomeLogic:
             This method launches the file explorer of the system.
             Opens the file dialog to select the file.
         """
-        file = ctk.CTKc .askopenfilename(initialdir="/", title="Select a File")
+        file = filedialog.askopenfilename(initialdir="/", title="Select a File")
         
         if file:
             print(file)
