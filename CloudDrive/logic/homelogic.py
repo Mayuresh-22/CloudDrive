@@ -12,5 +12,5 @@ class HomeLogic:
     def launch_file_explorer():
         """
             This method launches the file explorer of the system.
-            Opens the file explorer in the default directory.
+            Opens the file explorer in the download directory.
         """    
