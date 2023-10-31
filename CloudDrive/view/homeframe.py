@@ -1,6 +1,5 @@
 import os
 from dotenv import load_dotenv
-from logic.homelogic import HomeLogic
 import tkinter as tk
 import customtkinter as ctk
 from PIL import Image
@@ -84,7 +83,7 @@ class HomeFrame():
             fg_color=os.getenv("HOME_SCREEN_BG_COLOR"),
             hover_color="#0077B6",
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 15)),
-            command=lambda: HomeLogic.launch_file_explorer()
+            command=lambda: ()
         ).pack(padx=10, pady=20)
 
         # My Account
@@ -100,7 +99,7 @@ class HomeFrame():
 
         # My Account Label
         user_icon_img = ctk.CTkImage(Image.open(os.getenv("USER_ICON")), size=(int(os.getenv("DEFAULT_ICON_SIZE")), int(os.getenv("DEFAULT_ICON_SIZE"))))
-        ctk.CTkButton(self.left_sidebar,
+        ctk.CTkButton(self.my_account,
             text="My Account",
             image=user_icon_img,
             text_color=os.getenv("WHITE_COLOR"),
