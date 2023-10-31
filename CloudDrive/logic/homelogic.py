@@ -12,13 +12,6 @@ class HomeLogic:
     def launch_file_explorer():
         """
             This method launches the file explorer of the system.
-            Opens the file explorer in the download directory.
-        """ 
-        os.system("xdg-open ~/Downloads")
+            Opens the file dialog to select the file.
+        """
 
-    def upload_file():
-        """
-            This method uploads the file to the cloud.
-        """
-        pass
-    
