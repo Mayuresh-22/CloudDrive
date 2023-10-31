@@ -1,8 +1,6 @@
 """
     HomeLogic is rhe class that handles the logic for the home page.
 """
-
-from customtkinter import CustomTkinter as ctk
 from tkinter import filedialog
 
 class HomeLogic:
