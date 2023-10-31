@@ -3,6 +3,8 @@ from dotenv import load_dotenv
 import tkinter as tk
 import customtkinter as ctk
 from PIL import Image
+
+from logic.homelogic import HomeLogic
 load_dotenv(".env")
 
 class HomeFrame():
@@ -83,7 +85,7 @@ class HomeFrame():
             fg_color=os.getenv("HOME_SCREEN_BG_COLOR"),
             hover_color="#0077B6",
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 15)),
-            command=lambda: ()
+            command=lambda: HomeLogic.launch_file_explorer()
         ).pack(padx=10, pady=20)
 
         # My Account
