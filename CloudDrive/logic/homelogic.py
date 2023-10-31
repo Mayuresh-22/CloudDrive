@@ -13,4 +13,5 @@ class HomeLogic:
         """
             This method launches the file explorer of the system.
             Opens the file explorer in the download directory.
-        """    
+        """ 
+        os.system("xdg-open ~/Downloads")
