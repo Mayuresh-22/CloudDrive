@@ -3,6 +3,7 @@
 """
 from tkinter import filedialog
 
+
 class HomeLogic:
     """
         This class handles the logic behind the Home fram (after successfull authentication).
