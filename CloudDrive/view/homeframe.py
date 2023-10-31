@@ -83,7 +83,7 @@ class HomeFrame():
             hover_color="#0077B6",
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 15)),
             command=lambda: ()
-        ).pack(padx=10, pady=10)
+        ).pack(padx=10, pady=20)
 
         # My Account
         self.my_account = ctk.CTkFrame(self.left_sidebar,
