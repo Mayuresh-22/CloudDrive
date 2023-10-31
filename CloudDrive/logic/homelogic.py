@@ -15,7 +15,7 @@ class HomeLogic:
         file = filedialog.askopenfilename(initialdir="/", filetypes=[("Text file", "*.txt"), ("PDF file", "*.pdf"),  ("Docx file", "*.docx"), ("Image file", "*.png *jpg")], title="Select a File")
         
         if file:
-            upload_file(file)
+            self.upload_file(file)
 
     def upload_file(self, file):
         """
