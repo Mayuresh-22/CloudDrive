@@ -107,7 +107,7 @@ class HomeFrame():
             hover_color=os.getenv("HOME_SCREEN_BG_COLOR"),
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 12)),
             command=lambda: ()
-        ).pack(padx=10)
+        ).pack(padx=10, side=tk.BOTTOM, pady=20)
 
         self.left_sidebar.pack_propagate(False)
         self.left_sidebar.pack(side=tk.LEFT, pady=10, padx=10)
