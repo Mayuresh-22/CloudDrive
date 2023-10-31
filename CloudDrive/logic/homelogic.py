@@ -2,6 +2,9 @@
     HomeLogic is rhe class that handles the logic for the home page.
 """
 
+import os
+
+
 class HomeLogic:
     """
         This class handles the logic behind the Home fram (after successfull authentication).
