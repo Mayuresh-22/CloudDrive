@@ -78,7 +78,7 @@ class HomeFrame():
         ctk.CTkButton(self.left_sidebar,
             text="Upload",
             image=upload_img,
-            height=35
+            height=35,
             text_color=os.getenv("WHITE_COLOR"),
             fg_color=os.getenv("HOME_SCREEN_BG_COLOR"),
             hover_color="#0077B6",
