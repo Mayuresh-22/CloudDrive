@@ -15,3 +15,10 @@ class HomeLogic:
             Opens the file explorer in the download directory.
         """ 
         os.system("xdg-open ~/Downloads")
+
+    def upload_file():
+        """
+            This method uploads the file to the cloud.
+        """
+        pass
+    
