@@ -12,6 +12,5 @@ class HomeLogic:
     def launch_file_explorer():
         """
             This method launches the file explorer of the system.
-        """
-        os.system("xdg-open "+os.getenv("DEFAULT_APP_DOWNLOAD_PATH"))
-        
+            Opens the file explorer in the default directory.
+        """    
