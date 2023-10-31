@@ -73,6 +73,18 @@ class HomeFrame():
             text_color=os.getenv("WHITE_COLOR")
         ).pack(pady=60, side=tk.TOP, padx=10)
 
+        # Upload Button
+        upload_img = ctk.CTkImage(Image.open(os.getenv("UPLOAD_ICON")), size=(int(os.getenv("DEFAULT_ICON_SIZE")), int(os.getenv("DEFAULT_ICON_SIZE"))))
+        ctk.CTkButton(self.left_sidebar,
+            text="Upload",
+            image=upload_img,
+            text_color=os.getenv("WHITE_COLOR"),
+            fg_color=os.getenv("HOME_SCREEN_BG_COLOR"),
+            hover_color=os.getenv("HOME_SCREEN_BG_COLOR"),
+            font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 12)),
+            command=lambda: ()
+        ).pack(padx=10)
+
         # My Account
         self.my_account = ctk.CTkFrame(self.left_sidebar,
             width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.18,
