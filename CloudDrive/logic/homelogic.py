@@ -8,7 +8,7 @@ class HomeLogic:
     """
         This class handles the logic behind the Home fram (after successfull authentication).
     """
-    def launch_file_explorer(self):
+    def launch_file_explorer(self, userObj):
         """
             This method launches the file explorer of the system.
             Opens the file dialog to select the file.
