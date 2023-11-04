@@ -16,3 +16,5 @@ class CloudSetup():
 
         if cloud_provider == "Filestack":
             self.filestack_setup(api_key)
+        else:
+            pass
