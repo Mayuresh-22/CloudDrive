@@ -8,7 +8,7 @@ class HomeLogic:
     """
         This class handles the logic behind the Home fram (after successfull authentication).
     """
-    def __init__(self, userObj, cloudObj):
+    def __init__(self, userObj):
         """
             This is the constructor of the HomeLogic class.
             - userObj: the user object, which contains the user details
@@ -36,5 +36,4 @@ class HomeLogic:
             This method uploads the file to the cloud.
             - file: the file to be uploaded
         """
-        print(self.cloudObj.api_key)
 
