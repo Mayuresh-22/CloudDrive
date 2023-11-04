@@ -26,6 +26,6 @@ class CloudSetup():
     
     def filestack_setup(self, **kwargs):
         # Initialize the client
-        self.client = Client("api_key")
+        self.client = Client(self.api_key)
         print("Filestack setup done")
 
