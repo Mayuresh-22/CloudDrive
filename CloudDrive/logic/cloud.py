@@ -27,7 +27,6 @@ class CloudSetup():
 
         if self.cloud_provider == os.getenv(os.getenv("FILESTACK")):
             return Filestack()
-            pass
     
 
 class Filestack():
