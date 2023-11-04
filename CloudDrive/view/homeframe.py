@@ -33,7 +33,7 @@ class HomeFrame():
         self.frame = prev
         self.userObj = userObj
         # Initialize the HomeLogic class
-        HomeLogic.__init__(HomeLogic, userObj)
+        HomeLogic.__init__(userObj=userObj)
         # Build the Home frame
         self.frame.grid(row=0, column=0)
         self.frame.pack_propagate(False)
