@@ -26,14 +26,9 @@ class CloudSetup():
 
     def setup(self, **kwargs) -> None:
         """
-            This method return the cloud provider setup object.
+            This method return the cloud provider object.
         """
-        if self.cloud_provider == "filestack":
-            self.cloud = Filestack(self.api_key)
-            self.cloud.setup()
-        else:
-            print("Cloud provider not found")
-        return self.cloud
+        
     
 
 class Filestack():
