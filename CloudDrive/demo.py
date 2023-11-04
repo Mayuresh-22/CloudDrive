@@ -34,6 +34,13 @@ print(fileinfo.upload_response)
 # download the file
 print("\nDownloading the file...\n")
 REQUEST=f'https://cdn.filestackcontent.com/{fileinfo.upload_response["handle"]}'
+print(REQUEST, "\n")
+
+r = requests.get(REQUEST)
+if r.status_code == 200:
+    print("File downloaded successfully")
+else:
+    print("Error downloading file")
 
 # Delete the file
 # print("\nDeleting the file...\n")
