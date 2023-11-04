@@ -43,5 +43,5 @@ class Filestack(CloudSetup):
             This method uploads the file to the cloud.
             - file: the file to be uploaded
         """
-        print(self.client.upload(filepath=file))
-        print("File uploaded successfully.")
+        filelink = self.client.upload(filepath=file)
+        return filelink
