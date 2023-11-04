@@ -21,6 +21,7 @@ class UserDB(db.Model):
         # Return json representation of the object
         return f"User('{self.username}', '{self.name}', '{self.cloud_provider}')"
     
+    
 class FilesDB(db.Model):
     """
     This class creates the Files table in the database.
