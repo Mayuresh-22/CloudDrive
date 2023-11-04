@@ -31,10 +31,10 @@ class HomeLogic:
             self.upload_file(file)
 
 
-    def upload_file(file):
+    def upload_file(self, file):
         """
             This method uploads the file to the cloud.
             - file: the file to be uploaded
         """
-        print(CloudSetup.api_key)
+        print(self.)
 
