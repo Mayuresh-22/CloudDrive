@@ -28,7 +28,7 @@ class CloudSetup():
             pass
     
 
-Class FilestackCloud(CloudSetup):
+class FilestackCloud(CloudSetup):
     def filestack_setup(self, **kwargs):
         # Initialize the Filestack Setup
         self.client = Client(self.api_key)
