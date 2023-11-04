@@ -22,7 +22,7 @@ client = Client("Af07oLPtdSVqPdz7UTtygz")
 
 
 # fileinfo = client.upload(filepath="assets/img.jpg", security=security)
-fileinfo = client.upload(filepath="assets/img.jpg")
+fileinfo = client.upload(filepath="assets/1.jpg")
 # print(fileinfo.upload_response)
 # print(f"URL: https://cdn.filestackcontent.com/{security.as_url_string()}/{fileinfo.upload_response['handle']} \n")
 print(f"URL: https://cdn.filestackcontent.com/{fileinfo.upload_response['handle']} \n")
