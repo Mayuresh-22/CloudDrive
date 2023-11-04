@@ -26,7 +26,7 @@ class CloudSetup():
         self.kwargs = kwargs
 
         if self.cloud_provider == os.getenv(os.getenv("FILESTACK")):
-            self.filestack_setup()
+            Filestack.filestack_setup()
         else:
             pass
     
