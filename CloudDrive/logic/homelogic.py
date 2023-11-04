@@ -15,6 +15,7 @@
 from tkinter import filedialog
 from logic.cloud import CloudSetup, Filestack
 
+
 class HomeLogic:
     """
         This class handles the logic behind the Home fram (after successfull authentication).
