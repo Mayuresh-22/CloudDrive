@@ -2,6 +2,7 @@
     This file contains the logic for the cloud cloud provider setup.
 """
 import json
+from pydoc import cli
 from filestack import Client, Security
 import os
 from dotenv import load_dotenv
@@ -37,6 +38,10 @@ class CloudSetup():
     @client.setter
     def client(self, client):
         self.client = client
+    
+    @client.getter
+    def client(self):
+        return self.client
     
 
 class Filestack(CloudSetup):
