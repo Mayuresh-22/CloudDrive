@@ -44,8 +44,7 @@ class Filestack():
             This is the constructor of the Filestack class.
             - cloudSetObj: the cloud provider setup object (CloudSetup)
         """
-        self.cloudSetObj = cloudSetObj
-        self.api_key = cloudSetObj.api_key
+        self.api_key = api_key
         
 
     def filestack_setup(self, **kwargs) -> None:
