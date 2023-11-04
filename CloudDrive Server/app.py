@@ -146,8 +146,6 @@ def upload_file():
         db.session.commit()
 
 
-
-
 # api endpoint to get all files
 @app.route('/files/', methods=['GET'])
 def get_all_files():
