@@ -138,7 +138,7 @@ def upload_file():
     elif file is None:
         new_file = FilesDB(file_owner=file_owner, file_name=file_name, 
                            file_size=file_size, file_type=file_type, 
-                           file_url=file_url)
+                           file_url=file_url, file_handle=file_handle, file_status=file_status)
 
 
 
