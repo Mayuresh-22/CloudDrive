@@ -30,18 +30,6 @@ class CloudSetup():
             Filestack.filestack_setup(Filestack)
         else:
             pass
-
-    @property
-    def client(self):
-        return self.client
-    
-    @client.setter
-    def client(self, client):
-        self.client = client
-    
-    @client.getter
-    def client(self):
-        return self.client
     
 
 class Filestack(CloudSetup):
