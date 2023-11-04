@@ -30,9 +30,13 @@ class CloudSetup():
         else:
             pass
 
-    @get_cloud_provider.setter
-    def get_cloud_provider(self):
-        return self.cloud_provider
+    @property
+    def client(self):
+        return self.client
+    
+    @client.setter
+    def client(self, client):
+        self.client = client
     
 
 class Filestack(CloudSetup):
