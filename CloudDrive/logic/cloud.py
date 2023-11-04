@@ -2,7 +2,6 @@
     This file contains the logic for the cloud cloud provider setup.
 """
 import json
-from pydoc import cli
 from filestack import Client, Security
 import os
 from dotenv import load_dotenv
@@ -32,7 +31,7 @@ class CloudSetup():
             pass
     
 
-class Filestack():
+class Filestack(CloudSetup):
     """
         This class contains the logic for the Filestack cloud provider setup and actions.
         It inherits the CloudSetup class.
@@ -44,20 +43,15 @@ class Filestack():
     """
 
     def filestack_setup(self, **kwargs) -> None:
-        # # Initialize the Filestack Setup
-        # self.client = Client(self.api_key)
-        # print("Filestack setup done")
-        
-        # print cloudsetup class attributes
-        print(self.cloud_provider)
-        print(self.api_key)
-        print(self.kwargs)
+        # Initialize the Filestack Setup
+        self.client = Client(self.api_key)
+        print("Filestack setup done")
 
 
-    # def upload_file(self, file):
-    #     """
-    #         This method uploads the file to the cloud.
-    #         - file: the file to be uploaded
-    #     """
-    #     filelink = self.client.upload(filepath=file)
-    #     return filelink
+    def upload_file(self, file):
+        """
+            This method uploads the file to the cloud.
+            - file: the file to be uploaded
+        """
+        filelink = self.client.upload(filepath=file)
+        return filelink
