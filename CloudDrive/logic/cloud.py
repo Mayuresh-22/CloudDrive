@@ -26,7 +26,7 @@ class CloudSetup():
         self.kwargs = kwargs
 
         if self.cloud_provider == os.getenv(os.getenv("FILESTACK")):
-            Filestack.filestack_setup(Filestack)
+            return Filestack(self, **kwargs).filestack_setup()
         else:
             pass
     
@@ -49,7 +49,7 @@ class Filestack():
         self.cloudSetObj = cloudSetObj
         self.api_key = cloudSetObj.api_key
         
-        
+
     def filestack_setup(self, **kwargs) -> None:
         # Initialize the Filestack Setup
         self.client = Client(self.api_key)
