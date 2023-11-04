@@ -13,6 +13,7 @@ class HomeLogic:
             This method launches the file explorer of the system.
             Opens the file dialog to select the file.
         """
+        file = filedialog.askopenfilename(initialdir="/", filetypes=[("Text file", "*.txt"), ("PDF file", "*.pdf"),  ("Docx file", "*.docx"), ("Image file", "*.png *jpg")], title="Select a File to Upload")
         
         if file:
             self.upload_file(file)
