@@ -30,6 +30,7 @@ class HomeFrame():
         CloudSetup(userObj["cloud_provider"], userObj["cloud_provider_api_key"])
         # Initialize HomeLogic class
         HomeLogic(userObj)
+        # Initialize the frame
         self.remove_frame(prev)
         self.parent = parent
         self.frame = prev
