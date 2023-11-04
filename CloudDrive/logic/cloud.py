@@ -18,3 +18,5 @@ class CloudSetup():
             self.filestack_setup(api_key)
         else:
             pass
+    
+    def filestack_setup(self, api_key, **kargs):
