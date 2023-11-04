@@ -87,5 +87,6 @@ class HomeLogic:
                 if resp.status_code == 200 and resp.json()["status"] == "success":
                     print(resp.json()["message"])
                 else:
+                    print(resp.json()["message"])
             except:
                 print("Server error")
