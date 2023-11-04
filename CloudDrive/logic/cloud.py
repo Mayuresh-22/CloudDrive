@@ -24,9 +24,15 @@ class CloudSetup():
         self.api_key = api_key
         self.kwargs = kwargs
 
-        if self.cloud_provider == os.getenv(os.getenv("FILESTACK")):
-            return Filestack(api_key)
-        return None
+    def setup(self, **kwargs) -> None:
+        """
+            This method setups the cloud provider.
+        """
+        if self.cloud_provider == "Filestack":
+            self.cloud = Filestack(self.api_key)
+            self.cloud.setup()
+        else:
+            print("No cloud provider setup")
     
 
 class Filestack():
