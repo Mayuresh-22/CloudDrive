@@ -67,7 +67,7 @@ class HomeLogic:
                 If the file is uploaded successfully,
                 Now, storing the file details in the database.
             """
-            url = os.getenv
+            url = os.getenv("APP_BASE_URL")+os.getenv("FILE_ENDPOINT")+os.getenv("LOGIN_ENDPOINT")
             try:
                 resp = requests.post(url
                     
