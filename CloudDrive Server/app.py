@@ -118,34 +118,13 @@ def register_user():
 def upload_file():
     if not request.json or not 'file_owner' in request.json or not 'file_name' in request.json or not 'file_size' in request.json or not 'file_type' in request.json or not 'file_url' in request.json or not 'file_handle' in request.json or not 'file_status' in request.json:
         return {"please provide required parameters."}
-
+    
     file_owner = request.json['file_owner'].strip()
     file_name = request.json['file_name'].strip()
     file_size = request.json['file_size'].strip()
     file_type = request.json['file_type'].strip()
     file_url = request.json['file_url'].strip()
     file_handle = request.json['file_handle'].strip()
-    file_status = request.json['file_status'].strip()
-
-    # check if file exists
-    file = FilesDB.query.filter_by(file_name="file_name").first()
-    if file is not None:
-        return {"status": "file already exists."}
-    else:
-        # Insert New File in DB
-        new_file = FilesDB(file_owner=file_owner, file_name=file_name, file_size=file_size, file_type=file_type, file_url=file_url, file_handle=file_handle, file_status=file_status)
-        db.session.add(new_file)
-        db.session.commit()
-        
-        return {"status": "success",
-                "message": "File uploaded successfully.",
-                "file_owner": file_owner, 
-                "file_name": file_name, 
-                "file_size": file_size, 
-                "file_type": file_type, 
-                "file_url": file_url, 
-                "file_handle": file_handle, 
-                "file_status": file_status}
 
 
 # api endpoint to get all files
