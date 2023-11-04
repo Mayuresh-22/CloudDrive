@@ -48,7 +48,6 @@ class Filestack():
         """
         self.cloudSetObj = cloudSetObj
         self.api_key = cloudSetObj.api_key
-        self.kwargs = kwargs
         
     def filestack_setup(self, **kwargs) -> None:
         # Initialize the Filestack Setup
