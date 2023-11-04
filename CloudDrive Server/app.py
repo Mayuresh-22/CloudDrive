@@ -159,7 +159,7 @@ def upload_file():
     # get the file parameters
     file_owner = request.json['file_owner']
     file_name = request.json['file_name'].strip()
-    file_size = request.json['file_size'].strip()
+    file_size = request.json['file_size']
     file_type = request.json['file_type'].strip()
     file_url_pub = request.json['file_url_pub'].strip()
     file_url_pvt = request.json['file_url_pvt'].strip()
