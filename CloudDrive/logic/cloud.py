@@ -31,7 +31,7 @@ class CloudSetup():
             pass
     
 
-class Filestack(S):
+class Filestack():
     """
         This class contains the logic for the Filestack cloud provider setup and actions.
         It inherits the CloudSetup class.
