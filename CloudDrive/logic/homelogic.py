@@ -3,6 +3,7 @@
 """
 
 # Import the required modules
+import os
 from tkinter import filedialog
 
 import requests
@@ -65,8 +66,9 @@ class HomeLogic:
                 If the file is uploaded successfully,
                 Now, storing the file details in the database.
             """
+            url = os.getenv
             try:
-                resp = requests.post(
+                resp = requests.post(url
                     
                 )
             except:
