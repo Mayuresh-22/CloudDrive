@@ -37,4 +37,6 @@ class HomeLogic:
             - file: the file to be uploaded
         """
         print(self.cloudObj.api_key)
+        print("File uploaded successfully.")
+        print(file)
 
