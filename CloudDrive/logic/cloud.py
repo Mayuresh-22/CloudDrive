@@ -25,10 +25,10 @@ class CloudSetup():
         self.api_key = api_key
         self.kwargs = kwargs
 
-        # if cloud_provider == os.getenv(os.getenv("FILESTACK")):
-        #     Filestack.filestack_setup(Filestack)
-        # else:
-        #     pass
+        if self.cloud_provider == os.getenv(os.getenv("FILESTACK")):
+            Filestack.filestack_setup()
+        else:
+            pass
     
 
 class Filestack(CloudSetup):
@@ -41,31 +41,17 @@ class Filestack(CloudSetup):
         - upload_file(): This method uploads the file to the cloud and returns the file link,
                         which contains the file details.
     """
-    def __init__(self, **kwargs):
-        super().__init__(cloud_provider="Filestack", api_key="1233")
+
+    def filestack_setup(self, **kwargs) -> None:
+        # Initialize the Filestack Setup
+        self.client = Client(self.api_key)
+        print("Filestack setup done")
 
 
-    def main(self):
-        print("Filestack main")
-        # PRINT cloudsetup class attributes
-        print(self.client)
-        print(self.cloud_provider)
-
-    # def filestack_setup(self, **kwargs) -> None:
-    #     # Initialize the Filestack Setup
-    #     self.client = Client(self.api_key)
-    #     print("Filestack setup done")
-
-
-    # def upload_file(self, file):
-    #     """
-    #         This method uploads the file to the cloud.
-    #         - file: the file to be uploaded
-    #     """
-    #     filelink = self.client.upload(filepath=file)
-    #     return filelink
-
-
-if __name__ == "__main__":
-    file = Filestack()
-    file.main()
+    def upload_file(self, file):
+        """
+            This method uploads the file to the cloud.
+            - file: the file to be uploaded
+        """
+        filelink = self.client.upload(filepath=file)
+        return filelink
