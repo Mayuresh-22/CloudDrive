@@ -80,6 +80,7 @@ def auth_user_login():
     if user is not None:
         return {"status": os.getenv("SUCCESS"),
                 "message": os.getenv("LOGIN_SUCCESS"),
+                "id": user.id,
                 "name": user.name, 
                 "cloud_provider": user.cloud_provider, 
                 "cloud_provider_api_key": user.cloud_provider_api_key, 
