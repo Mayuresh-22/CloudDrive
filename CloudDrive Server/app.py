@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
+import os
+from dotenv import load_dotenv
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
@@ -153,6 +155,11 @@ def upload_file():
         )
         db.session.add(new_file)
         db.session.commit()
+
+    return {
+        "status" : "success"
+        "message" : 
+    }
 
 
 # api endpoint to get all files
