@@ -127,6 +127,9 @@ def upload_file():
     file_url = request.json['file_url'].strip()
     file_handle = request.json['file_handle'].strip()
     file_status = request.json['file_status'].strip()
+    # check if file already exists
+    file = FilesDB.query.filter_by(file_name = file_name).first()
+    if file is not None:
 
 
 
