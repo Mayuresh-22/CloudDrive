@@ -4,6 +4,7 @@
 
 # Import the required modules
 import os
+from urllib import response
 from dotenv import load_dotenv
 from tkinter import filedialog
 import requests
@@ -82,5 +83,8 @@ class HomeLogic:
                         "file_status" : filelink.upload_response["status"]
                     }
                 )
+
+                if resp.status_code == 200 and resp.json()["status"] == "success":
+                    print("File Uploaded and Stored Successfully")
             except:
                 pass
