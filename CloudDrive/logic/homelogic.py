@@ -90,3 +90,5 @@ class HomeLogic:
                     print(resp.json()["message"])
             except:
                 print("Server error")
+
+                
