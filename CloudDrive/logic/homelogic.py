@@ -7,7 +7,8 @@
 
     This class has the following attributes:
     - userObj: the user object, which contains the user details (JSON)
-    - cloudSetObj: the cloud provider setup object
+    - cloudSetObj: the cloud provider setup object (CloudSetup)
+    - filehandler: the file handler object for the cloud provider (Filestack)
 """
 from tkinter import filedialog
 from logic.cloud import CloudSetup, Filestack
