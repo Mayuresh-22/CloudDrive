@@ -8,13 +8,6 @@ class HomeLogic:
     """
         This class handles the logic behind the Home fram (after successfull authentication).
     """
-    def __init__(self, userObj):
-        """
-            This is the constructor of the HomeLogic class.
-            - userObj: the user object, which contains the user details
-        """
-        CloudSetup.__init__(cloud_provider= userObj["cloud_provider"], api_key=userObj["cloud_provider_api_key"])
-        
 
     def launch_file_explorer(self, userObj):
         """
