@@ -13,9 +13,9 @@ class HomeLogic:
             This is the constructor of the HomeLogic class.
             - userObj: the user object, which contains the user details
         """
-        self.userObj = userObj
+        CloudSetup.__init__(self, userObj["cloud_provider"], userObj["api_key"])
         
-        
+
     def launch_file_explorer(self, userObj):
         """
             This method launches the file explorer of the system.
