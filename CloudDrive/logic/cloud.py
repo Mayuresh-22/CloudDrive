@@ -47,7 +47,7 @@ class Filestack():
         self.api_key = api_key
         
 
-    def filestack_setup(self, **kwargs) -> None:
+    def setup(self, **kwargs) -> None:
         # Initialize the Filestack Setup
         self.client = Client(self.api_key)
         print("Filestack setup done")
