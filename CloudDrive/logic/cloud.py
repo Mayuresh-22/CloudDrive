@@ -25,10 +25,10 @@ class CloudSetup():
         api_key = api_key
         kwargs = kwargs
 
-        if cloud_provider == os.getenv(os.getenv("FILESTACK")):
-            Filestack.filestack_setup(Filestack)
-        else:
-            pass
+        # if cloud_provider == os.getenv(os.getenv("FILESTACK")):
+        #     Filestack.filestack_setup(Filestack)
+        # else:
+        #     pass
     
 
 class Filestack(CloudSetup):
