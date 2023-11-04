@@ -33,7 +33,6 @@ class HomeFrame():
         # Initialize the HomeLogic class
         HomeLogic.__init__(self, userObj)
         
-
         self.frame.grid(row=0, column=0)
         self.frame.pack_propagate(False)
         self.frame.tkraise()
