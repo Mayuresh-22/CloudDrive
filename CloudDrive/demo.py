@@ -44,12 +44,12 @@ else:
     print("Error downloading file")
 
 # Delete the file
-# print("\nDeleting the file...\n")
-# REQUEST=f'https://www.filestackapi.com/api/file/{fileinfo.upload_response["handle"]}?key=Aulnj8a0wRLERECktpnFlz&signature={security.signature}&policy={security.policy_b64}'
-# print(REQUEST, "\n")
+print("\nDeleting the file...\n")
+REQUEST=f'https://www.filestackapi.com/api/file/{fileinfo.upload_response["handle"]}?key=Aulnj8a0wRLERECktpnFlz&signature={security.signature}&policy={security.policy_b64}'
+print(REQUEST, "\n")
 
-# r = requests.delete(REQUEST)
-# if r.status_code == 200:
-#     print("File deleted successfully")
-# else:
-#     print("Error deleting file")
+r = requests.delete(REQUEST)
+if r.status_code == 200:
+    print("File deleted successfully")
+else:
+    print("Error deleting file")
