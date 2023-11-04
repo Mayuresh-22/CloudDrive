@@ -27,8 +27,7 @@ class HomeFrame():
             - userObj: the user object, which contains the user details
         """
         # Initialize HomeLogic class
-        HomeLogic(userObj, CloudSetup(userObj["cloud_provider"], userObj["cloud_provider_api_key"])
-)
+        HomeLogic(userObj, CloudSetup(userObj["cloud_provider"], userObj["cloud_provider_api_key"]))
         # Initialize the frame
         self.remove_frame(prev)
         self.parent = parent
