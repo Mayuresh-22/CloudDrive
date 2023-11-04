@@ -33,6 +33,8 @@ class AuthLogic():
                 if resp.status_code == 200 and resp.json()["status"] == "success":
                     # Redirect to Home frame
                     HomeFrame(parent, current, resp.json())
+                else:
+                    kwargs["errorlabel"].configure(text=resp.json()["message"])
             except:
                 kwargs["errorlabel"].configure(text="Server error occurred. Try again after sometime.")
 
