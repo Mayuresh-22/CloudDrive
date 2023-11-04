@@ -46,8 +46,6 @@ class Filestack(CloudSetup):
             This is the constructor of the Filestack class.
             It inherits the CloudSetup class.
         """
-        client = CloudSetup.client
-        api_key = CloudSetup.api_key
         
     def filestack_setup(self, **kwargs) -> None:
         # Initialize the Filestack Setup
