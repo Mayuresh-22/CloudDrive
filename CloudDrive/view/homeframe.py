@@ -27,7 +27,7 @@ class HomeFrame():
             - userObj: the user object, which contains the user details
         """
         # Initialize HomeLogic class
-        self.homeLogic = HomeLogic(userObj, CloudSetup(userObj))
+        self.homeLogic = HomeLogic(userObj)
         # Initialize the frame
         self.remove_frame(prev)
         self.parent = parent
