@@ -20,11 +20,11 @@ class CloudSetup():
         self.kargs = kargs
 
         if self.cloud_provider == "Filestack":
-            self.filestack_setup(api_key)
+            self.filestack_setup()
         else:
             pass
     
-    def filestack_setup(self, api_key, **kargs):
+    def filestack_setup(self, **kargs):
         # Initialize the client
         self.client = Client("api_key")
         print("Filestack setup done")
