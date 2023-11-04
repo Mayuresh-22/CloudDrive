@@ -4,4 +4,4 @@
 from filestack import Client, Security
 import time
 
-class CloudLogic():
+class CloudSetup():
