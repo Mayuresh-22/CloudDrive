@@ -38,6 +38,7 @@ class FilesDB(db.Model):
         # Return json representation of the object
         return f"File('{self.file_name}', '{self.file_size}', '{self.file_type}', '{self.file_path}', '{self.file_owner}', '{self.file_cloud_provider}', '{self.file_cloud_provider_api_key}')"
 
+
 @app.route('/')
 def index():
     return render_template("index.html")
