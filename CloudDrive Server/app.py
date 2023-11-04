@@ -146,7 +146,7 @@ def upload_file():
     if file is not None:
         return {
             "message" : "File Already Exists.",
-            "status" : "fail"
+            "status" : os.getenv("FAIL")
         }
     elif file is None:
         try:
