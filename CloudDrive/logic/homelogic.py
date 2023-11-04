@@ -19,23 +19,24 @@ from logic.cloud import CloudSetup, Filestack
 
 
 class HomeLogic:
-    """
-        This class handles the logic behind the Home fram (after successfull authentication).
-    """
+"""
+    HomeLogic is rhe class that handles the logic for the home page.
+    This class __init__ method takes the user object as the parameter.
+    This class has the following methods:
+    - launch_file_explorer(): This method launches the file explorer of the system.
+    - upload_file(): This method is the global method to upload the file to the cloud.
+
+    This class has the following attributes:
+    - userObj: the user object, which contains the user details (JSON)
+    - cloudSetObj: the cloud provider setup object (CloudSetup)
+    - filehandler: the file handler object for the cloud provider,
+                   which handles the file actions (Any cloud provider type)
+
+"""
     def __init__(self, userObj):
         """
-            HomeLogic is rhe class that handles the logic for the home page.
-            This class __init__ method takes the user object as the parameter.
-            This class has the following methods:
-            - launch_file_explorer(): This method launches the file explorer of the system.
-            - upload_file(): This method is the global method to upload the file to the cloud.
-
-            This class has the following attributes:
-            - userObj: the user object, which contains the user details (JSON)
-            - cloudSetObj: the cloud provider setup object (CloudSetup)
-            - filehandler: the file handler object for the cloud provider,
-                        which handles the file actions (Any cloud provider type)
-
+            This is the constructor of the HomeLogic class.
+            - userObj: the user object, which contains the user details
         """
         self.userObj = userObj
         self.cloudSetObj = CloudSetup(userObj["cloud_provider"], userObj["cloud_provider_api_key"])
