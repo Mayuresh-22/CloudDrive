@@ -86,7 +86,7 @@ def auth_user_login():
                 "username": user.username, 
                 "password": user.password_hash}
     else:
-        return {"status": "fail",
+        return {"status": os.getenv("FAIL"),
                 "message": "Login failed. Please check username and password."}
 
 
