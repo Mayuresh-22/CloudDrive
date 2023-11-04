@@ -100,7 +100,8 @@ def register_user():
         return {"status": "user already exists."}
     else:
         # Insert New User in DB
-        new_usr = UserDB(username=username, password_hash=password, name=name, cloud_provider=cloud_provider, cloud_provider_api_key=cloud_provider_api_key.strip())
+        new_usr = UserDB(username=username, password_hash=password, 
+                         name=name, cloud_provider=cloud_provider, cloud_provider_api_key=cloud_provider_api_key.strip())
         db.session.add(new_usr)
         db.session.commit()
         
