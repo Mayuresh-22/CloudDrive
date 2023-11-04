@@ -113,6 +113,8 @@ def register_user():
                 "password": password}
 
 
+# api endpoint to upload file
+
 # api endpoint to get all files
 @app.route('/files/', methods=['GET'])
 def get_all_files():
