@@ -27,7 +27,7 @@ print(f"URL: https://cdn.filestackcontent.com/{security.as_url_string()}/{filein
 
 # print file info
 print("\nFile info:\n")
-print(fileinfo.metadata(['size', 'type', 'filename', 'width', 'height', 'uploaded', 'writeable', 'cloud', 'sourceUrl', 'mimetype', 'md5', 'path', 'container', 'exif', 'filename', 'key', 'location', 'status', 'url', 'originalPath', 'originalFile',]))
+print(fileinfo.metadata(['size', 'type', 'filename', 'sourceUrl', 'mimetype']))
 
 # Delete the file
 # print("\nDeleting the file...\n")
