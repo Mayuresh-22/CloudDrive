@@ -2,7 +2,7 @@
     HomeLogic is rhe class that handles the logic for the home page.
 """
 from tkinter import filedialog
-from logic.cloud import CloudSetup
+from logic.cloud import CloudSetup, Filestack
 
 class HomeLogic:
     """
@@ -36,7 +36,5 @@ class HomeLogic:
             This method uploads the file to the cloud.
             - file: the file to be uploaded
         """
-        print(self.cloudSetObj.api_key)
-        print("File uploaded successfully.")
-        print(file)
+        Filestack.upload_file(self.cloudSetObj, file)
 
