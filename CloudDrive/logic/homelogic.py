@@ -75,8 +75,11 @@ class HomeLogic:
                         "file_owner" = filelink.upload_response["file_owner"],
                         "file_name" = filelink.upload_response["file_name"],
                         "file_size" = filelink.upload_response["file_size"],
-                        "file_owner" = filelink.upload_response["file_owner"],
-                        "file_owner" = filelink.upload_response["file_owner"],
+                        "file_type" = filelink.upload_response["file_type"],
+                        "file_url_pub" = filelink.upload_response["file_url_pub"],
+                        "file_url_pvt" = filelink.upload_response["file_url_pvt"],
+                        "file_url_pub" = filelink.upload_response["file_url_pub"],
+                        "file_url_pub" = filelink.upload_response["file_url_pub"],
                     }
                     
                 )
