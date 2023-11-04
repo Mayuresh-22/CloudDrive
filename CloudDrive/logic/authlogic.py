@@ -34,7 +34,6 @@ class AuthLogic():
                     # Redirect to Home frame
                     HomeFrame(parent, current, resp.json())
             except:
-                print(resp.json())
                 kwargs["errorlabel"].configure(text="Server error occurred. Try again after sometime.")
 
 
@@ -59,5 +58,4 @@ class AuthLogic():
                     # Redirect to Home frame
                     HomeFrame(parent, current, resp.json())
             except:
-                print(resp.json())
                 kwargs["errorlabel"].configure(text="Server error occurred. Try again after sometime.")
