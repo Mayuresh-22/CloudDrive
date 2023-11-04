@@ -112,6 +112,25 @@ def register_user():
                 "username": username, 
                 "password": password}
 
+
+# api endpoint to get all files
+@app.route('/files/', methods=['GET'])
+def get_all_files():
+    files = FilesDB.query.all()
+    output = []
+    for file in files:
+        file_data = {}
+        file_data['id'] = file.id
+        file_data['file_owner'] = file.file_owner
+        file_data['file_name'] = file.file_name
+        file_data['file_size'] = file.file_size
+        file_data['file_type'] = file.file_type
+        file_data['file_url'] = file.file_url
+        file_data['file_handle'] = file.file_handle
+        file_data['file_status'] = file.file_status
+        output.append(file_data)
+    return {"files": output}
+
     
 # fallback route for 404
 @app.errorhandler(404)
