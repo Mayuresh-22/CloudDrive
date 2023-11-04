@@ -79,7 +79,7 @@ def auth_user_login():
     user = UserDB.query.filter_by(username=username, password_hash=password).first()
     if user is not None:
         return {"status": os.getenv("SUCCESS"),
-                "message": "Login successful. Welcome!",
+                "message": os.getenv("LOGIN_SUCCESS"),
                 "name": user.name, 
                 "cloud_provider": user.cloud_provider, 
                 "cloud_provider_api_key": user.cloud_provider_api_key, 
