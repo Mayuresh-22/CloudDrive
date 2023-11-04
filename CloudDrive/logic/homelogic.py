@@ -78,7 +78,6 @@ class HomeLogic:
                         "file_size" : filelink.upload_response["size"],
                         "file_type" : filelink.upload_response["mimetype"],
                         "file_url_pub" : filelink.upload_response["url"],
-                        "file_url_pvt" : None,
                         "file_handle" : filelink.upload_response["handle"],
                         "file_status" : filelink.upload_response["status"]
                     }
@@ -91,4 +90,3 @@ class HomeLogic:
             except:
                 print("Server error")
 
-                
