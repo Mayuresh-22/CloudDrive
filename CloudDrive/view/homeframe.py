@@ -19,7 +19,7 @@ class HomeFrame():
         which contains the files and folders of the user.
         - parent: the parent of the frame
     """
-    def __init__(self, parent, prev, T->userObj):
+    def __init__(self, parent, prev, userObj):
         """
             This is the constructor of the HomeFrame class.
             - parent: the parent of the frame
