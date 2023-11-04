@@ -184,6 +184,10 @@ def upload_file():
             "status" : os.getenv("SUCCESS"),
             "message" : os.getenv("UPLOAD_SUCCESS")
         }
+    return {
+        "status" : os.getenv("FAIL"),
+        "message" : os.getenv("UPLOAD_ERROR")
+    }
 
 
 # fallback route for 404
