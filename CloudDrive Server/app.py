@@ -116,7 +116,7 @@ def register_user():
         db.session.add(new_usr)
         db.session.commit()
         
-        return {"status": "success",
+        return {"status": os.getenv("SUCCESS"),
                 "message": "User created successfully.",
                 "name": name, 
                 "cloud_provider": cloud_provider, 
