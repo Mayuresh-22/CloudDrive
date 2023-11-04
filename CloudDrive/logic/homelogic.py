@@ -69,21 +69,24 @@ class HomeLogic:
                 Now, storing the file details in the database.
             """
             url = os.getenv("APP_BASE_URL")+os.getenv("FILE_ENDPOINT")+os.getenv("UPLOAD_ENDPOINT")
-            resp = requests.post(url,
-                headers={"Content-Type": "application/json"},
-                json={
-                    "file_owner" : self.userObj["id"],
-                    "file_name" : filelink.upload_response["filename"],
-                    "file_size" : filelink.upload_response["size"],
-                    "file_type" : filelink.upload_response["mimetype"],
-                    "file_url_pub" : filelink.upload_response["url"],
-                    "file_handle" : filelink.upload_response["handle"],
-                    "file_status" : filelink.upload_response["status"]
-                }
-            )
+            try:
+                resp = requests.post(url,
+                    headers={"Content-Type": "application/json"},
+                    json={
+                        "file_owner" : self.userObj["id"],
+                        "file_name" : filelink.upload_response["filename"],
+                        "file_size" : filelink.upload_response["size"],
+                        "file_type" : filelink.upload_response["mimetype"],
+                        "file_url_pub" : filelink.upload_response["url"],
+                        "file_handle" : filelink.upload_response["handle"],
+                        "file_status" : filelink.upload_response["status"]
+                    }
+                )
 
-            if resp.status_code == 200 and resp.json()["status"] == "success":
-                print(resp.json()["message"])
-            else:
-                print(resp.json()["message"])
+                if resp.status_code == 200 and resp.json()["status"] == "success":
+                    print(resp.json()["message"])
+                else:
+                    print(resp.json()["message"])
+            except:
+                print("Server error")
 
