@@ -29,7 +29,8 @@ class HomeLogic:
         
         if file:
             """
-                If the file is selected, upload it to the cloud by calling the upload_file method.
+                If the file is selected,
+                This method calls the global method upload_file() to upload the file to the cloud.
             """
             self.upload_file(file)
 
