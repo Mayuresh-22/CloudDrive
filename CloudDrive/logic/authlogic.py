@@ -66,3 +66,4 @@ class AuthLogic():
                     kwargs["errorlabel"].configure(text="Server error occurred. Try again after sometime.")
         except KeyError as e:
             kwargs["errorlabel"].configure(text="Software Failure. Please contact the developer.")
+            
