@@ -72,7 +72,7 @@ class HomeLogic:
                 resp = requests.post(url,
                     headers={"Content-Type": "application/json"},
                     json={
-                        "file_owner" = filelink.upload_response["file_owner"],
+                        "file_owner" = filelink.upload_response[self.userObj["id"]],
                         "file_name" = filelink.upload_response["file_name"],
                         "file_size" = filelink.upload_response["file_size"],
                         "file_type" = filelink.upload_response["file_type"],
