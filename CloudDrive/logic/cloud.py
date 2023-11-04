@@ -2,6 +2,7 @@
     This file contains the logic for the cloud cloud provider setup.
 """
 import json
+from re import S
 from filestack import Client, Security
 import os
 from dotenv import load_dotenv
@@ -30,7 +31,7 @@ class CloudSetup():
             pass
     
 
-class Filestack():
+class Filestack(S):
     """
         This class contains the logic for the Filestack cloud provider setup and actions.
         It inherits the CloudSetup class.
