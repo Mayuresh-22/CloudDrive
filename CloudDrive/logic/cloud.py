@@ -46,14 +46,11 @@ class Filestack(CloudSetup):
             This is the constructor of the Filestack class.
             It inherits the CloudSetup class.
         """
-        super().__init__(**kwargs)
-        self.client = None
-        self.filelink = None
-        self.kwargs = kwargs
-
+        self.client = CloudSetup.client
+        
     def filestack_setup(self, **kwargs) -> None:
         # Initialize the Filestack Setup
-        CloudSetup.client = Client(CloudSetup.api_key)
+        self.client = Client(CloudSetup.api_key)
         print("Filestack setup done")
 
 
