@@ -6,19 +6,19 @@ import requests
 # Initialize the client
 client = Client("Aulnj8a0wRLERECktpnFlz")
 
-# Get the current time in seconds since the Unix epoch
-now = int(time.time())
+# # Get the current time in seconds since the Unix epoch
+# now = int(time.time())
 
-# Add one hour in seconds to the current time
-expiration_time = now + 3600
+# # Add one hour in seconds to the current time
+# expiration_time = now + 3600
 
-print("Time: ", expiration_time, "\n")
+# print("Time: ", expiration_time, "\n")
 
-policy = {
-    "expiry": expiration_time, 
-    "call": ["pick","read","stat","write","store","convert","remove","exif","writeUrl","runWorkflow"]
-}
-security = Security(policy, "7PDJLJSTP5G33M7FKQQE3Q4W3E")
+# policy = {
+#     "expiry": expiration_time, 
+#     "call": ["pick","read","stat","write","store","convert","remove","exif","writeUrl","runWorkflow"]
+# }
+# security = Security(policy, "7PDJLJSTP5G33M7FKQQE3Q4W3E")
 
 
 # fileinfo = client.upload(filepath="assets/img.jpg", security=security)
