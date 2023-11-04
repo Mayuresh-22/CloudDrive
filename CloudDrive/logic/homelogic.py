@@ -28,7 +28,7 @@ class HomeLogic:
             """
                 If the file is selected, upload it to the cloud by calling the upload_file method.
             """
-            self.upload_file(HomeLogic, file)
+            self.upload_file(file)
 
 
     def upload_file(self, file):
