@@ -30,7 +30,7 @@ class HomeLogic:
         self.userObj = userObj
         self.cloudSetObj = CloudSetup(userObj["cloud_provider"], userObj["cloud_provider_api_key"])
         # Create File handler object for the cloud provider
-        if userObj["cloud_provider"] == "filestack":
+        if userObj["cloud_provider"] == "Filestack":
             self.filehandler = Filestack()
 
 
