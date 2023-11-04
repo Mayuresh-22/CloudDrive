@@ -39,5 +39,5 @@ class HomeLogic:
             This method uploads the file to the cloud.
             - file: the file to be uploaded
         """
-        self.filehandler.upload_file(file)
+        filelink = self.filehandler.upload_file(file)
 
