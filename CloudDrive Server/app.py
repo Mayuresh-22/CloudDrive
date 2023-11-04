@@ -21,6 +21,22 @@ class UserDB(db.Model):
         # Return json representation of the object
         return f"User('{self.username}', '{self.name}', '{self.cloud_provider}')"
     
+class FilesDB(db.Model):
+    """
+    This class creates the Files table in the database.
+    """
+    id = db.Column(db.Integer, primary_key=True)
+    file_name = db.Column(db.String(20), unique=True, nullable=False)
+    file_size = db.Column(db.Integer, nullable=False)
+    file_type = db.Column(db.String(20), nullable=False)
+    file_path = db.Column(db.String(20), nullable=False)
+    file_owner = db.Column(db.String(20), nullable=False)
+    file_cloud_provider = db.Column(db.String(20), nullable=False)
+    file_cloud_provider_api_key = db.Column(db.String(20), nullable=False)
+    
+    def __repr__(self):
+        # Return json representation of the object
+        return f"File('{self.file_name}', '{self.file_size}', '{self.file_type}', '{self.file_path}', '{self.file_owner}', '{self.file_cloud_provider}', '{self.file_cloud_provider_api_key}')"
 
 @app.route('/')
 def index():
