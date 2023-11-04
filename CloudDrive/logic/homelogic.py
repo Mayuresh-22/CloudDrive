@@ -41,4 +41,3 @@ class HomeLogic:
         """
         filelink = self.filehandler.upload_file(file)
         print(filelink.upload_response)
-
