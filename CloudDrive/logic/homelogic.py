@@ -4,11 +4,12 @@
 
 # Import the required modules
 import os
+from dotenv import load_dotenv
 from tkinter import filedialog
-
 import requests
 from logic.cloud import CloudSetup, Filestack
 
+load_dotenv(".env")
 
 class HomeLogic:
     """
