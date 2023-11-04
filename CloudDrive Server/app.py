@@ -121,7 +121,7 @@ def register_user():
         
         return {"status": os.getenv(os.getenv("SUCCESS")),
                 "message": os.getenv("REGISTER_SUCCESS"),
-                "id": ,
+                "id": new_usr.id,
                 "name": name, 
                 "cloud_provider": cloud_provider, 
                 "cloud_provider_api_key": cloud_provider_api_key, 
