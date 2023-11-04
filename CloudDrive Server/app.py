@@ -72,7 +72,7 @@ def get_all_users():
 @app.route('/users/login/', methods=['GET', 'POST'])
 def auth_user_login():
     if not request.json or not 'username' in request.json or not 'password' in request.json:
-        return {"Please provide username and password."}
+        return {os.getenv("MISSING_PARAMETERS")}
     username = request.json['username'].strip()
     password = request.json['password'].strip()
     # check if user exists
