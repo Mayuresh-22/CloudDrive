@@ -104,7 +104,7 @@ def register_user():
     cloud_provider_api_key = request.json['cloud_provider_api_key'].strip()
 
     # check if user exists
-    user = UserDB.query.filter_by(username="username").first()
+    user = UserDB.query.filter_by(username=username).first()
     if user is not None:
         return {"status": "User Already Exists"}
     else:
