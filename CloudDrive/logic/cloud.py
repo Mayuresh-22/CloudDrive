@@ -29,6 +29,10 @@ class CloudSetup():
             Filestack.filestack_setup(Filestack)
         else:
             pass
+
+    @get_cloud_provider.getter
+    def get_cloud_provider(self):
+        return self.cloud_provider
     
 
 class Filestack(CloudSetup):
@@ -41,8 +45,6 @@ class Filestack(CloudSetup):
         - upload_file(): This method uploads the file to the cloud and returns the file link,
                         which contains the file details.
     """
-    def __init__(self):
-        super().__init__(os.getenv("FILESTACK"), os.getenv("FILESTACK_API_KEY"))
 
     def filestack_setup(self, **kwargs) -> None:
         # # Initialize the Filestack Setup
