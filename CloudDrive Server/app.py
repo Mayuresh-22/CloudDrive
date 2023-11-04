@@ -166,7 +166,7 @@ def upload_file():
 
     # check if file already exists
     file = FilesDB.query.filter_by(file_name=file_name).first()
-    if user is not None:
+    if file is not None:
         return {"status": "User Already Exists"}
     elif file is None:
         new_file = FilesDB(
