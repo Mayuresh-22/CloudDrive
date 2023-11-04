@@ -33,7 +33,6 @@ class CloudSetup():
         else:
             return None
         
-    
 
 class Filestack():
     """
