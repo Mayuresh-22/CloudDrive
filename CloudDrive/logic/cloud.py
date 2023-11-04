@@ -24,6 +24,7 @@ class CloudSetup():
         self.api_key = api_key
         self.kwargs = kwargs
 
+
     def setup(self, **kwargs):
         """
             This method return the cloud provider object.
