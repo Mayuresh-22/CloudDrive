@@ -8,7 +8,7 @@
     This class has the following attributes:
     - userObj: the user object, which contains the user details (JSON)
     - cloudSetObj: the cloud provider setup object (CloudSetup)
-    - filehandler: the file handler object for the cloud provider, which handles the file actions (Any cloud provider)
+    - filehandler: the file handler object for the cloud provider, which handles the file actions (Any cloud provider type)
 
 """
 from tkinter import filedialog
