@@ -27,5 +27,5 @@ class HomeLogic:
             This method uploads the file to the cloud.
             - file: the file to be uploaded
         """
-        pass
+        self.api_key
 
