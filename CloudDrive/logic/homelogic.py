@@ -53,5 +53,5 @@ class HomeLogic:
 
             This method calls the upload_file() method of the respective cloud provider.
         """
-        filelink = self.filehandler.upload_file(file)
+        filelink = self.cloud.upload_file(file)
         print(filelink.upload_response)
