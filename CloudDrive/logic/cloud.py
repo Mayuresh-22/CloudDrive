@@ -28,6 +28,12 @@ class CloudSetup():
         """
             This method return the cloud provider object.
         """
+        if self.cloud_provider == "Filestack":
+            self.cloud = Filestack(self.api_key)
+            self.cloud.setup()
+            return self.cloud
+        else:
+            return None
         
     
 
