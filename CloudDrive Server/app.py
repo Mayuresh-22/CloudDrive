@@ -105,7 +105,7 @@ def register_user():
     # check if user exists
     user = UserDB.query.filter_by(username="username").first()
     if user is not None:
-        return {"status": "User AlreadY Exists."}
+        return {"status": "User AlreadY Exists"}
     else:
         # Insert New User in DB
         new_usr = UserDB(
