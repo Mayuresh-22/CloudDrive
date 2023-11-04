@@ -20,12 +20,12 @@ class CloudSetup():
             This is the constructor for the class.
             Checks the cloud provider and calls the respective method.
         """
-        client = None
-        cloud_provider = cloud_provider
-        api_key = api_key
-        kwargs = kwargs
+        self.client = None
+        self.cloud_provider = cloud_provider
+        self.api_key = api_key
+        self.kwargs = kwargs
 
-        if cloud_provider == os.getenv(os.getenv("FILESTACK")):
+        if self.cloud_provider == os.getenv(os.getenv("FILESTACK")):
             Filestack.filestack_setup()
         else:
             pass
@@ -44,7 +44,7 @@ class Filestack(CloudSetup):
 
     def filestack_setup(self, **kwargs) -> None:
         # Initialize the Filestack Setup
-        client = Client(self.api_key)
+        self.client = Client(self.api_key)
         print("Filestack setup done")
 
 
