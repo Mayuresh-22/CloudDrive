@@ -28,7 +28,7 @@ class HomeLogic:
             - userObj: the user object, which contains the user details
         """
         self.userObj = userObj
-        self.cloud = CloudSetup(userObj["cloud_provider"], userObj["cloud_provider_api_key"])
+        self.cloud = CloudSetup(userObj["cloud_provider"], userObj["cloud_provider_api_key"]).setup()
 
         if self.cloud != None:
             self.cloud.setup()
