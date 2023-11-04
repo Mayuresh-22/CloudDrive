@@ -11,9 +11,10 @@ class HomeLogic:
     def __init__(self, userObj):
         """
             This is the constructor of the HomeLogic class.
+            - userObj: the user object, which contains the user details
         """
         self.userObj = userObj
-            
+
 
     def launch_file_explorer(self):
         """
