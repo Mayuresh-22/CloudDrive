@@ -88,7 +88,7 @@ def register_user():
     # if not request.json or not 'username' in request.json or not 'password' in request.json or not 'name' in request.json or not 'cloud_provider' in request.json or not 'cloud_provider_api_key' in request.json:
     #     return {"please provide required parameters."}
 
-    username = request.json['username'].strip()
+    username = request.json['username']
     password = request.json['password']
     name = request.json['name']
     cloud_provider = request.json['cloud_provider']
