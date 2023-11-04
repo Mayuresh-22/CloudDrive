@@ -117,7 +117,7 @@ def register_user():
         db.session.add(new_usr)
         db.session.commit()
 
-        UserDB.query.filter_by(username=username, password=password).first()
+        new_user = UserDB.query.filter_by(username=username, password=password).first()
         
         return {"status": os.getenv(os.getenv("SUCCESS")),
                 "message": os.getenv("REGISTER_SUCCESS"),
