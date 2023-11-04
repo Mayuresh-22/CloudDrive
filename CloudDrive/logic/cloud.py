@@ -19,7 +19,7 @@ class CloudSetup():
         self.api_key = api_key
         self.kargs = kargs
 
-        if cloud_provider == "Filestack":
+        if self.cloud_provider == "Filestack":
             self.filestack_setup(api_key)
         else:
             pass
