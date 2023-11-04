@@ -30,10 +30,10 @@ class HomeFrame():
         self.parent = parent
         self.frame = prev
         self.userObj = userObj
-        
+
         # Initialize the HomeLogic class
         HomeLogic.__init__(self, userObj)
-        
+        # Build the Home frame
         self.frame.grid(row=0, column=0)
         self.frame.pack_propagate(False)
         self.frame.tkraise()
