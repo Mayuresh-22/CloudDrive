@@ -38,4 +38,10 @@ class Filestack(CloudSetup):
         self.client = Client(self.api_key)
         print("Filestack setup done")
 
-
+    def upload_file(self, file):
+        """
+            This method uploads the file to the cloud.
+            - file: the file to be uploaded
+        """
+        print(self.client.upload(filepath=file))
+        print("File uploaded successfully.")
