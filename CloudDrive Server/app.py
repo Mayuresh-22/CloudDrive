@@ -159,7 +159,7 @@ def upload_file():
         db.session.commit()
 
     return {
-        "status" : "success"
+        "status" : "success",
         "message" : os.getenv("UPLOAD_SUCCESS")
     }
 
