@@ -29,9 +29,9 @@ class HomeLogic:
         """
         self.userObj = userObj
         self.cloud = CloudSetup(userObj["cloud_provider"], userObj["cloud_provider_api_key"])
-        
+
         if self.cloud != None:
-            self.cloud.filestack_setup()
+            self.cloud.setup()
 
 
     def launch_file_explorer(self) -> None:
