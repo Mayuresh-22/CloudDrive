@@ -2,7 +2,7 @@
     HomeLogic is rhe class that handles the logic for the home page.
 """
 from tkinter import filedialog
-
+from logic.cloud import CloudSetup
 
 class HomeLogic:
     """
