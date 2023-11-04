@@ -149,21 +149,22 @@ def upload_file():
             "status" : os.getenv("FAIL")
         }
     elif file is None:
-        try:
-            new_file = FilesDB(
-                file_owner=file_owner, file_name=file_name, 
-                file_size=file_size, file_type=file_type, 
-                file_url_pub=file_url_pub, file_url_pvt=file_url_pvt,
-                file_handle=file_handle, file_status=file_status
-            )
-            db.session.add(new_file)
-            db.session.commit()
-            return {
-                "status" : os.getenv("SUCCESS"),
-                "message" : os.getenv("UPLOAD_SUCCESS")
-            }
-        except:
-
+        new_file = FilesDB(
+            file_owner=file_owner, file_name=file_name, 
+            file_size=file_size, file_type=file_type, 
+            file_url_pub=file_url_pub, file_url_pvt=file_url_pvt,
+            file_handle=file_handle, file_status=file_status
+        )
+        db.session.add(new_file)
+        db.session.commit()
+        return {
+            "status" : os.getenv("SUCCESS"),
+            "message" : os.getenv("UPLOAD_SUCCESS")
+        }
+    return {
+            "status" : os.getenv("FAIL"),
+            "message" : os.getenv("UPLOAD_ERROR")
+        }
 
 
 # api endpoint to get all files
