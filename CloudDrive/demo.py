@@ -31,6 +31,10 @@ print(f"URL: https://cdn.filestackcontent.com/{fileinfo.upload_response['handle'
 print("\nFile info:\n")
 print(fileinfo.upload_response)
 
+# download the file
+print("\nDownloading the file...\n")
+REQUEST=f'https://cdn.filestackcontent.com/{fileinfo.upload_response["handle"]}'
+
 # Delete the file
 # print("\nDeleting the file...\n")
 # REQUEST=f'https://www.filestackapi.com/api/file/{fileinfo.upload_response["handle"]}?key=Aulnj8a0wRLERECktpnFlz&signature={security.signature}&policy={security.policy_b64}'
