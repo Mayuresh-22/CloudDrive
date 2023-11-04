@@ -38,6 +38,7 @@ print(REQUEST, "\n")
 
 r = requests.get(REQUEST)
 if r.status_code == 200:
+    open('assets/downloaded.pdf', 'wb').write(r.content
     print("File downloaded successfully")
 else:
     print("Error downloading file")
