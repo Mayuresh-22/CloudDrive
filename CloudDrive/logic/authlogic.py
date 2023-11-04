@@ -28,8 +28,9 @@ class AuthLogic():
                 url = os.getenv("APP_BASE_URL")+os.getenv("USERS_ENDPOINT")+os.getenv("LOGIN_ENDPOINT")
                 resp =  requests.post(url,
                             headers={"Content-Type": "application/json"},
-                            json={"username": kwargs["username"], 
-                                  "password": kwargs["password"]
+                            json={
+                                "username": kwargs["username"], 
+                                "password": kwargs["password"]
                             }
                         )
                 if resp.status_code == 200 and resp.json()["status"] == "success":
