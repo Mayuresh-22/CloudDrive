@@ -2,6 +2,9 @@
     This file contains the logic for the cloud cloud provider setup.
 """
 from filestack import Client, Security
+import os
+from dotenv import load_dotenv
+load_dotenv(".env")
 import time
 
 class CloudSetup():
