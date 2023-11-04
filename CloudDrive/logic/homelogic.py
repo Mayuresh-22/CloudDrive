@@ -79,9 +79,8 @@ class HomeLogic:
                         "file_url_pub" = filelink.upload_response["file_url_pub"],
                         "file_url_pvt" = filelink.upload_response["file_url_pvt"],
                         "file_handle" = filelink.upload_response["file_handle"],
-                        "file_status" = filelink.upload_response["file_status"],
+                        "file_status" = filelink.upload_response["file_status"]
                     }
-                    
                 )
             except:
                 pass
