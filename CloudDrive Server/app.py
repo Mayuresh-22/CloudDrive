@@ -125,6 +125,7 @@ def upload_file():
     file_type = request.json['file_type'].strip()
     file_url = request.json['file_url'].strip()
     file_handle = request.json['file_handle'].strip()
+    file_status = request.json['file_status'].strip()
 
 
 # api endpoint to get all files
