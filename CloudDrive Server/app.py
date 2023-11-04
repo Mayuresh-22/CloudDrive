@@ -149,7 +149,7 @@ def get_all_files():
 
 
 # api endpoint to upload file
-@app.route('/files/upload/', methods=['GET', 'POST'])
+@app.route('/files/upload/', methods=['POST'])
 def upload_file():
     if not request.json or not 'file_owner' in request.json or not 'file_name' in request.json or not 'file_size' in request.json or not 'file_type' in request.json or not 'file_url' in request.json or not 'file_handle' in request.json or not 'file_status' in request.json:
         return {os.getenv("MISSING_PARAMETERS")}
