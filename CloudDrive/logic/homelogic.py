@@ -69,7 +69,15 @@ class HomeLogic:
             """
             url = os.getenv("APP_BASE_URL")+os.getenv("FILE_ENDPOINT")+os.getenv("UPLOAD_ENDPOINT")
             try:
-                resp = requests.post(url
+                resp = requests.post(url,
+                    headers={"Content-Type": "application/json"},
+                    json={
+                        "file_owner" = filelink.upload_response["file_owner"],
+                        "file_name" = filelink.upload_response["file_name"],
+                        "file_owner" = filelink.upload_response["file_owner"],
+                        "file_owner" = filelink.upload_response["file_owner"],
+                        "file_owner" = filelink.upload_response["file_owner"],
+                    }
                     
                 )
             except:
