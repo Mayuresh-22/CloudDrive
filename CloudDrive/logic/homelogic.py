@@ -12,6 +12,8 @@
                    which handles the file actions (Any cloud provider type)
 
 """
+
+# Import the required modules
 from tkinter import filedialog
 from logic.cloud import CloudSetup, Filestack
 
