@@ -34,7 +34,7 @@ print(fileinfo)
 # REQUEST=f'https://www.filestackapi.com/api/file/{fileinfo.upload_response["handle"]}?key=Aulnj8a0wRLERECktpnFlz&signature={security.signature}&policy={security.policy_b64}'
 # print(REQUEST, "\n")
 
-r = requests.delete(REQUEST)
+# r = requests.delete(REQUEST)
 if r.status_code == 200:
     print("File deleted successfully")
 else:
