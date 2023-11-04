@@ -42,7 +42,7 @@ class Filestack(CloudSetup):
                         which contains the file details.
     """
     def main(self):
-        super().__init__(self, cloud_provider="Filestack", api_key=os.getenv("FILESTACK_API_KEY"))
+        super().__init__(self, cloud_provider="Filestack", api_key="1233")
         print("Filestack main")
         # PRINT cloudsetup class attributes
         print(self.client)
