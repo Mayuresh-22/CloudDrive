@@ -44,7 +44,7 @@ class Filestack(CloudSetup):
 
     def filestack_setup(self, **kwargs) -> None:
         # Initialize the Filestack Setup
-        self.client = Client(self.api_key)
+        CloudSetup.client = Client(CloudSetup.api_key)
         print("Filestack setup done")
 
 
