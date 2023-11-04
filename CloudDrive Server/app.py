@@ -132,7 +132,8 @@ def upload_file():
     file = FilesDB.query.filter_by(file_name = file_name).first()
     if file is not None:
         return {
-            "message" = "File already exists."
+            "message" : "File already exists.",
+            "status" : "fail"
         }
 
 
