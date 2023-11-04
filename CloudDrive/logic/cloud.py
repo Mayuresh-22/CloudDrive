@@ -30,8 +30,9 @@ class CloudSetup():
 
 class Filestack(CloudSetup):
     """
-        This class contains the logic for the Filestack cloud provider setup.
+        This class contains the logic for the Filestack cloud provider setup and actions.
     """
+
     def filestack_setup(self, **kwargs):
         # Initialize the Filestack Setup
         self.client = Client(self.api_key)
