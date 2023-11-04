@@ -33,8 +33,7 @@ class FilesDB(db.Model):
     file_url = db.Column(db.String(250), nullable=False)
     file_handle = db.Column(db.String(100), nullable=False)
     file_status = db.Column(db.String(20), nullable=False)
-    file_cloud_provider = db.Column(db.String(20), nullable=False)
-    file_cloud_provider_api_key = db.Column(db.String(20), nullable=False)
+    file_owner = db.Column(db.String(20), nullable=False)
     
     def __repr__(self):
         # Return json representation of the object
