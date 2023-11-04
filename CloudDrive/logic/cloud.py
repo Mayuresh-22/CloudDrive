@@ -39,7 +39,7 @@ class Filestack():
         - upload_file(): This method uploads the file to the cloud and returns the file link,
                         which contains the file details.
     """
-    def __init__(self, cloudSetObj, **kwargs):
+    def __init__(self, api, **kwargs):
         """
             This is the constructor of the Filestack class.
             - cloudSetObj: the cloud provider setup object (CloudSetup)
