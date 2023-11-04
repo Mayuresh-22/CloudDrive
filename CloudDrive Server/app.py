@@ -140,7 +140,7 @@ def get_all_files():
         file_data['file_name'] = file.file_name
         file_data['file_size'] = file.file_size
         file_data['file_type'] = file.file_type
-        file_data['file_url_pub'] = file.file_url
+        file_data['file_url'] = file.file_url_pub
         file_data['file_handle'] = file.file_handle
         file_data['file_status'] = file.file_status
         output.append(file_data)
