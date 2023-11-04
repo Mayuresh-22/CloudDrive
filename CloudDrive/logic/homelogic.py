@@ -85,6 +85,8 @@ class HomeLogic:
                 )
 
                 if resp.status_code == 200 and resp.json()["status"] == "success":
-                    print("File Uploaded and Stored Successfully")
+                    print(resp.json()["message"])
+                else:
+
             except:
                 pass
