@@ -44,7 +44,9 @@ class Filestack(CloudSetup):
     def main(self):
         print("Filestack main")
         # PRINT cloudsetup class attributes
-
+        print(self.client)
+        print(self.cloud_provider)
+        
     # def filestack_setup(self, **kwargs) -> None:
     #     # Initialize the Filestack Setup
     #     self.client = Client(self.api_key)
