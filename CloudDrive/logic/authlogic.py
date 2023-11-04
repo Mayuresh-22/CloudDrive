@@ -26,15 +26,18 @@ class AuthLogic():
         try:
             if kwargs["username"] != "" and kwargs["password"] != "":
                 url = os.getenv("APP_BASE_URL")+os.getenv("USERS_ENDPOINT")+os.getenv("LOGIN_ENDPOINT")
-                resp =  requests.post(url,
-                            headers={"Content-Type": "application/json"},
-                            json={"username": kwargs["username"], "password": kwargs["password"]}
-                        )
-                if resp.status_code == 200 and resp.json()["status"] == "success":
-                    # Redirect to Home frame
-                    HomeFrame(parent, current, resp.json())
-                else:
-                    kwargs["errorlabel"].configure(text=resp.json()["message"])
+                try:
+                    resp =  requests.post(url,
+                                headers={"Content-Type": "application/json"},
+                                json={"username": kwargs["username"], "password": kwargs["password"]}
+                            )
+                    if resp.status_code == 200 and resp.json()["status"] == "success":
+                        # Redirect to Home frame
+                        HomeFrame(parent, current, resp.json())
+                    else:
+                        kwargs["errorlabel"].configure(text=resp.json()["message"])
+                except:
+                    kwargs["errorlabel"].configure(text="Server error occurred. Try again after sometime.")
         except KeyError as e:
             kwargs["errorlabel"].configure(text="Software Failure. Please contact the developer.")
 
