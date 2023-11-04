@@ -65,8 +65,8 @@ def get_all_users():
 def auth_user_login():
     if not request.json or not 'username' in request.json or not 'password' in request.json:
         return {"Please provide username and password."}
-    username = request.json['username']
-    password = request.json['password']
+    username = request.json['username'].strip()
+    password = request.json['password'].strip()
     # check if user exists
     user = UserDB.query.filter_by(username=username, password_hash=password).first()
     if user is not None:
@@ -88,11 +88,11 @@ def register_user():
     # if not request.json or not 'username' in request.json or not 'password' in request.json or not 'name' in request.json or not 'cloud_provider' in request.json or not 'cloud_provider_api_key' in request.json:
     #     return {"please provide required parameters."}
 
-    username = request.json['username']
-    password = request.json['password']
-    name = request.json['name']
-    cloud_provider = request.json['cloud_provider']
-    cloud_provider_api_key = request.json['cloud_provider_api_key']
+    username = request.json['username'].strip()
+    password = request.json['password'].strip()
+    name = request.json['name'].strip()
+    cloud_provider = request.json['cloud_provider'].strip()
+    cloud_provider_api_key = request.json['cloud_provider_api_key'].strip()
 
     # check if user exists
     user = UserDB.query.filter_by(username="username").first()
