@@ -23,5 +23,3 @@ class CloudSetup():
     def filestack_setup(self, api_key, **kargs):
         # Initialize the client
         self.client = Client("api_key")
-
-        
