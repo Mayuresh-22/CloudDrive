@@ -142,6 +142,8 @@ def upload_file():
                            file_size=file_size, file_type=file_type, 
                            file_url=file_url, file_handle=file_handle, 
                            file_status=file_status)
+        db.session.add(new_file)
+        db.session.commit()
 
 
 
