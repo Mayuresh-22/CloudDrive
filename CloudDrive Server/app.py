@@ -119,6 +119,7 @@ def upload_file():
     if not request.json or not 'file_owner' in request.json or not 'file_name' in request.json or not 'file_size' in request.json or not 'file_type' in request.json or not 'file_url' in request.json or not 'file_handle' in request.json or not 'file_status' in request.json:
         return {"please provide required parameters."}
     
+    # get the file parameters
     file_owner = request.json['file_owner'].strip()
     file_name = request.json['file_name'].strip()
     file_size = request.json['file_size'].strip()
@@ -126,6 +127,8 @@ def upload_file():
     file_url = request.json['file_url'].strip()
     file_handle = request.json['file_handle'].strip()
     file_status = request.json['file_status'].strip()
+
+
 
 
 # api endpoint to get all files
