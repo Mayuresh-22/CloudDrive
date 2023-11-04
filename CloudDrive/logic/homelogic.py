@@ -36,7 +36,7 @@ class HomeLogic:
             This method uploads the file to the cloud.
             - file: the file to be uploaded
         """
-        print(self.cloudObj.api_key)
+        print(self.cloudSetObj.api_key)
         print("File uploaded successfully.")
         print(file)
 
