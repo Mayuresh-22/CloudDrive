@@ -20,7 +20,7 @@ from logic.cloud import CloudSetup, Filestack
 
 class HomeLogic:
     """
-        HomeLogic is rhe class that handles the logic for the home page.
+        HomeLogic is the class that handles the logic for the home page.
         This class __init__ method takes the user object as the parameter.
         This class has the following methods:
         - launch_file_explorer(): This method launches the file explorer of the system.
