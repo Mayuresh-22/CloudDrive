@@ -15,7 +15,6 @@ class CloudSetup():
         __init__ method takes the cloud provider and the api key as the parameters.
         This class setups the cloud provider of the user.
     """
-
     def __init__(self, cloud_provider, api_key, **kwargs):
         """
             This is the constructor for the class.
