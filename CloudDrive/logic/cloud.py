@@ -46,7 +46,7 @@ class Filestack(CloudSetup):
         # PRINT cloudsetup class attributes
         print(self.client)
         print(self.cloud_provider)
-        
+
     # def filestack_setup(self, **kwargs) -> None:
     #     # Initialize the Filestack Setup
     #     self.client = Client(self.api_key)
@@ -60,3 +60,8 @@ class Filestack(CloudSetup):
     #     """
     #     filelink = self.client.upload(filepath=file)
     #     return filelink
+
+
+if __name__ == "__main__":
+    file = Filestack()
+    file.main()
