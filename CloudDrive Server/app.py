@@ -78,7 +78,7 @@ def auth_user_login():
     # check if user exists
     user = UserDB.query.filter_by(username=username, password_hash=password).first()
     if user is not None:
-        return {"status": "success",
+        return {"status": os.getenv("SUCCESS"),
                 "message": "Login successful. Welcome!",
                 "name": user.name, 
                 "cloud_provider": user.cloud_provider, 
@@ -116,7 +116,7 @@ def register_user():
         db.session.add(new_usr)
         db.session.commit()
         
-        return {"status": os.getenv("SUCCESS"),
+        return {"status": os.getenv(os.getenv("SUCCESS")),
                 "message": os.getenv("REGISTER_SUCCESS"),
                 "name": name, 
                 "cloud_provider": cloud_provider, 
@@ -159,7 +159,7 @@ def upload_file():
         db.session.commit()
 
     return {
-        "status" : "success",
+        "status" : os.getenv("SUCCESS"),
         "message" : os.getenv("UPLOAD_SUCCESS")
     }
 
