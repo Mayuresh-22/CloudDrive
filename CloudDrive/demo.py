@@ -27,7 +27,7 @@ print(f"URL: https://cdn.filestackcontent.com/{security.as_url_string()}/{filein
 
 # print file info
 print("\nFile info:\n")
-print(fileinfo.metadata(['size', 'filename'], security=security))
+print(fileinfo.upload_response)
 
 # Delete the file
 # print("\nDeleting the file...\n")
