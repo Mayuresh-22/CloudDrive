@@ -1,16 +1,5 @@
 """
     HomeLogic is rhe class that handles the logic for the home page.
-    This class __init__ method takes the user object as the parameter.
-    This class has the following methods:
-    - launch_file_explorer(): This method launches the file explorer of the system.
-    - upload_file(): This method is the global method to upload the file to the cloud.
-
-    This class has the following attributes:
-    - userObj: the user object, which contains the user details (JSON)
-    - cloudSetObj: the cloud provider setup object (CloudSetup)
-    - filehandler: the file handler object for the cloud provider,
-                   which handles the file actions (Any cloud provider type)
-
 """
 
 # Import the required modules
