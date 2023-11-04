@@ -160,7 +160,7 @@ def upload_file():
 
     return {
         "status" : "success"
-        "message" : 
+        "message" : os.getenv("UPLOAD_SUCCESS")
     }
 
 
