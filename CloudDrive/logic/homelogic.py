@@ -39,6 +39,8 @@ class HomeLogic:
         """
             This method is the global method to upload the file to the cloud.
             - file: the file to be uploaded
+
+            This method calls the upload_file() method of the respective cloud provider.
         """
         filelink = self.filehandler.upload_file(file)
         print(filelink.upload_response)
