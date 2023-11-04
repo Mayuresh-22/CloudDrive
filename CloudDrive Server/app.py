@@ -87,7 +87,7 @@ def auth_user_login():
                 "password": user.password_hash}
     else:
         return {"status": os.getenv("FAIL"),
-                "message": "Login failed. Please check username and password."}
+                "message": os.getenv("LOGIN_ERROR")}
 
 
 # api endpoint to register user
