@@ -25,6 +25,9 @@ fileinfo = client.upload(filepath="assets/img.jpg", security=security)
 # print(fileinfo.upload_response)
 print(f"URL: https://cdn.filestackcontent.com/{security.as_url_string()}/{fileinfo.upload_response['handle']} \n")
 
+# print file info
+print("\nFile info:\n")
+print(fileinfo)
 
 # Delete the file
 # print("\nDeleting the file...\n")
