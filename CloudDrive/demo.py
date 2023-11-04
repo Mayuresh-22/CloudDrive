@@ -26,10 +26,10 @@ fileinfo = client.upload(filepath="assets/img.jpg", security=security)
 print(f"URL: https://cdn.filestackcontent.com/{security.as_url_string()}/{fileinfo.upload_response['handle']} \n")
 
 
-# Delete the file
-print("\nDeleting the file...\n")
-REQUEST=f'https://www.filestackapi.com/api/file/{fileinfo.upload_response["handle"]}?key=Aulnj8a0wRLERECktpnFlz&signature={security.signature}&policy={security.policy_b64}'
-print(REQUEST, "\n")
+# # Delete the file
+# print("\nDeleting the file...\n")
+# REQUEST=f'https://www.filestackapi.com/api/file/{fileinfo.upload_response["handle"]}?key=Aulnj8a0wRLERECktpnFlz&signature={security.signature}&policy={security.policy_b64}'
+# print(REQUEST, "\n")
 
 r = requests.delete(REQUEST)
 if r.status_code == 200:
