@@ -9,7 +9,7 @@ class CloudSetup():
         This class contains the logic for the cloud cloud provider setup.
     """
 
-    def __init__(self, cloud_provider, api_key):
+    def __init__(self, cloud_provider, api_key, **kargs):
         """
             This is the constructor for the class.
             Checks the cloud provider and calls the respective method.
@@ -17,7 +17,7 @@ class CloudSetup():
         self.client = None
         self.cloud_provider = cloud_provider
         self.api_key = api_key
-        
+
         if cloud_provider == "Filestack":
             self.filestack_setup(api_key)
         else:
