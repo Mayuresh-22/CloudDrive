@@ -4,6 +4,8 @@
 
 # Import the required modules
 from tkinter import filedialog
+
+import requests
 from logic.cloud import CloudSetup, Filestack
 
 
@@ -58,12 +60,14 @@ class HomeLogic:
         """
         filelink = self.cloud.upload_file(file)
         
-        if filelink:
+        if filelink.upload_response["status"] == "Stored":
             """
                 If the file is uploaded successfully,
                 Now, storing the file details in the database.
             """
             try:
-                pass
+                resp = requests.post(
+                    
+                )
             except:
                 pass
