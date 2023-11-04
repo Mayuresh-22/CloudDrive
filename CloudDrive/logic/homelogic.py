@@ -17,7 +17,7 @@ class HomeLogic:
         
         if file:
             """
-                Upload the file to the cloud
+                If the file is selected, upload it to the cloud.
             """
             self.upload_file(file)
 
