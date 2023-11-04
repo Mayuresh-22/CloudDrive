@@ -74,7 +74,7 @@ class HomeLogic:
                     json={
                         "file_owner" : filelink.upload_response[self.userObj["id"]],
                         "file_name" : filelink.upload_response["file_name"],
-                        "file_size" : filelink.upload_response["file_size"],
+                        "file_size" : filelink.upload_response["size"],
                         "file_type" : filelink.upload_response["file_type"],
                         "file_url_pub" : filelink.upload_response["file_url_pub"],
                         "file_url_pvt" : filelink.upload_response["file_url_pvt"],
