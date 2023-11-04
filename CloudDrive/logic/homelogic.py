@@ -13,6 +13,7 @@ class HomeLogic:
             This is the constructor of the HomeLogic class.
         """
         self.userObj = userObj
+            
 
     def launch_file_explorer(self):
         """
