@@ -6,6 +6,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
+
 class UserDB(db.Model):
     """
     This class creates the User table in the database.
@@ -45,6 +46,7 @@ class FilesDB(db.Model):
 def index():
     return render_template("index.html")
 
+
 # api endpoint to get all users
 @app.route('/users/', methods=['GET'])
 def get_all_users():
@@ -60,6 +62,7 @@ def get_all_users():
         user_data['cloud_provider_api_key'] = user.cloud_provider_api_key
         output.append(user_data)
     return {"users": output}
+
 
 # api endpoint to auth user login
 @app.route('/users/login/', methods=['GET', 'POST'])
@@ -101,9 +104,11 @@ def register_user():
         return {"status": "user already exists."}
     else:
         # Insert New User in DB
-        new_usr = UserDB(username=username, password_hash=password, 
-                         name=name, cloud_provider=cloud_provider, 
-                         cloud_provider_api_key=cloud_provider_api_key.strip())
+        new_usr = UserDB(
+            username=username, password_hash=password, 
+            name=name, cloud_provider=cloud_provider, 
+            cloud_provider_api_key=cloud_provider_api_key.strip()
+        )
         db.session.add(new_usr)
         db.session.commit()
         
