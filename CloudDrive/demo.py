@@ -24,8 +24,8 @@ security = Security(policy, "7PDJLJSTP5G33M7FKQQE3Q4W3E")
 fileinfo = client.upload(filepath="assets/img.jpg", security=security)
 # fileinfo = client.upload(filepath="assets/1.pdf")
 # print(fileinfo.upload_response)
-# print(f"URL: https://cdn.filestackcontent.com/{security.as_url_string()}/{fileinfo.upload_response['handle']} \n")
-print(f"URL: https://cdn.filestackcontent.com/{fileinfo.upload_response['handle']} \n")
+print(f"URL: https://cdn.filestackcontent.com/{security.as_url_string()}/{fileinfo.upload_response['handle']} \n")
+# print(f"URL: https://cdn.filestackcontent.com/{fileinfo.upload_response['handle']} \n")
 
 # print file info
 print("\nFile info:\n")
