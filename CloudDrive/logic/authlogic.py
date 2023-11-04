@@ -30,6 +30,7 @@ class AuthLogic():
                             headers={"Content-Type": "application/json"},
                             json={"username": kwargs["username"], "password": kwargs["password"]}
                         )
+                print(resp.json())
                 if resp.status_code == 200:
                     # Redirect to Home frame
                     HomeFrame(parent, current, resp.json())
