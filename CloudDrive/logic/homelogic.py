@@ -17,7 +17,7 @@ class HomeLogic:
         self.cloudSetObj = CloudSetup(userObj["cloud_provider"], userObj["cloud_provider_api_key"])
 
 
-    def launch_file_explorer(self):
+    def launch_file_explorer(self) -> None:
         """
             This method launches the file explorer of the system.
             Opens the file dialog to select the file.
