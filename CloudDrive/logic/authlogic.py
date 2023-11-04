@@ -49,7 +49,7 @@ class AuthLogic():
             - api_key: the api key of the user
         """
         # Hit the register API if fields are not empty
-        if kwargs.get("name") != "" and kwargs.get("username") != "" and kwargs.get("password") != "" and kwargs.get("cloud_provider") != "" and kwargs.get("api_key") != "":
+        if kwargs["name"] != "" and kwargs["username"] != "" and kwargs["password"] != "" and kwargs["cloud_provider"] != "" and kwargs["api_key"] != "":
             url = os.getenv("APP_BASE_URL")+os.getenv("USERS_ENDPOINT")+os.getenv("REGISTER_ENDPOINT")
             try:
                 resp = requests.post(url,
