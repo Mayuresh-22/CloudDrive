@@ -35,7 +35,7 @@ print(fileinfo)
 # print(REQUEST, "\n")
 
 # r = requests.delete(REQUEST)
-if r.status_code == 200:
-    print("File deleted successfully")
-else:
-    print("Error deleting file")
+# if r.status_code == 200:
+#     print("File deleted successfully")
+# else:
+#     print("Error deleting file")
