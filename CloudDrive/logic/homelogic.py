@@ -65,3 +65,5 @@ class HomeLogic:
             """
             try:
                 pass
+            except:
+                pass
