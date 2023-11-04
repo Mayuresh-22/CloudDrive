@@ -8,6 +8,14 @@ class HomeLogic:
     """
         This class handles the logic behind the Home fram (after successfull authentication).
     """
+    def __init__(self, userObj):
+        """
+            This is the constructor of the HomeLogic class.
+            - userObj: the user object, which contains the user details
+        """
+        self.userObj = userObj
+        
+        
     def launch_file_explorer(self, userObj):
         """
             This method launches the file explorer of the system.
