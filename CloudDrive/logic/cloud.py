@@ -48,6 +48,9 @@ class Filestack():
         
 
     def setup(self, **kwargs) -> None:
+        """
+            This method setups the Filestack cloud provider.
+        """
         # Initialize the Filestack Setup
         self.client = Client(self.api_key)
         print("Filestack setup done")
