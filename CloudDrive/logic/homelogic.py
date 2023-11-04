@@ -40,4 +40,5 @@ class HomeLogic:
             - file: the file to be uploaded
         """
         filelink = self.filehandler.upload_file(file)
+        print(filelink.upload_response)
 
