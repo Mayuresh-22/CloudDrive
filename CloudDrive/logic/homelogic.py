@@ -8,7 +8,7 @@ class HomeLogic:
     """
         This class handles the logic behind the Home fram (after successfull authentication).
     """
-    def __init__(self, userObj):
+    def __init__(self, userObj, cloudObj):
         """
             This is the constructor of the HomeLogic class.
             - userObj: the user object, which contains the user details
