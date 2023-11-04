@@ -82,6 +82,6 @@ class HomeLogic:
                     "file_status" : filelink.upload_response["status"]
                 }
             )
-            print(resp)
+            print(resp.json())
             # if resp.status_code == 200 and resp.json()["status"] == "success":
             #     print(resp.json()["message"])
