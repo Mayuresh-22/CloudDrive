@@ -30,6 +30,7 @@ class HomeFrame():
         self.parent = parent
         self.frame = prev
         self.userObj = userObj
+        
         # Initialize the HomeLogic class
         HomeLogic.__init__(self, userObj)
         
