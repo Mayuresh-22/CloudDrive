@@ -1,6 +1,7 @@
 """
     This file contains the logic for the cloud cloud provider setup.
 """
+import json
 from filestack import Client, Security
 import os
 from dotenv import load_dotenv
@@ -39,7 +40,7 @@ class Filestack(CloudSetup):
         print("Filestack setup done")
 
 
-    def upload_file(self, file):
+    def upload_file(self, file) -> json:
         """
             This method uploads the file to the cloud.
             - file: the file to be uploaded
