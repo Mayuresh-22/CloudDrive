@@ -138,7 +138,7 @@ class AuthFrame():
         self.auth_cloud_provider = ctk.CTkComboBox(self.frame,
             width=300,
             height=40,
-            values=["Choose your Cloud Provider", "Filestack"],
+            values=["Choose your Cloud Provider", os.getenv("FILESTACK")],
             button_color=os.getenv("PRIMARY_COLOR_MED"),
             button_hover_color="#1B387C",
             command=self.on_cloud_provider_selected
