@@ -84,7 +84,7 @@ class HomeFrame():
             fg_color=os.getenv("HOME_SCREEN_BG_COLOR"),
             hover_color="#0077B6",
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 15)),
-            command=lambda: HomeLogic.launch_file_explorer()
+            command=lambda: HomeLogic.launch_file_explorer(HomeLogic, userObj)
         ).pack(padx=10, pady=20)
 
         # My Account
