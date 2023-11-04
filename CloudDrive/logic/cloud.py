@@ -34,6 +34,11 @@ class CloudSetup():
 class Filestack(CloudSetup):
     """
         This class contains the logic for the Filestack cloud provider setup and actions.
+        It inherits the CloudSetup class.
+        
+        This class has the following methods:
+        - filestack_setup(): This method setups the Filestack cloud provider.
+        - upload_file(): This method uploads the file to the cloud.
     """
 
     def filestack_setup(self, **kwargs) -> None:
