@@ -79,7 +79,7 @@ def auth_user_login():
                 "password": user.password_hash}
     else:
         return {"status": "fail",
-                "message": "Loggin failed. Please check username and password."}
+                "message": "Login failed. Please check username and password."}
 
 
 # api endpoint to register user
