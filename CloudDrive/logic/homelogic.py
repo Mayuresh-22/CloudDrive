@@ -72,14 +72,14 @@ class HomeLogic:
                 resp = requests.post(url,
                     headers={"Content-Type": "application/json"},
                     json={
-                        "file_owner" = filelink.upload_response[""],
-                        "file_name" = filelink.upload_response["file_name"],
-                        "file_size" = filelink.upload_response["file_size"],
-                        "file_type" = filelink.upload_response["file_type"],
-                        "file_url_pub" = filelink.upload_response["file_url_pub"],
-                        "file_url_pvt" = filelink.upload_response["file_url_pvt"],
-                        "file_handle" = filelink.upload_response["file_handle"],
-                        "file_status" = filelink.upload_response["file_status"]
+                        "file_owner" : filelink.upload_response[""],
+                        "file_name" : filelink.upload_response["file_name"],
+                        "file_size" : filelink.upload_response["file_size"],
+                        "file_type" : filelink.upload_response["file_type"],
+                        "file_url_pub" : filelink.upload_response["file_url_pub"],
+                        "file_url_pvt" : filelink.upload_response["file_url_pvt"],
+                        "file_handle" : filelink.upload_response["file_handle"],
+                        "file_status" : filelink.upload_response["file_status"]
                     }
                 )
             except:
