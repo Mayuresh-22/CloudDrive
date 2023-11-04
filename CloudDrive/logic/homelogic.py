@@ -14,7 +14,7 @@ class HomeLogic:
             - userObj: the user object, which contains the user details
         """
         self.userObj = userObj
-        self.cloudObj = cloudObj
+        self.cloudObj = CloudSetup(userObj.cloud_provider, userObj.api_key)
 
 
     def launch_file_explorer(self):
