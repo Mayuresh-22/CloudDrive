@@ -30,7 +30,7 @@ class CloudSetup():
         else:
             pass
 
-    @get_cloud_provider.getter
+    @get_cloud_provider.setter
     def get_cloud_provider(self):
         return self.cloud_provider
     
