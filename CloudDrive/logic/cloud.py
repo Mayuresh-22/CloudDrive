@@ -26,6 +26,8 @@ class CloudSetup():
 
         if self.cloud_provider == os.getenv(os.getenv("FILESTACK")):
             return Filestack(api_key)
+        else:
+            return None
     
 
 class Filestack():
