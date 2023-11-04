@@ -27,7 +27,7 @@ class HomeFrame():
             - userObj: the user object, which contains the user details
         """
         # Initialize CloudSetup class
-        CloudSetup(userObj["cloud_provider"], userObj["cloud_provider_api_key"])
+        cloud = CloudSetup(userObj["cloud_provider"], userObj["cloud_provider_api_key"])
         self.remove_frame(prev)
         self.parent = parent
         self.frame = prev
