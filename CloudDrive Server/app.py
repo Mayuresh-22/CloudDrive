@@ -127,7 +127,7 @@ def upload_file():
     file_name = request.json['file_name'].strip()
     file_size = request.json['file_size'].strip()
     file_type = request.json['file_type'].strip()
-    file_url = request.json['file_url'].strip()
+    file_url_pub = request.json['file_url'].strip()
     file_handle = request.json['file_handle'].strip()
     file_status = request.json['file_status'].strip()
 
