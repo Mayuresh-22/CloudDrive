@@ -47,6 +47,7 @@ class Filestack(CloudSetup):
             It inherits the CloudSetup class.
         """
         self.client = CloudSetup.client
+        self.api_key = CloudSetup.api_key
         
     def filestack_setup(self, **kwargs) -> None:
         # Initialize the Filestack Setup
