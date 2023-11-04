@@ -30,7 +30,7 @@ class FilesDB(db.Model):
     file_name = db.Column(db.String(20), unique=True, nullable=False)
     file_size = db.Column(db.Integer, nullable=False)
     file_type = db.Column(db.String(20), nullable=False)
-    file_path = db.Column(db.String(20), nullable=False)
+    file_url = db.Column(db.String(20), nullable=False)
     file_owner = db.Column(db.String(20), nullable=False)
     file_cloud_provider = db.Column(db.String(20), nullable=False)
     file_cloud_provider_api_key = db.Column(db.String(20), nullable=False)
