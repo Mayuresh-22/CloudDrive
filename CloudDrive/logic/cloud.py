@@ -44,7 +44,7 @@ class Filestack():
     def __init__(self, cloudSetObj, **kwargs):
         """
             This is the constructor of the Filestack class.
-            It inherits the CloudSetup class.
+            - cloudSetObj: the cloud provider setup object (CloudSetup)
         """
         
     def filestack_setup(self, **kwargs) -> None:
