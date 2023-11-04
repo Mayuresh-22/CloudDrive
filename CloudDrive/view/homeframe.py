@@ -26,12 +26,14 @@ class HomeFrame():
             - prev: the previous frame
             - userObj: the user object, which contains the user details
         """
-        # Initialize CloudSetup class
-        CloudSetup(userObj["cloud_provider"], userObj["cloud_provider_api_key"])
         self.remove_frame(prev)
         self.parent = parent
         self.frame = prev
         self.userObj = userObj
+        # Initialize the HomeLogic class
+        HomeLogic.__init__(self, userObj)
+        
+
         self.frame.grid(row=0, column=0)
         self.frame.pack_propagate(False)
         self.frame.tkraise()
