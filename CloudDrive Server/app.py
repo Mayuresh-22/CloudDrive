@@ -32,7 +32,7 @@ class FilesDB(db.Model):
     This class creates the Files table in the database.
     """
     id = db.Column(db.Integer, primary_key=True)
-    file_owner = db.Column(db.String(20), nullable=False)
+    file_owner = db.Column(db.Integer, nullable=False)
     file_name = db.Column(db.String(20), unique=True, nullable=False)
     file_size = db.Column(db.Integer, nullable=False)
     file_type = db.Column(db.String(20), nullable=False)
