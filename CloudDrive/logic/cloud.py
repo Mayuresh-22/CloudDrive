@@ -38,7 +38,8 @@ class Filestack(CloudSetup):
         
         This class has the following methods:
         - filestack_setup(): This method setups the Filestack cloud provider.
-        - upload_file(): This method uploads the file to the cloud and returns the file link.
+        - upload_file(): This method uploads the file to the cloud and returns the file link,
+                        which contains the file details.
     """
 
     def filestack_setup(self, **kwargs) -> None:
