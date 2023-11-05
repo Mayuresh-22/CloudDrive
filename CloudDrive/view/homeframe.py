@@ -149,7 +149,7 @@ class HomeFrame():
             width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.8,
             height=int(os.getenv("DEFAULT_APP_HEIGHT"))*0.8,
             fg_color="#ffffff",
-            corner_radius=25
+            corner_radius=10
         )
         self.files.pack_propagate(False)
         self.files.pack(side=tk.TOP, pady=10, padx=10)
