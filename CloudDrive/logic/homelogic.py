@@ -213,6 +213,7 @@ class HomeLogic:
                         font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10)),
                         command=lambda: self.filehandler.download_file(file["file_handle"])
                     )
+                    download_button.pack(side=tk.LEFT, padx=5)
 
                     col += 1
                     if col == max_col:
