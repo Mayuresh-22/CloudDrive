@@ -241,6 +241,8 @@ class HomeLogic:
 
         
     def download_file(self, file_url, file_name):
-        print("File URL: ", file_url.cget("text"))
-        print("File Name: ", file_name.cget("text"))
+        """
+            This method downloads the file from the cloud.
+            This method call the download_file() method of the respective cloud provider.
+        """
 
