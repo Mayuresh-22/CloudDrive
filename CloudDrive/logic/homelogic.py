@@ -216,7 +216,7 @@ class HomeLogic:
                         bg_color="transparent",
                         hover=False,
                         font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10)),
-                        command=lambda: self.cloud.download_file(file["file_url"], file["file_name"])
+                        command=lambda: self.download_file(file["file_url"], file["file_name"])
                     )
                     download_button.pack(side=tk.LEFT, padx=5)
 
@@ -232,4 +232,4 @@ class HomeLogic:
     def download_file(file_url, file_name):
         print("File URL: ", file_url)
         print("File Name: ", file_name)
-        
+
