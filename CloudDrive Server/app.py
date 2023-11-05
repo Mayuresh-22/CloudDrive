@@ -54,6 +54,17 @@ def index():
 # api endpoint to get all users
 @app.route('/users/', methods=['GET'])
 def get_all_users():
+    # authenticate user
+    if not request.json or not 'cloud_provider_api_key' in request.json:
+        return {"status": os.getenv("FAIL"),
+                "message": os.getenv("MISSING_PARAMETERS")}
+    else:
+        cloud_provider_api_key = request.json['cloud_provider_api_key']
+        # check if user exists
+        user = UserDB.query.filter_by(cloud_provider_api_key=cloud_provider_api_key).first()
+        if user is None:
+            return {"status": os.getenv("FAIL"),
+                    "message": os.getenv("AUTH_ERROR")}
     users = UserDB.query.all()
     output = []
     for user in users:
