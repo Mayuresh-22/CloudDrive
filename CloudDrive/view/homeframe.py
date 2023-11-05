@@ -158,7 +158,7 @@ class HomeFrame():
         self.files.pack_propagate(False)
         self.files.pack(side=tk.BOTTOM, pady=10, padx=10)
         self.files.tkraise()
-
+        # configure the main content
         self.main_content.pack_propagate(False)
         self.main_content.pack(side=tk.RIGHT, pady=10, padx=10)
         self.main_content.tkraise()
