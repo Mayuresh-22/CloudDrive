@@ -69,68 +69,6 @@ class HomeLogic:
                 "jpeg" : os.getenv("JPEG_ICON_MED"),
                 "plain" : os.getenv("TXT_ICON_MED")
             }
-
-
-    def launch_user_details(self, main_content_frame):
-        """
-            This method launches the user details in the main content frame.
-            - main_content_frame: the frame to launch the user details
-        """
-        # Clear the main content frame
-        for widget in main_content_frame.winfo_children():
-            widget.destroy()
-
-        # User Details
-        user_details = ctk.CTkFrame(main_content_frame,
-            width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.8,
-            height=int(os.getenv("DEFAULT_APP_HEIGHT")),
-            fg_color="#E3F5FD",
-            corner_radius=0
-        )
-        user_details.grid(row=0, column=0)
-        user_details.pack_propagate(False)
-        user_details.grid_propagate(False)
-
-        # User Details Label
-        user_details_label = ctk.CTkLabel(user_details,
-            text="User Details",
-            fg_color="#E3F5FD",
-            text_color="#1B387C",
-            font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT1_SIZE"), 10))
-        )
-        user_details_label.pack(pady=10)
-
-        # User Details Frame
-        user_details_frame = ctk.CTkFrame(user_details,
-            width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.8,
-            height=int(os.getenv("DEFAULT_APP_HEIGHT")),
-            fg_color="#E3F5FD",
-            corner_radius=0
-        )
-        user_details_frame.pack(pady=10)
-        user_details_frame.pack_propagate(False)
-        user_details_frame.grid_propagate(False)
-
-        # User Details Frame Row 1
-        user_details_frame_row1 = ctk.CTkFrame(user_details_frame,
-            width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.8,
-            height=int(os.getenv("DEFAULT_APP_HEIGHT")),
-            fg_color="#E3F5FD",
-            corner_radius=0
-        )
-        user_details_frame_row1.pack(pady=10)
-        user_details_frame_row1.pack_propagate(False)
-        user_details_frame_row1.grid_propagate(False)
-
-        # User Details Frame Row 1 Column 1
-        user_details_frame_row1_col1 = ctk.CTkFrame(user_details_frame_row1,
-            width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.8*0.5,
-            height=int(os.getenv("DEFAULT_APP_HEIGHT")),
-            fg_color="#E3F5FD",
-            corner_radius=0
-        )
-        user_details_frame_row1_col1.pack(side=tk.LEFT, pady=10)
-        user_details_frame_row1_col1.pack_propagate(False)
         
 
     def launch_file_explorer(self, files_frame) -> None:
