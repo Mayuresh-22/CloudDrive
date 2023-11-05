@@ -145,6 +145,9 @@ class HomeFrame():
             fg_color="#f7fcfe",
             corner_radius=25
         )
+        self.files.pack_propagate(False)
+        self.files.pack(side=tk.TOP, pady=10, padx=10)
+        self.files.tkraise()
 
         self.main_content.pack_propagate(False)
         self.main_content.pack(side=tk.RIGHT, pady=10, padx=10)
