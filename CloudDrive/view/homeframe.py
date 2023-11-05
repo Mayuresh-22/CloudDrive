@@ -98,7 +98,8 @@ class HomeFrame():
             text_color=os.getenv("WHITE_COLOR"),
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 12))
         )
-
+        self.progress_bar.pack(padx=10, pady=10)
+        
         # My Account
         self.my_account = ctk.CTkFrame(self.left_sidebar,
             width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.18,
