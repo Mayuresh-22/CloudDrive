@@ -44,12 +44,13 @@ class HomeLogic:
         file_icons_theme = os.getenv("FILE_ICONS_PLAIN")
         if file_icons_theme == os.getenv("FILE_ICONS_PLAIN"):
             self.file_icons = {
-                "pdf" : os.getenv("FILE_ICONS_PLAIN_PDF"),
-                "octet-stream" : os.getenv("FILE_ICONS_PLAIN_DOCX"),
-                "png" : os.getenv("FILE_ICONS_PLAIN_PNG"),
-                "jpg" : os.getenv("FILE_ICONS_PLAIN_JPG"),
-                "txt" : os.getenv("FILE_ICONS_PLAIN_TXT")
+                "pdf" : os.getenv("PDF_ICON_PLAIN"),
+                "octet-stream" : os.getenv("DOC_ICON_PLAIN"),
+                "png" : os.getenv("IMAGE_ICON_PLAIN"),
+                "jpg" : os.getenv("IMAGE_ICON_PLAIN"),
+                "txt" : os.getenv("TXT_ICON_PLAIN")
             }
+        elif file_icons_theme == os.getenv("FILE_ICONS_COLORED"):
 
 
     def launch_file_explorer(self, files_frame) -> None:
