@@ -41,7 +41,7 @@ class HomeLogic:
             self.cloud.setup()
 
 
-    def launch_file_explorer(self) -> None:
+    def launch_file_explorer(self, files_frame) -> None:
         """
             This method launches the file explorer of the system.
             Opens the file dialog to select the file.
@@ -56,7 +56,7 @@ class HomeLogic:
             self.upload_file(file)
 
 
-    def upload_file(self, file, files_frame):
+    def upload_file(self, file):
         """
             This method is the global method to upload the file to the cloud.
             - file: the file to be uploaded
