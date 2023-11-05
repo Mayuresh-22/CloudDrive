@@ -144,6 +144,7 @@ class HomeLogic:
                     file_icon = ctk.CTkImage(Image.open(self.file_icons[file_type]), size=(50, 50))
                     ctk.CTkLabel(file_frame,
                         image=file_icon,
+                        text=""
                         fg_color="#E3F5FD",
                         bg_color="#E3F5FD",
                     ).pack(pady=5, side = tk.TOP)
