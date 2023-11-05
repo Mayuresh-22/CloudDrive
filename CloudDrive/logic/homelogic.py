@@ -142,7 +142,7 @@ class HomeLogic:
 
                     # file icon
                     file_icon = ctk.CTkImage(Image.open(os.getenv("CLOUD_ICON")), size=(45, 45))
-
+                    
                     file_name = ctk.CTkLabel(file_frame,
                         text=file["file_name"],
                         fg_color="#E3F5FD",
