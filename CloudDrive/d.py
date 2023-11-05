@@ -5,7 +5,6 @@ import customtkinter as ctk
 root = ctk.CTk()
 
 frame = ctk.CTkFrame(root, width=500, height=500)
-frame.pack()
 
 scrollable_frame = ctk.CTkScrollableFrame(frame, width=500, height=500)
 
@@ -13,5 +12,6 @@ scrollable_frame = ctk.CTkScrollableFrame(frame, width=500, height=500)
 #     ctk.CTkLabel(scrollable_frame, text=f"Label {i}").pack()
 
 scrollable_frame.pack()
+frame.pack()
 
 root.mainloop()
