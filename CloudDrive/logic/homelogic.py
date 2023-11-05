@@ -231,7 +231,6 @@ class HomeLogic:
                     text_color="black",
                     font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT5_SIZE"), 10))
                 ).pack(pady=20)
-                return
 
         except Exception as e:
             print(e)
