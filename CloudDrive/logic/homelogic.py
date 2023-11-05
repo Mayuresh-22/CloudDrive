@@ -42,11 +42,11 @@ class HomeLogic:
         
         # setup file icons
         self.file_icons = {
-            "pdf" : os.getenv("PDF_ICON_PLAIN"),
-            "octet-stream" : os.getenv("DOC_ICON_PLAIN"),
-            "png" : os.getenv("IMAGE_ICON_PLAIN"),
-            "jpg" : os.getenv("IMAGE_ICON_PLAIN"),
-            "txt" : os.getenv("TXT_ICON_PLAIN")
+            "pdf" : os.getenv("PDF_ICON_3D"),
+            "octet-stream" : os.getenv("DOC_ICON_3D"),
+            "png" : os.getenv("IMAGE_ICON_3D"),
+            "jpg" : os.getenv("IMAGE_ICON_3D"),
+            "txt" : os.getenv("TXT_ICON_3D")
         }
         # file_icons_theme = os.getenv("FILE_ICONS_PLAIN")
         # if file_icons_theme == os.getenv("FILE_ICONS_PLAIN"):
