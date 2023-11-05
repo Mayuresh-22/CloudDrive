@@ -136,6 +136,9 @@ def get_all_files():
     file_owner = request.json['file_owner']
     cloud_provider_api_key = request.json['cloud_provider_api_key']
     files = FilesDB.query.filter_by(file_owner=file_owner, cloud_provider_api_key=cloud_provider_api_key).all()
+    if files is None:
+        return {"status": os.getenv("FAIL"),
+                "message": os.getenv("GET_FILES_ERROR")}
     output = []
     # create the json response
     for file in files:
@@ -149,10 +152,6 @@ def get_all_files():
         file_data['file_handle'] = file.file_handle
         file_data['file_status'] = file.file_status
         output.append(file_data)
-
-    if len(output) == 0:
-        return {"status": os.getenv("FAIL"),
-                "message": os.getenv("GET_FILES_ERROR")}
     return {"files": output,
             "status": os.getenv("SUCCESS"),
             "message": os.getenv("GET_FILES_SUCCESS")}
