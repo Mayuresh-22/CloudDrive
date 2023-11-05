@@ -228,7 +228,7 @@ class HomeLogic:
                     delete_icon = ctk.CTkImage(Image.open(os.getenv("DELETE_ICON")), size=(30, 30))
                     delete_button = ctk.CTkButton(file_actions,
                         height=30,
-                        width=30,
+                        width=40,
                         image=delete_icon,
                         text="",
                         fg_color="transparent",
