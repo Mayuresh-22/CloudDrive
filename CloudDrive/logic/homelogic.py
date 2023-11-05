@@ -73,6 +73,7 @@ class HomeLogic:
                 headers={"Content-Type": "application/json"},
                 json={
                     "file_owner" : self.userObj["id"],
+                    "cloud_provider_api_key" : self.userObj["cloud_provider_api_key"],
                     "file_name" : filelink.upload_response["filename"],
                     "file_size" : filelink.upload_response["size"],
                     "file_type" : filelink.upload_response["mimetype"],
