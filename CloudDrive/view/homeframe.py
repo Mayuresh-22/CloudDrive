@@ -136,7 +136,7 @@ class HomeFrame():
             text="My Cloud",
             fg_color="#f7fcfe",
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT5_SIZE"), 15))
-        ).pack(pady=30, padx=30, side=tk.TOP, anchor=tk.W)
+        ).pack(pady=30, padx=30, side=tk.TOP, anchor=tk.W, fill=tk.X)
 
         # Main Content - Files
         self.files = ctk.CTkFrame(self.main_content,
