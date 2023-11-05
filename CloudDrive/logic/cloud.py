@@ -68,7 +68,7 @@ class Filestack():
         """
         # Initialize the Filestack Setup
         self.client = Client(self.api_key)
-        print("Filestack setup done")
+        # print("Filestack setup done")
 
 
     def upload_file(self, file):
