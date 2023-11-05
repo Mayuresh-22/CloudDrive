@@ -94,9 +94,11 @@ class HomeLogic:
 
             This method calls the upload_file() method of the respective cloud provider.
         """
+
         # Calling the upload_file() method of the respective cloud provider
         filelink = self.cloud.upload_file(file)
         
+        # Checking if the file is uploaded successfully
         if filelink.upload_response["status"] == "Stored":
             """
                 If the file is uploaded successfully,
