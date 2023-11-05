@@ -150,7 +150,7 @@ class HomeLogic:
                     ctk.CTkLabel(files_frame,
                         text="No files found",
                         fg_color="#E3F5FD",
-                        text_color="#1B387C",
+                        text_color="black",
                         font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10))
                     ).pack(pady=20)
                     return
