@@ -159,7 +159,12 @@ class HomeLogic:
                 max_col = 4
                 for file in files:
                     file_type = file["file_type"].split("/")[1]
-                    # build file block
+                    """
+                        Creating the file block
+                        File block contains the file icon and the file name
+                        And, action buttons to download, share and delete the file
+                    """
+
                     file_block = ctk.CTkFrame(files_frame,
                         width=190,
                         height=190,
@@ -178,6 +183,8 @@ class HomeLogic:
                         fg_color="#E3F5FD",
                         bg_color="#E3F5FD",
                     ).pack(pady=20, side = tk.TOP)
+
+                    # file name
                     file_name = ctk.CTkLabel(file_block,
                         text=file["file_name"][0:15]+"...",
                         fg_color="#E3F5FD",
