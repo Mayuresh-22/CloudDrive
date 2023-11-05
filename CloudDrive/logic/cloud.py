@@ -81,7 +81,7 @@ class Filestack():
         # write the response content to the file
         filename =  filedialog.asksaveasfilename(initialdir=os.getcwd(), title="Save file",filetypes=(("All files","*.*"),("Text files","*.txt"),("PDF files","*.pdf"),("PNG files","*.png"),("JPEG files","*.jpeg"),("JPG files","*.jpg")))
         
-        with open(f"{filename}.{file}", "wb") as f:
+        with open(f"{filename}.{file_type}", "wb") as f:
             f.write(resp.content)
         
         print("File downloaded successfully")
