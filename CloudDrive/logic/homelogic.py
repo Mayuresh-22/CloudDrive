@@ -108,35 +108,35 @@ class HomeLogic:
                     "cloud_provider_api_key" : self.userObj["cloud_provider_api_key"]
                 }
             )
-            if resp.status_code == 200 and resp.json()["status"] == "success":
-                files = resp.json()["files"]
-                row = 0
-                col = 0
-                max_col = 4
-                for file in files:
-                    file_frame = ctk.CTkFrame(files_frame,
-                        width=200,
-                        height=200,
-                        fg_color="#E3F5FD",
-                        corner_radius=10
-                    )
-                    file_frame.grid(row=row, column=col, padx=10, pady=10)
-                    file_frame.pack_propagate(False)
-                    file_frame.grid_propagate(False)
+            # if resp.status_code == 200 and resp.json()["status"] == "success":
+            #     files = resp.json()["files"]
+            #     row = 0
+            #     col = 0
+            #     max_col = 4
+            #     for file in files:
+            #         file_frame = ctk.CTkFrame(files_frame,
+            #             width=200,
+            #             height=200,
+            #             fg_color="#E3F5FD",
+            #             corner_radius=10
+            #         )
+            #         file_frame.grid(row=row, column=col, padx=10, pady=10)
+            #         file_frame.pack_propagate(False)
+            #         file_frame.grid_propagate(False)
 
-                    file_name = ctk.CTkLabel(file_frame,
-                        text=file["file_name"],
-                        fg_color="#E3F5FD",
-                        text_color="#1B387C",
-                        font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10))
-                    )
-                    file_name.pack(pady=5)
+            #         file_name = ctk.CTkLabel(file_frame,
+            #             text=file["file_name"],
+            #             fg_color="#E3F5FD",
+            #             text_color="#1B387C",
+            #             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10))
+            #         )
+            #         file_name.pack(pady=5)
 
-                    col += 1
-                    if col == max_col:
-                        row += 1
-                        col = 0
-                files_frame.pack()
+            #         col += 1
+            #         if col == max_col:
+            #             row += 1
+            #             col = 0
+            #     files_frame.pack()
                         
    
         except Exception as e:
