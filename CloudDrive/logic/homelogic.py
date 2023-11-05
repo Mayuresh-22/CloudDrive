@@ -6,7 +6,7 @@
 import os
 from urllib import response
 from dotenv import load_dotenv
-from tkinter import filedialog
+from tkinter import Button, filedialog
 from PIL import Image
 import requests
 from logic.cloud import CloudSetup, Filestack
@@ -192,39 +192,26 @@ class HomeLogic:
                     )
                     file_name.pack(pady=5)
 
-                    # # file actions
-                    # file_actions = ctk.CTkFrame(file_block,
-                    #     width=190,
-                    #     height=30,
-                    #     fg_color="#E3F5FD",
-                    #     corner_radius=10
-                    # )
-                    # file_actions.pack(pady=10)
-                    # file_actions.pack_propagate(False)
+                    # file actions
+                    file_actions = ctk.CTkFrame(file_block,
+                        width=190,
+                        height=30,
+                        fg_color="#E3F5FD",
+                        corner_radius=10
+                    )
+                    file_actions.pack(pady=10)
+                    file_actions.pack_propagate(False)
 
-                    # # download button
-                    # download_icon = ctk.CTkImage(Image.open(os.getenv("DOWNLOAD_ICON")), size=(20, 20))
-                    # ctk.CTkLabel(file_actions,
-                    #     image=download_icon,
-                    #     text="",
-                    #     fg_color="#E3F5FD",
-                    #     bg_color="#E3F5FD",
-                    # ).pack(side=tk.LEFT, padx=10)
-                    # ctk.CTkLabel(file_actions,
-                    #     text="Download",
-                    #     fg_color="#E3F5FD",
-                    #     text_color="#1B387C",
-                    #     font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT7_SIZE"), 10))
-                    # ).pack(side=tk.LEFT, padx=5)
+                    # download button
+                    download_button = ctk.CTkButton(file_actions,
+                        
+                        fg_color="#E3F5FD",
+                        bg_color="#1B387C",
+                        hover_color="#1B387C",
+                        font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10)),
+                        command=lambda: self.filehandler.download_file(file["file_handle"])
+                    )
 
-                    # # view button
-                    # view_icon = ctk.CTkImage(Image.open(os.getenv("VIEW_ICON")), size=(20, 20))
-                    # ctk.CTkLabel(file_actions,
-                    #     image=view_icon,
-                    #     text="",
-                    #     fg_color="#E3F5FD",
-                    #     bg_color="#E3F5FD",
-                    # ).pack(side=tk.LEFT, padx=10)
                     col += 1
                     if col == max_col:
                         row += 1
