@@ -213,7 +213,7 @@ class HomeLogic:
                         image=download_icon,
                         text=""
                         fg_color="#E3F5FD",
-                        bg_color="#1B387C",
+                        bg_color="transparent",
                         hover_color="transparent",
                         font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10)),
                         command=lambda: self.filehandler.download_file(file["file_handle"])
