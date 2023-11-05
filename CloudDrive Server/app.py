@@ -148,6 +148,9 @@ def get_all_files():
         file_data['file_handle'] = file.file_handle
         file_data['file_status'] = file.file_status
         output.append(file_data)
+    if len(output) == 0:
+        return {"status": os.getenv("FAIL"),
+                "message": os.getenv("GET_FILES_ERROR")}
     return {"files": output,
             "status": os.getenv("SUCCESS"),
             "message": os.getenv("GET_FILES_SUCCESS")}
