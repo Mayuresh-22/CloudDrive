@@ -95,5 +95,5 @@ class HomeLogic:
             This method sends POST request to the server to get the files of the user.
             and populates the files in the files frame.
     """
-        # Get the files from the cloud provider
-        files = self.cloud.get_files()
+        # Get the files from the server for the user
+        url = os.getenv("APP_BASE_URL")+os.getenv("FILE_ENDPOINT")+os.getenv("GET_FILES_ENDPOINT")
