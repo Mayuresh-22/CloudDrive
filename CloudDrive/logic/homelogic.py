@@ -98,10 +98,70 @@ class HomeLogic:
     """
         # Get the files from the server for the user
         url = os.getenv("APP_BASE_URL")+os.getenv("FILE_ENDPOINT")
-        resp = requests.post(url,
-            headers={"Content-Type": "application/json"},
-            json={
-                "file_owner" : self.userObj["id"],
-                "cloud_provider_api_key" : self.userObj["cloud_provider_api_key"]
-            }
-        )
+        try:
+            resp = requests.post(url,
+                headers={"Content-Type": "application/json"},
+                json={
+                    "file_owner" : self.userObj["id"],
+                    "cloud_provider_api_key" : self.userObj["cloud_provider_api_key"]
+                }
+            )
+            if resp.status_code == 200 and resp.json()["status"] == "success":
+                files = resp.json()["files"]
+                for file in files:
+                    file_frame = ctk.CTkFrame(files_frame,
+                        width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.8,
+                        height=50,
+                        fg_color="#E3F5FD",
+                        corner_radius=0
+                    )
+                    file_frame.pack(pady=5)
+                    file_frame.pack_propagate(False)
+                    file_frame.grid_propagate(False)
+
+                    file_name = ctk.CTkLabel(file_frame,
+                        text=file["file_name"],
+                        width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.5,
+                        height=50,
+                        fg_color="#E3F5FD",
+                        text_color="#1B387C",
+                        font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"))),
+                        corner_radius=0
+                    )
+                    file_name.pack(side="left")
+
+                    file_size = ctk.CTkLabel(file_frame,
+                        text=file["file_size"],
+                        width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.2,
+                        height=50,
+                        fg_color="#E3F5FD",
+                        text_color="#1B387C",
+                        font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"))),
+                        corner_radius=0
+                    )
+                    file_size.pack(side="left")
+
+                    file_type = ctk.CTkLabel(file_frame,
+                        text=file["file_type"],
+                        width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.1,
+                        height=50,
+                        fg_color="#E3F5FD",
+                        text_color="#1B387C",
+                        font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"))),
+                        corner_radius=0
+                    )
+                    file_type.pack(side="left")
+
+                    file_download = ctk.CTkButton(file_frame,
+                        text="Download",
+                        width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.1,
+                        height=50,
+                        fg_color="#E3F5FD",
+                        text_color="#1B387C",
+                        font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"))),
+                        corner_radius=0,
+                        command=lambda: self.download_file(file["file_handle"])
+                    )
+                    file_download.pack(side="left")
+            else:
+                print(resp
