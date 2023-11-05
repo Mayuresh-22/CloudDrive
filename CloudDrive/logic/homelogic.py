@@ -67,7 +67,7 @@ class HomeLogic:
                 "jpg" : os.getenv("JPG_ICON_MED"),
                 "txt" : os.getenv("TXT_ICON_MED")
             }
-
+        print('File icons: ', self.file_icons)
 
     def launch_file_explorer(self, files_frame) -> None:
         """
