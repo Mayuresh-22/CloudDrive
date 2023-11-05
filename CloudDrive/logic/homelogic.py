@@ -241,8 +241,4 @@ class HomeLogic:
         """
         # calling the download_file() method of the respective cloud provider
         bool = self.cloud.download_file(file_url, file_name)
-        if bool:
-            print("File downloaded successfully")
-        else:
-            print("File download failed")
 
