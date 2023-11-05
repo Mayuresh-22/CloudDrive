@@ -134,7 +134,8 @@ def register_user():
 def get_all_files():
     # get the files of the user
     file_owner = request.json['file_owner']
-    files = FilesDB.query.filter_by(file_owner=file_owner, cloud_provider_api_key).all()
+    cloud_provider_api_key = request.json['cloud_provider_api_key']
+    files = FilesDB.query.filter_by(file_owner=file_owner, cloud_provider_api_key=cloud_provider_api_key).all()
     output = []
     for file in files:
         file_data = {}
