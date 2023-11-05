@@ -99,6 +99,9 @@ class HomeFrame():
             corner_radius=10
         )
         self.progress_bar.pack_propagate(False)
+        self.progress_bar.pack(side=tk.BOTTOM, pady=10)
+        self.progress_bar.tkraise()
+        
 
         # My Account
         self.my_account = ctk.CTkFrame(self.left_sidebar,
