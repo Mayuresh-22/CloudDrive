@@ -131,6 +131,13 @@ class HomeFrame():
             fg_color="#f7fcfe",
             corner_radius=25
         )
+
+        ctk.CTkLabel(self.main_content,
+            text="My Cloud",
+            fg_color="#f7fcfe",
+            font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT4_SIZE"), 12))
+        ).pack(pady=10, padx=10, side=tk.TOP, anchor=tk.W)
+
         self.main_content.pack_propagate(False)
         self.main_content.pack(side=tk.RIGHT, pady=10, padx=10)
         self.main_content.tkraise()
