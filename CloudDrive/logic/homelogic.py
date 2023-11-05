@@ -230,7 +230,7 @@ class HomeLogic:
                     fg_color="#E3F5FD",
                     text_color="black",
                     font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT5_SIZE"), 10))
-                ).pack(pady=20)
+                ).pack(pady=20, side = tk.CENTER)
 
         except Exception as e:
             print(e)
