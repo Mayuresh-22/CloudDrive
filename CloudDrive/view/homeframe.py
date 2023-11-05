@@ -96,7 +96,7 @@ class HomeFrame():
             text="Upload New File",
             fg_color=os.getenv("HOME_SCREEN_BG_COLOR"),
             text_color=os.getenv("WHITE_COLOR"),
-            font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 12))
+            font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10))
         )
         self.progress_bar.pack(padx=10, pady=10)
 
