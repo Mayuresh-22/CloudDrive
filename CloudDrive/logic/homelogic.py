@@ -147,7 +147,7 @@ class HomeLogic:
                         fg_color="#E3F5FD",
                         bg_color="#E3F5FD",
                         hover=False
-                    ).pack(pady=5)
+                    ).pack(pady=5, side = tk.TOP)
                     file_name = ctk.CTkLabel(file_frame,
                         text=file["file_name"],
                         fg_color="#E3F5FD",
