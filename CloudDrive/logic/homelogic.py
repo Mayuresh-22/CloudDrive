@@ -91,4 +91,6 @@ class HomeLogic:
         """
             This method populates the files in the files frame.
             - files_frame: the frame to populate the files
-            """
+
+            This method calls the get_files() method of the respective cloud provider.
+    """
