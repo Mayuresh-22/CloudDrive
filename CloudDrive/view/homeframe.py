@@ -26,17 +26,16 @@ class HomeFrame():
             - prev: the previous frame
             - userObj: the user object, which contains the user details
         """
+        # Initialize HomeLogic class
+        self.homeLogic = HomeLogic(userObj)
         # Initialize the frame
         self.remove_frame(prev)
         self.parent = parent
         self.frame = prev
         self.userObj = userObj
-        self.files = None
         self.frame.grid(row=0, column=0)
         self.frame.pack_propagate(False)
         self.frame.tkraise()
-        # Initialize HomeLogic class
-        self.homeLogic = HomeLogic(userObj, self.files)
         self.build()
 
 
@@ -153,7 +152,7 @@ class HomeFrame():
             corner_radius=25
         )
         # populate files
-        self.homeLogic.populate_files()
+        self.homeLogic.populate_files(self.files)
 
         # configure the grid
         self.files.pack(side=tk.TOP, pady=10, padx=10)
@@ -161,6 +160,7 @@ class HomeFrame():
 
         # configure the main content
         self.main_content.pack(side=tk.RIGHT, pady=10, padx=10)
+        self.main_content.pack_propagate(False)
         self.main_content.tkraise()
 
 
