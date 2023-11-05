@@ -88,7 +88,7 @@ class HomeFrame():
             fg_color=os.getenv("HOME_SCREEN_BG_COLOR"),
             hover_color="#0077B6",
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 15)),
-            command=lambda: self.homeLogic.launch_file_explorer(self.files)
+            command=lambda: self.homeLogic.launch_file_explorer(self.files, self.progress_bar)
         ).pack(padx=10, pady=20)
 
         # progress bar
@@ -99,7 +99,7 @@ class HomeFrame():
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 12))
         )
         self.progress_bar.pack(padx=10, pady=10)
-        
+
         # My Account
         self.my_account = ctk.CTkFrame(self.left_sidebar,
             width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.18,
