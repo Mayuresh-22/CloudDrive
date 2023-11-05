@@ -123,7 +123,7 @@ class HomeLogic:
                     file_name = ctk.CTkLabel(file_frame,
                         text=file["file_name"],
                         fg_color="#E3F5FD",
-                        font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 12))
+                        font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10))
                     )
                     file_name.pack(pady=5)
                     file_name.pack_propagate(False)
