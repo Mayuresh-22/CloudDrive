@@ -167,13 +167,13 @@ class HomeLogic:
                     file_block.grid_propagate(False)
 
                     # file icon
-                    # file_icon = ctk.CTkImage(Image.open(self.file_icons[file_type]), size=(55, 55))
-                    # ctk.CTkLabel(file_block,
-                    #     image=file_icon,
-                    #     text="",
-                    #     fg_color="#E3F5FD",
-                    #     bg_color="#E3F5FD",
-                    # ).pack(pady=20, side = tk.TOP)
+                    file_icon = ctk.CTkImage(Image.open(self.file_icons[file_type]), size=(55, 55))
+                    ctk.CTkLabel(file_block,
+                        image=file_icon,
+                        text="",
+                        fg_color="#E3F5FD",
+                        bg_color="#E3F5FD",
+                    ).pack(pady=20, side = tk.TOP)
                     file_name = ctk.CTkLabel(file_block,
                         text=file["file_name"],
                         fg_color="#E3F5FD",
