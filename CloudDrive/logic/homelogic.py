@@ -10,6 +10,7 @@ from tkinter import filedialog
 import requests
 from logic.cloud import CloudSetup, Filestack
 import customtkinter as ctk
+import tkinter as tk
 
 load_dotenv(".env")
 
