@@ -29,7 +29,7 @@ class HomeLogic:
                     which handles the file actions (Any cloud provider type)
 
     """
-    def __init__(self, userObj):
+    def __init__(self, userObj, files_frame):
         """
             This is the constructor of the HomeLogic class.
             - userObj: the user object, which contains the user details
