@@ -146,6 +146,7 @@ class HomeLogic:
                         height=100
                     )
                     file_icon.pack(pady=10)
+                    
                     file_name = ctk.CTkLabel(file_frame,
                         text=file["file_name"],
                         fg_color="#E3F5FD",
