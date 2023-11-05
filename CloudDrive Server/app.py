@@ -164,7 +164,7 @@ def get_all_files():
     files = FilesDB.query.filter_by(file_owner=file_owner).all()
     # check if files exists
     if files is None:
-        return {"status": os.getenv("SUCCESS"),
+        return {"status": os.getenv("FAIL"),
                 "message": os.getenv("GET_FILES_ERROR")}
     output = []
     # create the json response
