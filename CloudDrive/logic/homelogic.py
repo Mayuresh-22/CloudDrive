@@ -37,9 +37,17 @@ class HomeLogic:
         """
         self.userObj = userObj
         self.cloud = CloudSetup(userObj["cloud_provider"], userObj["cloud_provider_api_key"]).setup()
+        self.file_icons = {
+            "pdf" : os.getenv("PDF_ICON_MED"),
+            "octet-stream" : os.getenv("DOC_ICON_MED"),
+            "png" : os.getenv("PNG_ICON_MED"),
+            "jpg" : os.getenv("JPG_ICON_MED"),
+            "jpeg" : os.getenv("JPG_ICON_MED"),
+            "plain" : os.getenv("TXT_ICON_3D"),
+        }
+        
         if self.cloud != None:
             self.cloud.setup()
-        
 
 
     def launch_file_explorer(self, files_frame) -> None:
@@ -153,6 +161,7 @@ class HomeLogic:
                     if col == max_col:
                         row += 1
                         col = 0
-
+                        
+   
         except Exception as e:
             print(e)
