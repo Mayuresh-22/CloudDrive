@@ -49,7 +49,7 @@ class HomeLogic:
                 "octet-stream" : os.getenv("DOC_ICON_PLAIN"),
                 "png" : os.getenv("IMAGE_ICON_PLAIN"),
                 "jpg" : os.getenv("IMAGE_ICON_PLAIN"),
-                "txt" : os.getenv("TXT_ICON_PLAIN")
+                "plain" : os.getenv("TXT_ICON_PLAIN")
             }
         elif file_icons_theme == os.getenv("FILE_ICON_3D"):
             self.file_icons = {
@@ -57,7 +57,7 @@ class HomeLogic:
                 "octet-stream" : os.getenv("DOC_ICON_3D"),
                 "png" : os.getenv("IMAGE_ICON_3D"),
                 "jpg" : os.getenv("IMAGE_ICON_3D"),
-                "txt" : os.getenv("TXT_ICON_3D")
+                "plain" : os.getenv("TXT_ICON_3D")
             }
         elif file_icons_theme == os.getenv("FILE_ICON_MED"):
             self.file_icons = {
@@ -65,7 +65,7 @@ class HomeLogic:
                 "octet-stream" : os.getenv("DOC_ICON_MED"),
                 "png" : os.getenv("PNG_ICON_MED"),
                 "jpg" : os.getenv("JPG_ICON_MED"),
-                "txt" : os.getenv("TXT_ICON_MED")
+                "plain" : os.getenv("TXT_ICON_MED")
             }
         print('File icons: ', self.file_icons)
 
