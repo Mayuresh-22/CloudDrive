@@ -92,16 +92,13 @@ class HomeFrame():
         ).pack(padx=10, pady=20)
 
         # progress bar
-        self.progress_bar = ctk.CTkProgressBar(self.left_sidebar,
-            width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.18,
-            height=int(os.getenv("DEFAULT_APP_HEIGHT"))*0.1,
-            fg_color=os.getenv("HOME_SCREEN_BG_COLOR"),
-            corner_radius=10
+        self.progress_bar = ctk.CTkLabel(self.left_sidebar,
+            text="",
+            fg_color="#0077B6",
+            text_color=os.getenv("WHITE_COLOR"),
+            font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 12))
         )
-        self.progress_bar.pack_propagate(False)
-        self.progress_bar.pack(side=tk.BOTTOM, pady=10)
-        self.progress_bar.tkraise()
-        
+
 
         # My Account
         self.my_account = ctk.CTkFrame(self.left_sidebar,
