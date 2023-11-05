@@ -137,9 +137,7 @@ class HomeLogic:
                     if column == max_column:
                         row += 1
                         column = 0
-
-                    
-                        
+  
    
         except Exception as e:
             print(e)
