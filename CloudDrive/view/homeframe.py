@@ -155,7 +155,7 @@ class HomeFrame():
         self.homeLogic.populate_files(self.files)
 
         # configure the grid
-        self.files.pack_propagate(False)
+        self.files.pack(side=tk.TOP, pady=10, padx=10)
         self.files.tkraise()
         # configure the main content
         self.main_content.pack_propagate(False)
