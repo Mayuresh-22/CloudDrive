@@ -50,7 +50,7 @@ class Filestack():
             - cloudSetObj: the cloud provider setup object (CloudSetup)
         """
         self.api_key = api_key
-        self.filetype = {
+        self.filetypes = {
             "pdf" : ("PDF files","*.pdf"),
             "docx" : ("DOCX files","*.docx"),
             "png" : ("PNG files","*.png"),
@@ -88,7 +88,7 @@ class Filestack():
         resp = requests.get(fileurl)
 
         # write the response content to the file
-        filename =  filedialog.asksaveasfilename(initialdir=os.getcwd(), title="Save file",filetypes=(("All files","*.*"),("Text files","*.txt"),("PDF files","*.pdf"),("PNG files","*.png"),("JPEG files","*.jpeg"),("JPG files","*.jpg")))
+        filename =  filedialog.asksaveasfilename(initialdir=os.getcwd(), title="Save file",filetypes=(self.filetypes[file_type], ["*."+file_type]))
         
         with open(f"{filename}.{file_type}", "wb") as f:
             f.write(resp.content)
