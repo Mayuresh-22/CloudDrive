@@ -246,5 +246,5 @@ class HomeLogic:
             This method call the download_file() method of the respective cloud provider.
         """
         # calling the download_file() method of the respective cloud provider
-        file = self.cloud.download_file(file_url, file_name)
+        bool = self.cloud.download_file(file_url, file_name)
 
