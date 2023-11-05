@@ -144,16 +144,15 @@ class HomeFrame():
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 12))
         ).pack(pady=0, padx=30, side=tk.TOP, anchor=tk.W)
 
-        # Main Content - Files
+        # Main Content - Files (grid view)
         self.files = ctk.CTkFrame(self.main_content,
             width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.8,
-            height=int(os.getenv("DEFAULT_APP_HEIGHT"))*0.8,
-            fg_color="#ffffff",
-            corner_radius=10
+            height=int(os.getenv("DEFAULT_APP_HEIGHT"))*0.7,
+            fg_color="#f7fcfe",
+            corner_radius=25
         )
-    
         self.files.pack_propagate(False)
-        self.files.pack(side=tk.TOP, pady=10, padx=10)
+        self.files.pack(side=tk.BOTTOM, pady=10, padx=10)
         self.files.tkraise()
 
         # populate files
