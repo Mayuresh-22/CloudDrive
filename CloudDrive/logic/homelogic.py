@@ -117,21 +117,11 @@ class HomeLogic:
                     file_frame = ctk.CTkFrame(files_frame,
                         width=200,
                         height=200,
-                        fg_color="#E3F5FD",
-                        corner_radius=10
+                        fg_color="white",
+                        corner_radius=0
                     )
-                    file_frame.pack(pady=5)
-                    file_frame.pack_propagate(False)
-                    file_frame.grid_propagate(False)
-
-                    file_name = ctk.CTkLabel(file_frame,
-                        text=file["file_name"],
-                        fg_color="#E3F5FD",
-                        font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10))
-                    )
-                    file_name.grid(row=0, column=0, pady=5)
-                    file_name.pack_propagate(False)
-                    file_name.grid_propagate(False)
+                    file_frame.grid(row=row, column=max_column, padx=10, pady=10)
+                    
                         
    
         except Exception as e:
