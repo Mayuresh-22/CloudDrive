@@ -4,6 +4,7 @@
 
 # Import the required modules
 import os
+from textwrap import fill
 from turtle import down
 from urllib import response
 from dotenv import load_dotenv
@@ -158,7 +159,7 @@ class HomeLogic:
                         text_color="#1B387C",
                         font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10))
                     )
-                    no_file_label.grid(row=0, column=0, padx=10, pady=10)
+                    no_file_label.grid(fill = tk.BOTH, expand = True)
                     no_file_label.pack_propagate(False)
                     no_file_label.grid_propagate(False)
                     return None
