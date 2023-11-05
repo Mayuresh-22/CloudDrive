@@ -48,6 +48,7 @@ class HomeLogic:
                 "octet-stream" : os.getenv("DOC_ICON_PLAIN"),
                 "png" : os.getenv("IMAGE_ICON_PLAIN"),
                 "jpg" : os.getenv("IMAGE_ICON_PLAIN"),
+                "jpeg" : os.getenv("IMAGE_ICON_PLAIN"),
                 "plain" : os.getenv("TXT_ICON_PLAIN")
             }
         elif file_icons_theme == os.getenv("FILE_ICON_3D"):
