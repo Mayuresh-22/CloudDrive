@@ -41,7 +41,7 @@ class HomeLogic:
             self.cloud.setup()
 
         # Set the file icons
-                    self.file_icons = {
+        self.file_icons = {
                 "pdf" : os.getenv("PDF_ICON_PLAIN"),
                 "octet-stream" : os.getenv("DOC_ICON_PLAIN"),
                 "png" : os.getenv("IMAGE_ICON_PLAIN"),
