@@ -31,13 +31,14 @@ class HomeFrame():
         self.parent = parent
         self.frame = prev
         self.userObj = userObj
+        self.files = None
         self.frame.grid(row=0, column=0)
         self.frame.pack_propagate(False)
         self.frame.tkraise()
         self.build()
-
         # Initialize HomeLogic class
         self.homeLogic = HomeLogic(userObj, self.files)
+
 
     def build(self):
         """
