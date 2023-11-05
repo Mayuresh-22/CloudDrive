@@ -125,7 +125,7 @@ class HomeLogic:
                         fg_color="#E3F5FD",
                         font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10))
                     )
-                    file_name.pack(pady=5)
+                    file_name.grid(row=0, column=0, pady=5)
                     file_name.pack_propagate(False)
                     file_name.grid_propagate(False)
                         
