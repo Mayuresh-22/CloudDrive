@@ -4,6 +4,7 @@
 
 # Import the required modules
 import os
+from turtle import down
 from urllib import response
 from dotenv import load_dotenv
 from tkinter import Button, filedialog
@@ -203,6 +204,7 @@ class HomeLogic:
                     file_actions.pack_propagate(False)
 
                     # download button
+                    download_icon = ctk.CTkImage(Image.open(os.getenv("DOWNLOAD_ICON")), size=(20, 20))
                     download_button = ctk.CTkButton(file_actions,
                         
                         fg_color="#E3F5FD",
