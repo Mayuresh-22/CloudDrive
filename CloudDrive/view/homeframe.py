@@ -91,6 +91,14 @@ class HomeFrame():
             command=lambda: self.homeLogic.launch_file_explorer(self.files)
         ).pack(padx=10, pady=20)
 
+        # progress bar
+        self.progress_bar = ctk.CTkProgressBar(self.left_sidebar,
+            width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.18,
+            height=int(os.getenv("DEFAULT_APP_HEIGHT"))*0.1,
+            fg_color=os.getenv("HOME_SCREEN_BG_COLOR"),
+            corner_radius=10
+        )
+
         # My Account
         self.my_account = ctk.CTkFrame(self.left_sidebar,
             width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.18,
