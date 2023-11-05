@@ -111,6 +111,7 @@ class HomeLogic:
                 files = resp.json()["files"]
                 row = 0
                 column = 0
+                max_column = 4
                 for file in files:
                     file_frame = ctk.CTkFrame(files_frame,
                         width=200,
