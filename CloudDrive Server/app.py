@@ -130,8 +130,7 @@ def register_user():
 
 
 # api endpoint to get all files
-@app.route('/files/', methods=['GET'])
-@app.route('/files/<int:file_owner>', methods=['GET'])
+@app.route('/files/', methods=['GET', 'POST'])
 def get_all_files():
     files = FilesDB.query.all()
     output = []
