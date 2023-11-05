@@ -100,7 +100,7 @@ class HomeLogic:
             and populates the files in the files frame.
     """
         # Clear the files frame
-        for widget in self.files_frame.winfo_children():
+        for widget in files_frame.winfo_children():
             widget.destroy()
 
         # Get the files from the server for the user
@@ -119,7 +119,7 @@ class HomeLogic:
                 col = 0
                 max_col = 4
                 for file in files:
-                    file_frame = ctk.CTkFrame(self.files_frame,
+                    file_frame = ctk.CTkFrame(files_frame,
                         width=190,
                         height=190,
                         fg_color="#E3F5FD",
