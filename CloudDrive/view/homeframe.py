@@ -132,17 +132,17 @@ class HomeFrame():
             corner_radius=25
         )
 
-        ctk.CTkLabel(self.main_content,
-            text="My Cloud",
-            fg_color="#f7fcfe",
-            font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT4_SIZE"), 12))
-        ).pack(pady=30, padx=30, side=tk.TOP, anchor=tk.W)
+        # ctk.CTkLabel(self.main_content,
+        #     text="My Cloud",
+        #     fg_color="#f7fcfe",
+        #     font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT4_SIZE"), 12))
+        # ).pack(pady=30, padx=30, side=tk.TOP, anchor=tk.W)
 
-        ctk.CTkLabel(self.main_content,
-            text="Hi "+self.userObj["username"]+", Welcome to your CloudDrive!",
-            fg_color="#f7fcfe",
-            font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 12))
-        ).pack(pady=0, padx=30, side=tk.TOP, anchor=tk.W)
+        # ctk.CTkLabel(self.main_content,
+        #     text="Hi "+self.userObj["username"]+", Welcome to your CloudDrive!",
+        #     fg_color="#f7fcfe",
+        #     font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 12))
+        # ).pack(pady=0, padx=30, side=tk.TOP, anchor=tk.W)
 
         # Main Content - Files (grid view)
         self.files = ctk.CTkScrollableFrame(master=self.main_content,
