@@ -141,7 +141,7 @@ class HomeLogic:
                     file_frame.grid_propagate(False)
 
                     # file icon
-                    file_icon = ctk.CTkImage(Image.open(self.file_icons[file_type]), size=(50, 50))
+                    file_icon = ctk.CTkImage(Image.open(self.file_icons[file_type]), size=(55, 55))
                     ctk.CTkLabel(file_frame,
                         image=file_icon,
                         text="",
