@@ -148,7 +148,7 @@ class HomeFrame():
         self.files = ctk.CTkScrollableFrame(master=self.main_content,
             width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.8,
             height=int(os.getenv("DEFAULT_APP_HEIGHT"))*0.7,
-            fg_color="#fffff",
+            fg_color="#ffffff",
             corner_radius=25
         )
         # populate files
