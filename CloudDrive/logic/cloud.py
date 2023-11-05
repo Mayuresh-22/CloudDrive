@@ -79,7 +79,7 @@ class Filestack():
         filelink = self.client.upload(filepath=file)
         return filelink
     
-    
+
     def download_file(self, fileurl, filename):
         """
             This method downloads the file from the cloud.
@@ -91,7 +91,7 @@ class Filestack():
         resp = requests.get(fileurl)
 
         # write the response content to the file
-        filename =  filedialog.asksaveasfilename(initialdir=os.getcwd(), title="Save file",filetypes=((file_type, "*.{file_type}"),("All files", "*.*")))
+        filename =  filedialog.asksaveasfilename(initialdir=os.getcwd(), title="Save file",filetypes=((file_type, f"*.{file_type}"),("All files", "*.*")))
         
         with open(f"{filename}.{file_type}", "wb") as f:
             f.write(resp.content)
