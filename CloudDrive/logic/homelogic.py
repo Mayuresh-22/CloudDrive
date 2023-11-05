@@ -39,11 +39,11 @@ class HomeLogic:
         self.cloud = CloudSetup(userObj["cloud_provider"], userObj["cloud_provider_api_key"]).setup()
         self.file_icons = {
             "pdf" : os.getenv("PDF_ICON"),
-            "octet-stream" : os.getenv("DOC_ICON"),
-            "png" : os.getenv("IMAGE_ICON"),
-            "jpg" : os.getenv("IMAGE_ICON"),
-            "jpeg" : os.getenv("IMAGE_ICON"),
-            "plain" : os.getenv("TXT_ICON"),
+            "octet-stream" : os.getenv("DOC_ICON_3D"),
+            "png" : os.getenv("IMAGE_ICON_3D"),
+            "jpg" : os.getenv("IMAGE_ICON_3D"),
+            "jpeg" : os.getenv("IMAGE_ICON_3D"),
+            "plain" : os.getenv("TXT_ICON_3D"),
         }
         
         if self.cloud != None:
