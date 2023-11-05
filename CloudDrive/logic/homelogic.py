@@ -40,10 +40,10 @@ class HomeLogic:
         self.file_icons = {
             "pdf" : os.getenv("PDF_ICON_MED"),
             "octet-stream" : os.getenv("DOC_ICON_MED"),
-            "png" : os.getenv("IMAGE_ICON_3D"),
-            "jpg" : os.getenv("IMAGE_ICON_3D"),
-            "jpeg" : os.getenv("IMAGE_ICON_3D"),
-            "plain" : os.getenv("TXT_ICON_3D"),
+            "png" : os.getenv("PNG_ICON_MED"),
+            "jpg" : os.getenv("JPG_ICON_MED"),
+            "jpeg" : os.getenv("JPG_ICON_MED"),
+            "plain" : os.getenv("TXT_ICON_MED"),
         }
         
         if self.cloud != None:
