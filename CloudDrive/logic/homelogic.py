@@ -67,6 +67,7 @@ class HomeLogic:
                 "txt" : os.getenv("TXT_ICON_MED")
             }
 
+
     def launch_file_explorer(self, files_frame) -> None:
         """
             This method launches the file explorer of the system.
