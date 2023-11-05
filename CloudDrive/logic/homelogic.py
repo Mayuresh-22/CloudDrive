@@ -97,7 +97,7 @@ class HomeLogic:
         """
         filelink = self.cloud.upload_file(file)
         # update the progress bar
-        
+        progress_bar.configure(text="Uploading... "+str(filelink.upload_response["progress"])+"%")
         if filelink.upload_response["status"] == "Stored":
             """
                 If the file is uploaded successfully,
