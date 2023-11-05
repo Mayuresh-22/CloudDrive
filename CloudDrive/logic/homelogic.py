@@ -95,3 +95,5 @@ class HomeLogic:
             This method calls the get_files() method of the respective cloud provider.
             And, populates the files in the files frame.
     """
+        # Get the files from the cloud provider
+        files = self.cloud.get_files()
