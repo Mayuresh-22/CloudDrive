@@ -98,6 +98,10 @@ class HomeLogic:
             This method sends POST request to the server to get the files of the user.
             and populates the files in the files frame.
     """
+        # Clear the files frame
+        for widget in files_frame.winfo_children():
+            widget.destroy()
+            
         # Get the files from the server for the user
         url = os.getenv("APP_BASE_URL")+os.getenv("FILE_ENDPOINT")
         try:
