@@ -59,6 +59,13 @@ class HomeLogic:
                 "txt" : os.getenv("TXT_ICON_3D")
             }
         elif file_icons_theme == os.getenv("FILE_ICONS_MED"):
+            self.file_icons = {
+                "pdf" : os.getenv("PDF_ICON_MED"),
+                "octet-stream" : os.getenv("DOC_ICON_MED"),
+                "png" : os.getenv("IMAGE_ICON_MED"),
+                "jpg" : os.getenv("IMAGE_ICON_MED"),
+                "txt" : os.getenv("TXT_ICON_MED")
+            }
 
 
     def launch_file_explorer(self, files_frame) -> None:
