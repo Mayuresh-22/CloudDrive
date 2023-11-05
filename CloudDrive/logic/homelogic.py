@@ -115,7 +115,7 @@ class HomeLogic:
                 col = 0
                 max_col = 4
                 for file in files:
-                    file_frame = ctk.CTkFrame(files_frame,
+                    file_frame = ctk.CTkFrame(HomeFrame.files_frame,
                         width=200,
                         height=200,
                         fg_color="#E3F5FD",
