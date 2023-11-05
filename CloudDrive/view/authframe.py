@@ -84,7 +84,6 @@ class AuthFrame():
             show="*"
         )
         self.auth_password.pack(pady=5)
-        self.auth_password.configure(show="*")
 
         
         # Login button widget
