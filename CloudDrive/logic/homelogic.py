@@ -7,7 +7,7 @@ import os
 from turtle import down
 from urllib import response
 from dotenv import load_dotenv
-from tkinter import Button, filedialog
+from tkinter import N, Button, filedialog
 from PIL import Image
 import requests
 from logic.cloud import CloudSetup, Filestack
@@ -159,7 +159,7 @@ class HomeLogic:
                         font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10))
                     )
                     no_file_label.pack(pady=20)
-                    return
+                    return None
                 row = 0
                 col = 0
                 max_col = 4
