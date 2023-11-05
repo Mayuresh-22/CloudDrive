@@ -130,7 +130,7 @@ class HomeLogic:
                 max_col = 4
                 for file in files:
                     file_type = file["file_type"].split("/")[1]
-                    # build file blocl
+                    # build file block
                     file_frame = ctk.CTkFrame(files_frame,
                         width=190,
                         height=190,
