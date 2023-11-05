@@ -86,3 +86,9 @@ class HomeLogic:
                 print(resp.json()["message"])
             else:
                 print(resp.json()["message"])
+
+    def populate_files(self, files_frame):
+        """
+            This method populates the files in the files frame.
+            - files_frame: the frame to populate the files
+            """
