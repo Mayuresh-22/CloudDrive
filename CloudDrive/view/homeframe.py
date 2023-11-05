@@ -35,7 +35,7 @@ class HomeFrame():
         self.frame.grid(row=0, column=0)
         self.frame.pack_propagate(False)
         self.frame.tkraise()
-                # Initialize HomeLogic class
+        # Initialize HomeLogic class
         self.homeLogic = HomeLogic(userObj, self.files)
         self.build()
 
