@@ -98,12 +98,12 @@ class HomeLogic:
         filelink = self.cloud.upload_file(file)
     
         if filelink.upload_response["status"] == "Stored":
-                        """
+            """
                 If the file is uploaded successfully,
                 Now, storing the file details in the database.
             """
             # update the progress bar
-            progress_bar.configure(text="Uploading... "+str(filelink.upload_response["progress"])+"%")
+            progress_bar.configure(text="Uploaded Successfully")
 
             url = os.getenv("APP_BASE_URL")+os.getenv("FILE_ENDPOINT")+os.getenv("UPLOAD_ENDPOINT")
             resp = requests.post(url,
