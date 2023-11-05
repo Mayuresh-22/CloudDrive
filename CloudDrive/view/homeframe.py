@@ -139,7 +139,7 @@ class HomeFrame():
         ).pack(pady=30, padx=30, side=tk.TOP, anchor=tk.W)
 
         ctk.CTkLabel(self.main_content,
-            text="Hi "+self.userObj["username"]+", Welcome to your CloudDrive!",
+            text="Hi "+self.userObj["name"]+", Welcome to your CloudDrive!",
             fg_color="#f7fcfe",
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 12))
         ).pack(pady=0, padx=30, side=tk.TOP, anchor=tk.W)
