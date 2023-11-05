@@ -162,7 +162,7 @@ class HomeLogic:
                     """
                         Creating the file block
                         File block contains the file icon and the file name
-                        And, action buttons to download, share and delete the file
+                        And, action buttons to download, view, delete the file
                     """
 
                     file_block = ctk.CTkFrame(files_frame,
