@@ -204,6 +204,13 @@ class HomeLogic:
 
                     # download button
                     download_icon = ctk.CTkImage(Image.open(os.getenv("DOWNLOAD_ICON")), size=(20, 20))
+                    ctk.CTkLabel(file_actions,
+                        image=download_icon,
+                        text="",
+                        fg_color="#E3F5FD",
+                        bg_color="#E3F5FD",
+                    ).pack(side=tk.LEFT, padx=10)
+                    
                     col += 1
                     if col == max_col:
                         row += 1
