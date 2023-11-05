@@ -183,7 +183,7 @@ def upload_file():
         file_owner = request.json['file_owner']
         cloud_provider_api_key = request.json['cloud_provider_api_key']
         # check if user exists
-        user = UserDB.query.filter_by(id=file_owner).first()
+        user = UserDB.query.filter_by(id=file_owner, cloud_provider_api_key=cloud_provider_api_key).first()
         if user is None:
             return {"status" : os.getenv("FAIL"),
                 "message" : os.getenv("AUTH_ERROR")
