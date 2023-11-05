@@ -148,7 +148,7 @@ class HomeLogic:
                         text="",
                         fg_color="#E3F5FD",
                         bg_color="#E3F5FD",
-                    ).pack(pady=5, side = tk.TOP)
+                    ).pack(pady=20, side = tk.TOP)
                     file_name = ctk.CTkLabel(file_block,
                         text=file["file_name"],
                         fg_color="#E3F5FD",
