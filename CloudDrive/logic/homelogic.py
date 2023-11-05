@@ -42,7 +42,6 @@ class HomeLogic:
 
         # Set the file icons
         file_icons_theme = os.getenv("FILE_ICON_PLAIN")
-        print('File icons theme: ', file_icons_theme)
         if file_icons_theme == os.getenv("FILE_ICON_PLAIN"):
             self.file_icons = {
                 "pdf" : os.getenv("PDF_ICON_PLAIN"),
@@ -67,7 +66,7 @@ class HomeLogic:
                 "jpg" : os.getenv("JPG_ICON_MED"),
                 "plain" : os.getenv("TXT_ICON_MED")
             }
-        print('File icons: ', self.file_icons)
+
 
     def launch_file_explorer(self, files_frame) -> None:
         """
