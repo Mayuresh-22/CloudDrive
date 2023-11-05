@@ -210,6 +210,12 @@ class HomeLogic:
                         fg_color="#E3F5FD",
                         bg_color="#E3F5FD",
                     ).pack(side=tk.LEFT, padx=10)
+                    ctk.CTkLabel(file_actions,
+                        text="Download",
+                        fg_color="#E3F5FD",
+                        text_color="#1B387C",
+                        font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT7_SIZE"), 10))
+                    ).pack(side=tk.LEFT, padx=5)
                     
                     col += 1
                     if col == max_col:
