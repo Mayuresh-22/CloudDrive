@@ -94,7 +94,5 @@ class Filestack():
         
         with open(f"{filename}.{file_type}", "wb") as f:
             f.write(resp.content)
-        
-        print("File downloaded successfully")
         return True
     
