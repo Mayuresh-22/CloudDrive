@@ -164,5 +164,5 @@ class HomeLogic:
                         command=lambda: self.download_file(file["file_handle"])
                     )
                     file_download.pack(side="left")
-            else:
-                print(resp
+        execpt Exception as e:
+            print(e)
