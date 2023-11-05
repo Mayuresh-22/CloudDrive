@@ -85,7 +85,7 @@ class HomeLogic:
                 This method calls the global method upload_file() to upload the file to the cloud.
             """
             progress_bar.configure(text="Uploading...")
-            self.upload_file(file, files_frame)
+            self.upload_file(file, files_frame, progress_bar)
 
 
     def upload_file(self, file, files_frame):
@@ -96,6 +96,7 @@ class HomeLogic:
             This method calls the upload_file() method of the respective cloud provider.
         """
         filelink = self.cloud.upload_file(file)
+        # update the progress bar
         
         if filelink.upload_response["status"] == "Stored":
             """
