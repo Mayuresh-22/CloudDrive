@@ -245,4 +245,6 @@ class HomeLogic:
             This method downloads the file from the cloud.
             This method call the download_file() method of the respective cloud provider.
         """
+        # calling the download_file() method of the respective cloud provider
+        file = self.cloud.download_file(file_url, file_name)
 
