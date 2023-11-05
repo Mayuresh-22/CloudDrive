@@ -62,8 +62,8 @@ class HomeLogic:
             self.file_icons = {
                 "pdf" : os.getenv("PDF_ICON_MED"),
                 "octet-stream" : os.getenv("DOC_ICON_MED"),
-                "png" : os.getenv("IMAGE_ICON_MED"),
-                "jpg" : os.getenv("IMAGE_ICON_MED"),
+                "png" : os.getenv("PNG_ICON_MED"),
+                "jpg" : os.getenv("JPG_ICON_MED"),
                 "txt" : os.getenv("TXT_ICON_MED")
             }
 
