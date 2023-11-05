@@ -164,7 +164,6 @@ class HomeLogic:
                         File block contains the file icon and the file name
                         And, action buttons to download, view, delete the file
                     """
-
                     file_block = ctk.CTkFrame(files_frame,
                         width=190,
                         height=190,
@@ -175,7 +174,7 @@ class HomeLogic:
                     file_block.pack_propagate(False)
                     file_block.grid_propagate(False)
 
-                    # file icon
+                    # file icon - image
                     file_icon = ctk.CTkImage(Image.open(self.file_icons[file_type]), size=(55, 55))
                     ctk.CTkLabel(file_block,
                         image=file_icon,
