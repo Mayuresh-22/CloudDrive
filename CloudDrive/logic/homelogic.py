@@ -109,6 +109,9 @@ class HomeLogic:
             )
             if resp.status_code == 200 and resp.json()["status"] == "success":
                 files = resp.json()["files"]
+                row = 0
+                col = 0
+                max_col = 4
                 for file in files:
                     file_frame = ctk.CTkFrame(files_frame,
                         width=200,
