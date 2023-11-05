@@ -138,6 +138,12 @@ class HomeFrame():
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT4_SIZE"), 10))
         ).pack(pady=30, padx=30, side=tk.TOP, anchor=tk.W)
 
+        ctk.CTkLabel(self.main_content,
+            text="Files",
+            fg_color="#f7fcfe",
+            font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10))
+        ).pack(pady=10, padx=30, side=tk.TOP, anchor=tk.W)
+
         # Main Content - Files
         self.files = ctk.CTkFrame(self.main_content,
             width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.8,
