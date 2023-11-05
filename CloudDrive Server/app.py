@@ -132,38 +132,22 @@ def register_user():
 # api endpoint to get all files
 @app.route('/files/', methods=['POST'])
 def get_all_files():
-    if not request.json or not 'file_owner' in request.json:
-        files = FilesDB.query.all()
-        output = []
-        for file in files:
-            file_data = {}
-            file_data['id'] = file.id
-            file_data['file_owner'] = file.file_owner
-            file_data['file_name'] = file.file_name
-            file_data['file_size'] = file.file_size
-            file_data['file_type'] = file.file_type
-            file_data['file_url'] = file.file_url_pub
-            file_data['file_handle'] = file.file_handle
-            file_data['file_status'] = file.file_status
-            output.append(file_data)
-        return {"files": output}
-    else:
-        # get the files of the user
-        file_owner = request.json['file_owner']
-        files = FilesDB.query.filter_by(file_owner=file_owner).all()
-        output = []
-        for file in files:
-            file_data = {}
-            file_data['id'] = file.id
-            file_data['file_owner'] = file.file_owner
-            file_data['file_name'] = file.file_name
-            file_data['file_size'] = file.file_size
-            file_data['file_type'] = file.file_type
-            file_data['file_url'] = file.file_url_pub
-            file_data['file_handle'] = file.file_handle
-            file_data['file_status'] = file.file_status
-            output.append(file_data)
-        return {"files": output}
+    # get the files of the user
+    file_owner = request.json['file_owner']
+    files = FilesDB.query.filter_by(file_owner=file_owner, cloud_provider_api_key).all()
+    output = []
+    for file in files:
+        file_data = {}
+        file_data['id'] = file.id
+        file_data['file_owner'] = file.file_owner
+        file_data['file_name'] = file.file_name
+        file_data['file_size'] = file.file_size
+        file_data['file_type'] = file.file_type
+        file_data['file_url'] = file.file_url_pub
+        file_data['file_handle'] = file.file_handle
+        file_data['file_status'] = file.file_status
+        output.append(file_data)
+    return {"files": output}
 
 
 # api endpoint to upload file
