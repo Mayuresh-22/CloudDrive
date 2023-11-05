@@ -41,31 +41,38 @@ class HomeLogic:
             self.cloud.setup()
 
         # Set the file icons
-        file_icons_theme = os.getenv("FILE_ICONS_PLAIN")
-        if file_icons_theme == os.getenv("FILE_ICONS_PLAIN"):
-            self.file_icons = {
+                    self.file_icons = {
                 "pdf" : os.getenv("PDF_ICON_PLAIN"),
                 "octet-stream" : os.getenv("DOC_ICON_PLAIN"),
                 "png" : os.getenv("IMAGE_ICON_PLAIN"),
                 "jpg" : os.getenv("IMAGE_ICON_PLAIN"),
                 "txt" : os.getenv("TXT_ICON_PLAIN")
             }
-        elif file_icons_theme == os.getenv("FILE_ICONS_3D"):
-            self.file_icons = {
-                "pdf" : os.getenv("PDF_ICON_3D"),
-                "octet-stream" : os.getenv("DOC_ICON_3D"),
-                "png" : os.getenv("IMAGE_ICON_3D"),
-                "jpg" : os.getenv("IMAGE_ICON_3D"),
-                "txt" : os.getenv("TXT_ICON_3D")
-            }
-        elif file_icons_theme == os.getenv("FILE_ICONS_MED"):
-            self.file_icons = {
-                "pdf" : os.getenv("PDF_ICON_MED"),
-                "octet-stream" : os.getenv("DOC_ICON_MED"),
-                "png" : os.getenv("PNG_ICON_MED"),
-                "jpg" : os.getenv("JPG_ICON_MED"),
-                "txt" : os.getenv("TXT_ICON_MED")
-            }
+        # file_icons_theme = os.getenv("FILE_ICONS_PLAIN")
+        # if file_icons_theme == os.getenv("FILE_ICONS_PLAIN"):
+        #     self.file_icons = {
+        #         "pdf" : os.getenv("PDF_ICON_PLAIN"),
+        #         "octet-stream" : os.getenv("DOC_ICON_PLAIN"),
+        #         "png" : os.getenv("IMAGE_ICON_PLAIN"),
+        #         "jpg" : os.getenv("IMAGE_ICON_PLAIN"),
+        #         "txt" : os.getenv("TXT_ICON_PLAIN")
+        #     }
+        # elif file_icons_theme == os.getenv("FILE_ICONS_3D"):
+        #     self.file_icons = {
+        #         "pdf" : os.getenv("PDF_ICON_3D"),
+        #         "octet-stream" : os.getenv("DOC_ICON_3D"),
+        #         "png" : os.getenv("IMAGE_ICON_3D"),
+        #         "jpg" : os.getenv("IMAGE_ICON_3D"),
+        #         "txt" : os.getenv("TXT_ICON_3D")
+        #     }
+        # elif file_icons_theme == os.getenv("FILE_ICONS_MED"):
+        #     self.file_icons = {
+        #         "pdf" : os.getenv("PDF_ICON_MED"),
+        #         "octet-stream" : os.getenv("DOC_ICON_MED"),
+        #         "png" : os.getenv("PNG_ICON_MED"),
+        #         "jpg" : os.getenv("JPG_ICON_MED"),
+        #         "txt" : os.getenv("TXT_ICON_MED")
+        #     }
 
 
     def launch_file_explorer(self, files_frame) -> None:
