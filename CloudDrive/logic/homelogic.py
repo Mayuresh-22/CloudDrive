@@ -4,14 +4,12 @@
 
 # Import the required modules
 import os
-from textwrap import fill
-from turtle import down
-from urllib import response
 from dotenv import load_dotenv
-from tkinter import N, Button, filedialog
+from tkinter import filedialog
+from functools import partial
 from PIL import Image
 import requests
-from logic.cloud import CloudSetup, Filestack
+from logic.cloud import CloudSetup
 import customtkinter as ctk
 import tkinter as tk
 
