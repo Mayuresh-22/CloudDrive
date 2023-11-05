@@ -220,10 +220,23 @@ class HomeLogic:
                         fg_color="transparent",
                         bg_color="transparent",
                         hover=False,
-                        font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10)),
                         command=partial(self.download_file, file["file_url"], file["file_name"])
                     )
                     download_button.pack(side=tk.LEFT, padx=5, pady=5)
+
+                    # delete button
+                    delete_icon = ctk.CTkImage(Image.open(os.getenv("DELETE_ICON")), size=(30, 30))
+                    delete_button = ctk.CTkButton(file_actions,
+                        height=30,
+                        width=30,
+                        image=delete_icon,
+                        text="",
+                        fg_color="transparent",
+                        bg_color="transparent",
+                        hover=False,
+                        command=partial(self.delete_file, file["file_handle"], files_frame)
+                    ) 
+                    delete_button.pack(side=tk.LEFT, padx=5, pady=5)
 
                     col += 1
                     if col == max_col:
