@@ -88,7 +88,7 @@ class HomeLogic:
             self.upload_file(file, files_frame, progress_bar)
 
 
-    def upload_file(self, file, files_frame):
+    def upload_file(self, file, files_frame, progress_bar):
         """
             This method is the global method to upload the file to the cloud.
             - file: the file to be uploaded
