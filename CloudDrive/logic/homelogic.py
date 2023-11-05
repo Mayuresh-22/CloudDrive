@@ -138,6 +138,13 @@ class HomeLogic:
                     file_frame.pack_propagate(False)
                     file_frame.grid_propagate(False)
 
+                    # file icon
+                    file_icon = ctk.CTkImage(file_frame,
+                        image=self.file_icons[file["file_type"]],
+                        width=100,
+                        height=100
+                    )
+                    file_icon.pack(pady=10)
                     file_name = ctk.CTkLabel(file_frame,
                         text=file["file_name"],
                         fg_color="#E3F5FD",
