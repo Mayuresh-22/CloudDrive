@@ -65,6 +65,7 @@ def get_all_users():
         if user is None:
             return {"status": os.getenv("FAIL"),
                     "message": os.getenv("AUTH_ERROR")}
+        
     # get all users after authentication
     users = UserDB.query.all()
     output = []
