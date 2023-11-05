@@ -116,10 +116,15 @@ class HomeLogic:
                         fg_color="#E3F5FD",
                         corner_radius=10
                     )
-
                     file_frame.pack(pady=5)
                     file_frame.pack_propagate(False)
                     file_frame.grid_propagate(False)
+
+                    file_name = ctk.CTkLabel(file_frame,
+                        text=file["file_name"],
+                        fg_color="#E3F5FD",
+                        font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 12))
+                    )
    
         except Exception as e:
             print(e)
