@@ -157,6 +157,7 @@ class HomeFrame():
         # configure the grid
         self.files.pack(side=tk.TOP, pady=10, padx=10)
         # configure the main content
+        self.main_content.pack_propagate(False)
         self.main_content.pack(side=tk.RIGHT, pady=10, padx=10)
         self.main_content.tkraise()
 
