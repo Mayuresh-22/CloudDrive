@@ -45,7 +45,7 @@ class HomeLogic:
         if file_icons_theme == os.getenv("FILE_ICONS_PLAIN"):
             self.file_icons = {
                 "pdf" : os.getenv("FILE_ICONS_PLAIN_PDF"),
-                "docx" : os.getenv("FILE_ICONS_PLAIN_DOCX"),
+                "octet-stream" : os.getenv("FILE_ICONS_PLAIN_DOCX"),
                 "png" : os.getenv("FILE_ICONS_PLAIN_PNG"),
                 "jpg" : os.getenv("FILE_ICONS_PLAIN_JPG"),
                 "txt" : os.getenv("FILE_ICONS_PLAIN_TXT")
