@@ -3,6 +3,7 @@
 """
 
 # Import the required modules
+from cgitb import text
 import os
 from urllib import response
 from dotenv import load_dotenv
@@ -83,6 +84,7 @@ class HomeLogic:
                 If the file is selected,
                 This method calls the global method upload_file() to upload the file to the cloud.
             """
+            progress_bar.configure(text="Uploading file to the cloud...")
             self.upload_file(file, files_frame)
 
 
