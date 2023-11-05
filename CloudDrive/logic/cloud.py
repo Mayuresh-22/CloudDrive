@@ -75,13 +75,13 @@ class Filestack():
             It sends the GET request to the file url and downloads the file.
             - fileurl: the file url to be downloaded
         """
-
+        file_type = filename.split(".")[-1]
         resp = requests.get(fileurl)
 
         # write the response content to the file
         filename =  filedialog.asksaveasfilename(initialdir=os.getcwd(), title="Save file",filetypes=(("All files","*.*"),("Text files","*.txt"),("PDF files","*.pdf"),("PNG files","*.png"),("JPEG files","*.jpeg"),("JPG files","*.jpg")))
         
-        with open(filename, "wb") as f:
+        with open(f"{filename}.{file}", "wb") as f:
             f.write(resp.content)
         
         print("File downloaded successfully")
