@@ -151,6 +151,8 @@ class HomeLogic:
             )
             if resp.status_code == 200 and resp.json()["status"] == "success":
                 files = resp.json()["files"]
+                if len(files) == 0:
+                    print("No files found")
                 row = 0
                 col = 0
                 max_col = 4
@@ -224,13 +226,6 @@ class HomeLogic:
                     if col == max_col:
                         row += 1
                         col = 0
-            else:
-                ctk.CTkLabel(files_frame,
-                    text="No files found",
-                    fg_color="#E3F5FD",
-                    text_color="black",
-                    font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT5_SIZE"), 10))
-                ).pack(pady=20, side = tk.CENTER)
 
         except Exception as e:
             print(e)
