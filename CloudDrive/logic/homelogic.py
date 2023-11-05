@@ -120,7 +120,17 @@ class HomeLogic:
                         fg_color="white",
                         corner_radius=0
                     )
-                    file_frame.grid(row=row, column=max_column, padx=10, pady=10)
+                    file_frame.grid(row=0, column=max_column, padx=10, pady=10)
+                    file_frame.pack_propagate(False)
+                    file_frame.tkraise()
+
+                    file_name = ctk.CTkLabel(file_frame,
+                        text=file["file_name"],
+                        font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"))),
+                        text_color="black"
+                    )
+                    file_name.grid(row=row, column=column, padx=10, pady=10)
+
                     
                         
    
