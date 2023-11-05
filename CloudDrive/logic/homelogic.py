@@ -216,6 +216,21 @@ class HomeLogic:
                         text_color="#1B387C",
                         font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT7_SIZE"), 10))
                     ).pack(side=tk.LEFT, padx=5)
+
+                    # view button
+                    view_icon = ctk.CTkImage(Image.open(os.getenv("VIEW_ICON")), size=(20, 20))
+                    ctk.CTkLabel(file_actions,
+                        image=view_icon,
+                        text="",
+                        fg_color="#E3F5FD",
+                        bg_color="#E3F5FD",
+                    ).pack(side=tk.LEFT, padx=10)
+                    ctk.CTkLabel(file_actions,
+                        text="View",
+                        fg_color="#E3F5FD",
+                        text_color="#1B387C",
+                        font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT7_SIZE"), 10))
+                    ).pack(side=tk.LEFT, padx=5)
                     
                     col += 1
                     if col == max_col:
