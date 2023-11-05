@@ -199,6 +199,11 @@ class HomeLogic:
                         fg_color="#E3F5FD",
                         corner_radius=10
                     )
+                    file_actions.pack(pady=10)
+                    file_actions.pack_propagate(False)
+
+                    # download button
+                    download_icon = ctk.CTkImage(Image.open(os.getenv("DOWNLOAD_ICON")), size=(20, 20))
                     col += 1
                     if col == max_col:
                         row += 1
