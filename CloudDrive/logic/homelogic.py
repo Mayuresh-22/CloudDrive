@@ -160,6 +160,7 @@ class HomeLogic:
                     )
                     no_file_label.pack(pady=20)
                     return None
+                
                 row = 0
                 col = 0
                 max_col = 4
