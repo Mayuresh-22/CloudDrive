@@ -127,6 +127,9 @@ class HomeLogic:
                 progress_bar.configure(text="")
             else:
                 print(resp.json()["message"])
+        else:
+            # update the progress bar
+            progress_bar.configure(text="Upload Failed")
 
 
     def populate_files(self, files_frame):
