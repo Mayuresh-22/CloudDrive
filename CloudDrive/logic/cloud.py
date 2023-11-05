@@ -1,7 +1,7 @@
 """
     This file contains the logic for the cloud cloud provider setup.
 """
-from tkinter.filedialog import FileDialog
+from tkinter import filedialog
 from filestack import Client
 import os
 from dotenv import load_dotenv
@@ -79,9 +79,8 @@ class Filestack():
         resp = requests.get(fileurl)
 
         # write the response content to the file
-        filename =  FileDialog.asksaveasfilename(initialdir = os.getcwd(), title = "Save File", filetypes = (("All Files", "*.*"), ("Text Files", "*.txt"), ("PDF Files", "*.pdf"), ("Image Files", "*.png"), ("Image Files", "*.jpg"), ("Image Files", "*.jpeg"), ("Image Files", "*.jfif")))
+        filename =  FileDialog.
         with open(filename, "wb") as f:
             f.write(resp.content)
         
         print("File downloaded successfully")
-        
