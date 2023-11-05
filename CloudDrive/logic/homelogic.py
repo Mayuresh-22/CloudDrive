@@ -41,8 +41,8 @@ class HomeLogic:
             self.cloud.setup()
 
         # Set the file icons
-        file_icons_theme = os.getenv("FILE_ICONS_PLAIN")
-        if file_icons_theme == os.getenv("FILE_ICONS_PLAIN"):
+        file_icons_theme = os.getenv("FILE_ICON_PLAIN")
+        if file_icons_theme == os.getenv("FILE_ICON_PLAIN"):
             self.file_icons = {
                 "pdf" : os.getenv("PDF_ICON_PLAIN"),
                 "octet-stream" : os.getenv("DOC_ICON_PLAIN"),
@@ -50,7 +50,7 @@ class HomeLogic:
                 "jpg" : os.getenv("IMAGE_ICON_PLAIN"),
                 "txt" : os.getenv("TXT_ICON_PLAIN")
             }
-        elif file_icons_theme == os.getenv("FILE_ICONS_3D"):
+        elif file_icons_theme == os.getenv("FILE_ICON_3D"):
             self.file_icons = {
                 "pdf" : os.getenv("PDF_ICON_3D"),
                 "octet-stream" : os.getenv("DOC_ICON_3D"),
@@ -58,7 +58,7 @@ class HomeLogic:
                 "jpg" : os.getenv("IMAGE_ICON_3D"),
                 "txt" : os.getenv("TXT_ICON_3D")
             }
-        elif file_icons_theme == os.getenv("FILE_ICONS_MED"):
+        elif file_icons_theme == os.getenv("FILE_ICON_MED"):
             self.file_icons = {
                 "pdf" : os.getenv("PDF_ICON_MED"),
                 "octet-stream" : os.getenv("DOC_ICON_MED"),
