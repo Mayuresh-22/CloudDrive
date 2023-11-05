@@ -130,7 +130,7 @@ def register_user():
 
 
 # api endpoint to get all files
-@app.route('/files/', methods=['GET', 'POST'])
+@app.route('/files/', methods=['POST'])
 def get_all_files():
     if not request.json or not 'file_owner' in request.json:
         files = FilesDB.query.all()
