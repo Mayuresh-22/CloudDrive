@@ -214,6 +214,7 @@ class HomeLogic:
                         text="",
                         fg_color="transparent",
                         bg_color="transparent",
+                        hover=False,
                         font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10)),
                         command=lambda: self.filehandler.download_file(file["file_handle"])
                     )
