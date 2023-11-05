@@ -145,7 +145,7 @@ def get_all_files():
             return {"status": os.getenv("FAIL"),
                     "message": os.getenv("AUTH_ERROR")}
     
-    # get the files of the user
+    # get the files of the user after authentication
     file_owner = request.json['file_owner']
     cloud_provider_api_key = request.json['cloud_provider_api_key']
     files = FilesDB.query.filter_by(file_owner=file_owner).all()
