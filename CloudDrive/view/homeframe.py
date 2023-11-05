@@ -26,8 +26,6 @@ class HomeFrame():
             - prev: the previous frame
             - userObj: the user object, which contains the user details
         """
-        # Initialize HomeLogic class
-        self.homeLogic = HomeLogic(userObj, self.files)
         # Initialize the frame
         self.remove_frame(prev)
         self.parent = parent
@@ -38,6 +36,8 @@ class HomeFrame():
         self.frame.tkraise()
         self.build()
 
+        # Initialize HomeLogic class
+        self.homeLogic = HomeLogic(userObj, self.files)
 
     def build(self):
         """
