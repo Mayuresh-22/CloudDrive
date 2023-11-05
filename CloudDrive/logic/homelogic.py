@@ -111,7 +111,7 @@ class HomeLogic:
                 files = resp.json()["files"]
                 for file in files:
                     file_frame = ctk.CTkFrame(files_frame,
-                        width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.8,
+                        width=50,
                         height=50,
                         fg_color="#E3F5FD",
                         corner_radius=10
