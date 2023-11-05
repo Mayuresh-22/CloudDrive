@@ -229,7 +229,7 @@ class HomeLogic:
             print(e)
 
         
-    def download_file(file_url, file_name):
+    def download_file(self, file_url, file_name):
         print("File URL: ", file_url)
         print("File Name: ", file_name)
 
