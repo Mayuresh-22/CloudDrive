@@ -153,7 +153,7 @@ class HomeFrame():
         )
     
         self.files.pack_propagate(False)
-        self.files.grid(row=0, column=0)
+        self.files.pack(side=tk.TOP, pady=10, padx=10)
         self.files.tkraise()
 
         # populate files
