@@ -29,13 +29,12 @@ class HomeLogic:
                     which handles the file actions (Any cloud provider type)
 
     """
-    def __init__(self, userObj, files_frame):
+    def __init__(self, userObj):
         """
             This is the constructor of the HomeLogic class.
             - userObj: the user object, which contains the user details
         """
         self.userObj = userObj
-        self.files_frame = files_frame
         self.cloud = CloudSetup(userObj["cloud_provider"], userObj["cloud_provider_api_key"]).setup()
 
         if self.cloud != None:
