@@ -111,8 +111,8 @@ class HomeLogic:
                 files = resp.json()["files"]
                 for file in files:
                     file_frame = ctk.CTkFrame(files_frame,
-                        width=100,
-                        height=100,
+                        width=200,
+                        height=200,
                         fg_color="#E3F5FD",
                         corner_radius=10
                     )
