@@ -199,7 +199,7 @@ class HomeLogic:
                         font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10))
                     )
                     file_name.pack(pady=5)
-                    
+
                     # file actions
                     file_actions = ctk.CTkFrame(file_block,
                         width=190,
@@ -219,7 +219,7 @@ class HomeLogic:
                         bg_color="transparent",
                         hover=False,
                         font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10)),
-                        command=partial(self.download_file, file_url, file_name_org)
+                        command=partial(self.download_file, file["file_url_pub"], file["file_name"])
                     )
                     download_button.pack(side=tk.LEFT, padx=5)
 
