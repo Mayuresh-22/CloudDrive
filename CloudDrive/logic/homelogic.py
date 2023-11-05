@@ -224,20 +224,6 @@ class HomeLogic:
                     )
                     download_button.pack(side=tk.LEFT, padx=5, pady=5)
 
-                    # delete button
-                    delete_icon = ctk.CTkImage(Image.open(os.getenv("DELETE_ICON")), size=(30, 30))
-                    delete_button = ctk.CTkButton(file_actions,
-                        height=30,
-                        width=40,
-                        image=delete_icon,
-                        text="",
-                        fg_color="transparent",
-                        bg_color="transparent",
-                        hover=False,
-                        command=lambda: print("Delete button clicked")
-                    ) 
-                    delete_button.pack(side=tk.LEFT, padx=5, pady=5)
-
                     col += 1
                     if col == max_col:
                         row += 1
