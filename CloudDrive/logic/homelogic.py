@@ -141,7 +141,7 @@ class HomeLogic:
 
                     # file icon
                     file_icon = ctk.CTkImage(file_frame,
-                        image=self.file_icons[file["file_type"]],
+                        image=self.file_icons[file_type],
                         width=100,
                         height=100
                     )
