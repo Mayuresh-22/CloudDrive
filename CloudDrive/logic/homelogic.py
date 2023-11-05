@@ -140,13 +140,9 @@ class HomeLogic:
                     file_frame.grid_propagate(False)
 
                     # file icon
-                    file_icon = ctk.CTkImage(file_frame,
-                        image=self.file_icons[file_type],
-                        width=100,
-                        height=100
-                    )
+                    file_icon = ctk.CTkImage(Image.open(os.getenv("CLOUD_ICON")), size=(45, 45)
                     file_icon.pack(pady=10)
-                    
+
                     file_name = ctk.CTkLabel(file_frame,
                         text=file["file_name"],
                         fg_color="#E3F5FD",
