@@ -206,7 +206,7 @@ class HomeLogic:
                     # download button
                     download_icon = ctk.CTkImage(Image.open(os.getenv("DOWNLOAD_ICON")), size=(20, 20))
                     download_button = ctk.CTkButton(file_actions,
-                        
+                        image=download_icon,
                         fg_color="#E3F5FD",
                         bg_color="#1B387C",
                         hover_color="#1B387C",
