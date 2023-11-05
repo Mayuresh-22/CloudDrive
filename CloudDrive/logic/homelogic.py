@@ -134,6 +134,7 @@ class HomeLogic:
             This method sends POST request to the server to get the files of the user.
             and populates the files in the files frame.
     """
+        
         # Clear the files frame
         for widget in files_frame.winfo_children():
             widget.destroy()
