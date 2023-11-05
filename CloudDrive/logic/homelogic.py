@@ -109,35 +109,26 @@ class HomeLogic:
             )
             if resp.status_code == 200 and resp.json()["status"] == "success":
                 files = resp.json()["files"]
-                row = 0
-                column = 0
-                max_column = 4
-                # Loop through the files and populate the files in the files frame in grid layout
                 for file in files:
                     file_frame = ctk.CTkFrame(files_frame,
                         width=200,
                         height=200,
-                        fg_color="white",
-                        corner_radius=0
+                        fg_color="#E3F5FD",
+                        corner_radius=10
                     )
-                    file_frame.grid(row=0, column=max_column, padx=10, pady=10)
+                    file_frame.pack(pady=5)
                     file_frame.pack_propagate(False)
-                    file_frame.tkraise()
+                    file_frame.grid_propagate(False)
 
                     file_name = ctk.CTkLabel(file_frame,
                         text=file["file_name"],
-                        font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"))),
-                        text_color="black"
+                        fg_color="#E3F5FD",
+                        font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10))
                     )
-                    file_name.grid(row=row, column=column, padx=10, pady=10)
+                    file_name.pack(pady=5)
                     file_name.pack_propagate(False)
-                    file_name.tkraise()
-                    
-                    column += 1
-                    if column == max_column:
-                        row += 1
-                        column = 0
-  
+                    file_name.grid_propagate(False)
+                        
    
         except Exception as e:
             print(e)
