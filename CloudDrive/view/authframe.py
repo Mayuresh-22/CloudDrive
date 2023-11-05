@@ -84,7 +84,7 @@ class AuthFrame():
             show="*"
         )
         self.auth_password.pack(pady=5)
-
+        self.auth_password.insert(0, "12345678")
         
         # Login button widget
         self.login_btn = ctk.CTkButton(self.frame,
