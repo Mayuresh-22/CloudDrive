@@ -141,7 +141,6 @@ class HomeLogic:
                     if col == max_col:
                         row += 1
                         col = 0
-                self.files_frame.pack()
                         
    
         except Exception as e:
