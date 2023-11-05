@@ -87,12 +87,12 @@ class Filestack():
             - fileurl: the file url to be downloaded
         """
         file_type = filename.split(".")[-1]
-        
+
         # send the GET request to the file url
         resp = requests.get(fileurl)
 
         # write the response content to the file
-        filename =  filedialog.asksaveasfilename(initialdir=os.getcwd(), title="Save file",filetypes=((file_type, f"*.{file_type}"),("All files", "*.*")))
+        new_filename =  filedialog.asksaveasfilename(initialdir=os.getcwd(), title="Save file",filetypes=((file_type, f"*.{file_type}"),("All files", "*.*")))
         
         with open(f"{filename}.{file_type}", "wb") as f:
             f.write(resp.content)
