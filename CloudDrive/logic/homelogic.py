@@ -198,8 +198,14 @@ class HomeLogic:
                     file_name.pack(pady=5)
 
                     # file info label
-                    file_info = ctk.CTkLabel(file_block,
+                    file_url = ctk.CTkLabel(file_block,
                         text=file["file_type"]+" - "+str(file["file_size"])+" KB",
+                        fg_color="#E3F5FD",
+                        text_color="#1B387C",
+                        font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10))
+                    )
+                    file_name = ctk.CTkLabel(file_block,
+                        text=file["file_name"][0:15]+"...",
                         fg_color="#E3F5FD",
                         text_color="#1B387C",
                         font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10))
