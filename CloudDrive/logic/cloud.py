@@ -73,9 +73,9 @@ class Filestack():
     def download_file(self, fileurl):
         """
             This method downloads the file from the cloud.
-            - filelink: the file link to be downloaded
-            - filename: the filename to be saved as
+            It sends the GET request to the file url and downloads the file.
+            - fileurl: the file url to be downloaded
         """
         
-        return filename
+
 
