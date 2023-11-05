@@ -94,7 +94,7 @@ class HomeFrame():
         # progress bar
         self.progress_bar = ctk.CTkLabel(self.left_sidebar,
             text="",
-            fg_color="#0077B6",
+            fg_color=os.getenv("HOME_SCREEN_BG_COLOR"),
             text_color=os.getenv("WHITE_COLOR"),
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 12))
         )
