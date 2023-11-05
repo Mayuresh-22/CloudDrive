@@ -1,13 +1,11 @@
 """
     This file contains the logic for the cloud cloud provider setup.
 """
-import json
-from re import S
-from filestack import Client, Security
+from filestack import Client
 import os
 from dotenv import load_dotenv
+import requests
 load_dotenv(".env")
-import time
 
 class CloudSetup():
     """
@@ -76,6 +74,8 @@ class Filestack():
             It sends the GET request to the file url and downloads the file.
             - fileurl: the file url to be downloaded
         """
+
+        resp = requests.get(fileurl)
         
 
 
