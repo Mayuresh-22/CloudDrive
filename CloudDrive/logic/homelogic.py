@@ -66,6 +66,7 @@ class HomeLogic:
                 "octet-stream" : os.getenv("DOC_ICON_MED"),
                 "png" : os.getenv("PNG_ICON_MED"),
                 "jpg" : os.getenv("JPG_ICON_MED"),
+                "jpeg" : os.getenv("JPEG_ICON_MED"),
                 "plain" : os.getenv("TXT_ICON_MED")
             }
 
