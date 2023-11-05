@@ -159,8 +159,8 @@ class HomeLogic:
                         font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10))
                     )
                     no_file_label.pack(pady=20)
-                    file_block.pack_propagate(False)
-                    file_block.grid_propagate(False)
+                    no_file_label.pack_propagate(False)
+                    no_file_label.grid_propagate(False)
                     return None
                 
                 row = 0
