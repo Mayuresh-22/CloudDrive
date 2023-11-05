@@ -199,16 +199,10 @@ class HomeLogic:
 
                     # file info label
                     file_url = ctk.CTkLabel(file_block,
-                        text=file["file_url"],
-                        fg_color="#E3F5FD",
-                        text_color="#1B387C",
-                        font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10))
+                        text=file["file_url"]
                     )
                     file_name_org = ctk.CTkLabel(file_block,
-                        text=file["file_name"],
-                        fg_color="#E3F5FD",
-                        text_color="#1B387C",
-                        font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10))
+                        text=file["file_name"]
                     )
 
                     # file actions
