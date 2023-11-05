@@ -98,6 +98,7 @@ class HomeFrame():
             fg_color=os.getenv("HOME_SCREEN_BG_COLOR"),
             corner_radius=10
         )
+        self.progress_bar.pack_propagate(False)
 
         # My Account
         self.my_account = ctk.CTkFrame(self.left_sidebar,
