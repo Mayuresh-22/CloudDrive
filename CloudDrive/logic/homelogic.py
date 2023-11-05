@@ -84,7 +84,7 @@ class HomeLogic:
                 If the file is selected,
                 This method calls the global method upload_file() to upload the file to the cloud.
             """
-            progress_bar.configure(text="Uploading file to the cloud...")
+            progress_bar.configure(text="Uploading...")
             self.upload_file(file, files_frame)
 
 
