@@ -3,7 +3,6 @@
 """
 
 # Import the required modules
-from cgitb import text
 import os
 from urllib import response
 from dotenv import load_dotenv
@@ -72,7 +71,7 @@ class HomeLogic:
             }
 
 
-    def launch_file_explorer(self, files_frame, progress_bar) -> None:
+    def launch_file_explorer(self, files_frame) -> None:
         """
             This method launches the file explorer of the system.
             Opens the file dialog to select the file.
@@ -84,11 +83,10 @@ class HomeLogic:
                 If the file is selected,
                 This method calls the global method upload_file() to upload the file to the cloud.
             """
-            progress_bar.configure(text="Uploading...")
-            self.upload_file(file, files_frame, progress_bar)
+            self.upload_file(file, files_frame)
 
 
-    def upload_file(self, file, files_frame, progress_bar):
+    def upload_file(self, file, files_frame):
         """
             This method is the global method to upload the file to the cloud.
             - file: the file to be uploaded
@@ -96,15 +94,12 @@ class HomeLogic:
             This method calls the upload_file() method of the respective cloud provider.
         """
         filelink = self.cloud.upload_file(file)
-    
+        
         if filelink.upload_response["status"] == "Stored":
             """
                 If the file is uploaded successfully,
                 Now, storing the file details in the database.
             """
-            # update the progress bar
-            progress_bar.configure(text="Uploaded Successfully")
-
             url = os.getenv("APP_BASE_URL")+os.getenv("FILE_ENDPOINT")+os.getenv("UPLOAD_ENDPOINT")
             resp = requests.post(url,
                 headers={"Content-Type": "application/json"},
@@ -125,9 +120,6 @@ class HomeLogic:
                 self.populate_files(files_frame)
             else:
                 print(resp.json()["message"])
-        else:
-            # update the progress bar
-            progress_bar.configure(text="Upload Failed")
 
 
     def populate_files(self, files_frame):
