@@ -148,7 +148,7 @@ class HomeFrame():
         self.files = ctk.CTkFrame(self.main_content,
             width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.8,
             height=int(os.getenv("DEFAULT_APP_HEIGHT"))*0.8,
-            fg_color="#f7fcfe",
+            fg_color="#ffffff",
             corner_radius=25
         )
         self.files.pack_propagate(False)
