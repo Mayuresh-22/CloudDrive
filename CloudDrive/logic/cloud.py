@@ -92,12 +92,12 @@ class Filestack():
         resp = requests.get(fileurl)
 
         # write the response content to the file
-        new_filename =  filedialog.asksaveasfilename(initialdir=os.getcwd(), title="Save file",filetypes=((file_type, f"*.{file_type}"),("All files", "*.*")))
+        new_filename =  filedialog.asksaveasfilename(initialdir="/Download", title="Save file",filetypes=((file_type, f"*.{file_type}"),("All files", "*.*")))
         if new_filename == "":
             new_filename = filename.split(".")[0]
         
         with open(f"{new_filename}.{file_type}", "wb") as f:
             f.write(resp.content)
-            
+
         return True
     
