@@ -131,25 +131,25 @@ class HomeLogic:
                 for file in files:
                     file_type = file["file_type"].split("/")[1]
                     # build file block
-                    file_frame = ctk.CTkFrame(files_frame,
+                    file_block = ctk.CTkFrame(files_frame,
                         width=190,
                         height=190,
                         fg_color="#E3F5FD",
                         corner_radius=10
                     )
-                    file_frame.grid(row=row, column=col, padx=20, pady=20)
-                    file_frame.pack_propagate(False)
-                    file_frame.grid_propagate(False)
+                    file_block.grid(row=row, column=col, padx=20, pady=20)
+                    file_block.pack_propagate(False)
+                    file_block.grid_propagate(False)
 
                     # file icon
                     file_icon = ctk.CTkImage(Image.open(self.file_icons[file_type]), size=(55, 55))
-                    ctk.CTkLabel(file_frame,
+                    ctk.CTkLabel(file_block,
                         image=file_icon,
                         text="",
                         fg_color="#E3F5FD",
                         bg_color="#E3F5FD",
                     ).pack(pady=5, side = tk.TOP)
-                    file_name = ctk.CTkLabel(file_frame,
+                    file_name = ctk.CTkLabel(file_block,
                         text=file["file_name"],
                         fg_color="#E3F5FD",
                         text_color="#1B387C",
