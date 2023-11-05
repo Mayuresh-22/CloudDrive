@@ -151,12 +151,13 @@ class HomeFrame():
             fg_color="#ffffff",
             corner_radius=10
         )
+    
+        self.files.pack_propagate(False)
+        self.files.grid(row=0, column=0)
+        self.files.tkraise()
+
         # populate files
         self.homeLogic.populate_files(self.files)
-        
-        self.files.pack_propagate(False)
-        self.files.pack(side=tk.TOP, pady=10, padx=10)
-        self.files.tkraise()
 
         self.main_content.pack_propagate(False)
         self.main_content.pack(side=tk.RIGHT, pady=10, padx=10)
