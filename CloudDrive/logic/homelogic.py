@@ -151,7 +151,7 @@ class HomeLogic:
                         text="No files found",
                         fg_color="#E3F5FD",
                         text_color="black",
-                        font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10))
+                        font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT5_SIZE"), 10))
                     ).pack(pady=20)
                     return
                 row = 0
