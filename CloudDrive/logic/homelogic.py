@@ -211,7 +211,7 @@ class HomeLogic:
                     file_actions.pack_propagate(False)
 
                     # download button
-                    download_icon = ctk.CTkImage(Image.open(os.getenv("DOWNLOAD_ICON")), size=(30, 110))
+                    download_icon = ctk.CTkImage(Image.open(os.getenv("DOWNLOAD_ICON")), size=(30, 40))
                     download_button = ctk.CTkButton(file_actions,
                         height=100,
                         width=30,
