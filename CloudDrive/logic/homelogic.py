@@ -50,7 +50,7 @@ class HomeLogic:
                 "jpg" : os.getenv("IMAGE_ICON_PLAIN"),
                 "txt" : os.getenv("TXT_ICON_PLAIN")
             }
-        elif file_icons_theme == os.getenv("FILE_ICONS_COLORED"):
+        elif file_icons_theme == os.getenv("FILE_ICONS_3D"):
 
 
     def launch_file_explorer(self, files_frame) -> None:
