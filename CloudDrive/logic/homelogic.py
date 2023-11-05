@@ -100,7 +100,7 @@ class HomeLogic:
             and populates the files in the files frame.
     """
         # Clear the files frame
-        for widget in files_frame.winfo_children():
+        for widget in self.files_frame.winfo_children():
             widget.destroy()
 
         # Get the files from the server for the user
