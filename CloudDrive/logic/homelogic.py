@@ -130,6 +130,13 @@ class HomeLogic:
                         text_color="black"
                     )
                     file_name.grid(row=row, column=column, padx=10, pady=10)
+                    file_name.pack_propagate(False)
+                    file_name.tkraise()
+                    
+                    column += 1
+                    if column == max_column:
+                        row += 1
+                        column = 0
 
                     
                         
