@@ -119,10 +119,11 @@ class HomeLogic:
                 }
             )
             if resp.status_code == 200 and resp.json()["status"] == "success":
-                print(resp.json()["message"])
+                # print(resp.json()["message"])
                 self.populate_files(files_frame)
             else:
-                print(resp.json()["message"])
+                # print(resp.json()["message"])
+                pass
 
 
     def populate_files(self, files_frame):
