@@ -69,4 +69,13 @@ class Filestack():
         """
         filelink = self.client.upload(filepath=file)
         return filelink
+    
+    def download_file(self, filelink, filename):
+        """
+            This method downloads the file from the cloud.
+            - filelink: the file link to be downloaded
+            - filename: the filename to be saved as
+        """
+        self.client.download(filepath=filelink, filename=filename)
+        return filename
 
