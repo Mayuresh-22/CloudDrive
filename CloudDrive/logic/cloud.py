@@ -93,9 +93,11 @@ class Filestack():
 
         # write the response content to the file
         new_filename =  filedialog.asksaveasfilename(initialdir="/Downloads", title="Save file",
-                                                     filetypes=((file_type, f"*.{file_type}"),("All files", "*.*")))
+            filetypes=((file_type, f"*.{file_type}"),("All files", "*.*")))
+        
+        # if the user cancels the save file dialog
         if new_filename == "":
-            new_filename = filename.split(".")[0]
+            return False
         
         with open(f"{new_filename}.{file_type}", "wb") as f:
             f.write(resp.content)
