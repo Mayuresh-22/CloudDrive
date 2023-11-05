@@ -114,8 +114,9 @@ class HomeLogic:
                         width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.8,
                         height=50,
                         fg_color="#E3F5FD",
-                        corner_radius=0
+                        corner_radius=10
                     )
+
                     file_frame.pack(pady=5)
                     file_frame.pack_propagate(False)
                     file_frame.grid_propagate(False)
