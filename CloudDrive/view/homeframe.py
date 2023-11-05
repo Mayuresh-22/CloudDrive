@@ -88,17 +88,8 @@ class HomeFrame():
             fg_color=os.getenv("HOME_SCREEN_BG_COLOR"),
             hover_color="#0077B6",
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 15)),
-            command=lambda: self.homeLogic.launch_file_explorer(self.files, self.progress_bar)
+            command=lambda: self.homeLogic.launch_file_explorer(self.files)
         ).pack(padx=10, pady=20)
-
-        # progress bar
-        self.progress_bar = ctk.CTkLabel(self.left_sidebar,
-            text="Upload New File",
-            fg_color=os.getenv("HOME_SCREEN_BG_COLOR"),
-            text_color=os.getenv("WHITE_COLOR"),
-            font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10))
-        )
-        self.progress_bar.pack(padx=10, pady=10)
 
         # My Account
         self.my_account = ctk.CTkFrame(self.left_sidebar,
