@@ -112,6 +112,7 @@ class HomeLogic:
                 row = 0
                 column = 0
                 max_column = 4
+                # Loop through the files and populate the files in the files frame in grid layout
                 for file in files:
                     file_frame = ctk.CTkFrame(files_frame,
                         width=200,
