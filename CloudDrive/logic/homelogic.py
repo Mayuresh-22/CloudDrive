@@ -131,7 +131,7 @@ class HomeLogic:
                         font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10))
                     )
                     file_name.pack(pady=5)
-                    
+
                     col += 1
                     if col == max_col:
                         row += 1
