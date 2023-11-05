@@ -125,6 +125,10 @@ class HomeLogic:
                         fg_color="#E3F5FD",
                         font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 12))
                     )
+                    file_name.pack(pady=5)
+                    file_name.pack_propagate(False)
+                    file_name.grid_propagate(False)
+                        
    
         except Exception as e:
             print(e)
