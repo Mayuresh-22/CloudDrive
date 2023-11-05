@@ -224,7 +224,7 @@ class HomeLogic:
                         bg_color="transparent",
                         hover=False,
                         font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10)),
-                        command=lambda: self.download_file(file["file_url"], file["file_name"])
+                        command=lambda: self.download_file(file_url, file_name_org)
                     )
                     download_button.pack(side=tk.LEFT, padx=5)
 
