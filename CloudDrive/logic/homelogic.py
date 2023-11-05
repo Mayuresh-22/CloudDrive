@@ -128,6 +128,7 @@ class HomeLogic:
                 col = 0
                 max_col = 4
                 for file in files:
+                    file_type = file["file_type"].split("/")[1]
                     file_frame = ctk.CTkFrame(files_frame,
                         width=190,
                         height=190,
