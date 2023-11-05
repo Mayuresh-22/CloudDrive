@@ -142,10 +142,14 @@ class HomeLogic:
 
                     # file icon
                     file_icon = ctk.CTkImage(Image.open(os.getenv("CLOUD_ICON")), size=(45, 45))
-                    
+                    ctk.CTkLabel(file_frame,
+                        image=file_icon,
+                        fg_color="#E3F5FD",
+                        bg_color="#E3F5FD",
+                        hover=False
+                    ).pack(pady=5)
                     file_name = ctk.CTkLabel(file_frame,
                         text=file["file_name"],
-                        image=file_icon,
                         fg_color="#E3F5FD",
                         text_color="#1B387C",
                         font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10))
