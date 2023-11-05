@@ -199,15 +199,7 @@ class HomeLogic:
                         font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10))
                     )
                     file_name.pack(pady=5)
-
-                    # file info label
-                    file_url = ctk.CTkLabel(file_block,
-                        text=file["file_url"]
-                    )
-                    file_name_org = ctk.CTkLabel(file_block,
-                        text=file["file_name"]
-                    )
-
+                    
                     # file actions
                     file_actions = ctk.CTkFrame(file_block,
                         width=190,
