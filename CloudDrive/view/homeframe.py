@@ -142,7 +142,7 @@ class HomeFrame():
             text="Hi "+self.userObj["username"]+", Welcome to your cloud drive!",
             fg_color="#f7fcfe",
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10))
-        ).pack(pady=, padx=30, side=tk.TOP, anchor=tk.W)
+        ).pack(pady=0, padx=30, side=tk.TOP, anchor=tk.W)
 
         # Main Content - Files
         self.files = ctk.CTkFrame(self.main_content,
