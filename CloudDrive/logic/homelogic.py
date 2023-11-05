@@ -6,7 +6,8 @@
 import os
 from urllib import response
 from dotenv import load_dotenv
-from tkinter import Image, filedialog
+from tkinter import filedialog
+from PIL import Image
 import requests
 from logic.cloud import CloudSetup, Filestack
 import customtkinter as ctk
