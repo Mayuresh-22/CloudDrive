@@ -77,7 +77,9 @@ class Filestack():
 
         resp = requests.get(fileurl)
 
-        # write 
+        # write the response content to the file
+        with open(filename, "wb") as f:
+            f.write(resp.content)
         
 
 
