@@ -99,7 +99,6 @@ class HomeFrame():
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 12))
         )
 
-
         # My Account
         self.my_account = ctk.CTkFrame(self.left_sidebar,
             width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.18,
