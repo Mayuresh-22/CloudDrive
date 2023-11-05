@@ -199,7 +199,7 @@ class HomeLogic:
 
                     # file info label
                     file_url = ctk.CTkLabel(file_block,
-                        text=file["file_type"]+" - "+str(file["file_size"])+" KB",
+                        text=file["file_url"],
                         fg_color="#E3F5FD",
                         text_color="#1B387C",
                         font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10))
