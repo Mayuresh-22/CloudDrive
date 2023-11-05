@@ -159,7 +159,7 @@ class HomeLogic:
                         text_color="#1B387C",
                         font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10))
                     )
-                    no_file_label.grid(fill = tk.BOTH, expand = True)
+                    no_file_label.grid(fill=tk.BOTH, expand = True)
                     no_file_label.pack_propagate(False)
                     no_file_label.grid_propagate(False)
                     return None
