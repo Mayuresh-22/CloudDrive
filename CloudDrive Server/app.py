@@ -189,7 +189,7 @@ def upload_file():
                 "message" : os.getenv("AUTH_ERROR")
             }
     
-    # get the file parameters
+    # get the file parameters after authentication
     file_owner = request.json['file_owner']
     file_name = request.json['file_name'].strip()
     file_size = request.json['file_size']
