@@ -192,6 +192,13 @@ class HomeLogic:
                     )
                     file_name.pack(pady=5)
 
+                    # file actions
+                    file_actions = ctk.CTkFrame(file_block,
+                        width=190,
+                        height=30,
+                        fg_color="#E3F5FD",
+                        corner_radius=10
+                    )
                     col += 1
                     if col == max_col:
                         row += 1
