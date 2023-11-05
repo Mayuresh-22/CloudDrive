@@ -132,6 +132,19 @@ def register_user():
 # api endpoint to get all files
 @app.route('/files/', methods=['POST'])
 def get_all_files():
+    # authenticate user
+    if not request.json or not 'file_owner' in request.json or not 'cloud_provider_api_key' in request.json:
+        return {"status": os.getenv("FAIL"),
+                "message": os.getenv("MISSING_PARAMETERS")}
+    else:
+        file_owner = request.json['file_owner']
+        cloud_provider_api_key = request.json['cloud_provider_api_key']
+        # check if user exists
+        user = UserDB.query.filter_by(id=file_owner, cloud_provider_api_key=cloud_provider_api_key).first()
+        if user is None:
+            return {"status": os.getenv("FAIL"),
+                    "message": os.getenv("AUTH_ERROR")}
+    
     # get the files of the user
     file_owner = request.json['file_owner']
     cloud_provider_api_key = request.json['cloud_provider_api_key']
