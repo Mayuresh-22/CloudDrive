@@ -111,7 +111,7 @@ class HomeFrame():
             fg_color=os.getenv("HOME_SCREEN_BG_COLOR"),
             hover_color=os.getenv("HOME_SCREEN_BG_COLOR"),
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 12)),
-            command=lambda: self.homeLogic.launch_user_details(self.my_account)
+            command=lambda: self.homeLogic.launch_user_details(self.main_content)
         ).pack(padx=10)
 
         self.left_sidebar.pack_propagate(False)
