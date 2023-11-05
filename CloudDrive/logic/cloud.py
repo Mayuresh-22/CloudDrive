@@ -79,7 +79,7 @@ class Filestack():
         resp = requests.get(fileurl)
 
         # write the response content to the file
-        FileDialog.asksaveasfilename(initialdir = os.getcwd(), title = "Save File", filetypes = (("All Files", "*.*"), ("Text Files", "*.txt"), ("PDF Files", "*.pdf"), ("Image Files", "*.png"), ("Image Files", "*.jpg"), ("Image Files", "*.jpeg"), ("Image Files", "*.jfif")))
+        filename =  FileDialog.asksaveasfilename(initialdir = os.getcwd(), title = "Save File", filetypes = (("All Files", "*.*"), ("Text Files", "*.txt"), ("PDF Files", "*.pdf"), ("Image Files", "*.png"), ("Image Files", "*.jpg"), ("Image Files", "*.jpeg"), ("Image Files", "*.jfif")))
         with open(filename, "wb") as f:
             f.write(resp.content)
         
