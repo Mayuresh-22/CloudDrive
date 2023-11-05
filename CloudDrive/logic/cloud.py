@@ -88,7 +88,7 @@ class Filestack():
         resp = requests.get(fileurl)
 
         # write the response content to the file
-        filename =  filedialog.asksaveasfilename(initialdir=os.getcwd(), title="Save file",filetypes=(self.filetypes[file_type], ["*."+file_type]))
+        filename =  filedialog.asksaveasfilename(initialdir=os.getcwd(), title="Save file",filetypes=(file_type, "*.*"))
         
         with open(f"{filename}.{file_type}", "wb") as f:
             f.write(resp.content)
