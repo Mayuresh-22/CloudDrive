@@ -129,7 +129,7 @@ class HomeLogic:
             fg_color="#E3F5FD",
             corner_radius=0
         )
-        user_details_frame_row
+        user_details_frame_row1_col1.pack(side=tk.LEFT, pady=10)
 
     def launch_file_explorer(self, files_frame) -> None:
         """
