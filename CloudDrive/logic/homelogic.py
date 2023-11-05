@@ -119,7 +119,7 @@ class HomeLogic:
                         fg_color="#E3F5FD",
                         corner_radius=10
                     )
-                    file_frame.pack(pady=5)
+                    file_frame.grid(row=row, column=col, padx=10, pady=10)
                     file_frame.pack_propagate(False)
                     file_frame.grid_propagate(False)
 
