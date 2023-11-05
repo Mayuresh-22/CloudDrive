@@ -131,6 +131,11 @@ class HomeLogic:
                     file_name.pack(pady=5)
                     file_name.pack_propagate(False)
                     file_name.grid_propagate(False)
+
+                    col += 1
+                    if col == max_col:
+                        row += 1
+                        col = 0
                         
    
         except Exception as e:
