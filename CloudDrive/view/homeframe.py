@@ -139,7 +139,7 @@ class HomeFrame():
         ).pack(pady=30, padx=30, side=tk.TOP, anchor=tk.W)
 
         ctk.CTkLabel(self.main_content,
-            text="Welcome back, "+self.userObj["username"]+"!",
+            text="Welcome back, "+self.userObj["name"]+"!",
             fg_color="#f7fcfe",
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10))
         ).pack(pady=10, padx=30, side=tk.TOP, anchor=tk.W)
