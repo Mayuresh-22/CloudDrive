@@ -135,7 +135,7 @@ class HomeFrame():
         ctk.CTkLabel(self.main_content,
             text="My Cloud",
             fg_color="#f7fcfe",
-            font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT5_SIZE")-2, 20))
+            font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT5_SIZE"), 20))
         ).pack(pady=30, padx=30, side=tk.TOP, anchor=tk.W)
 
         # Main Content - Files
