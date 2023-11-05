@@ -130,8 +130,12 @@ class HomeLogic:
                         font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10))
                     )
                     file_name.pack(pady=5)
-                    file_name.pack_propagate(False)
-                    file_name.grid_propagate(False)
+
+                    ctk.CTkLabel(file_frame,
+                        text='Hello',
+                        fg_color="black",
+                        font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10))
+                    )
 
                     col += 1
                     if col == max_col:
