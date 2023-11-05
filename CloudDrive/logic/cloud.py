@@ -94,7 +94,7 @@ class Filestack():
         # write the response content to the file
         new_filename =  filedialog.asksaveasfilename(initialdir=os.getcwd(), title="Save file",filetypes=((file_type, f"*.{file_type}"),("All files", "*.*")))
         
-        with open(f"{filename}.{file_type}", "wb") as f:
+        with open(f"{new_filename}.{file_type}", "wb") as f:
             f.write(resp.content)
         return True
     
