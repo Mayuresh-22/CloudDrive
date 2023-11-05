@@ -152,6 +152,7 @@ class HomeLogic:
             if resp.status_code == 200 and resp.json()["status"] == "success":
                 files = resp.json()["files"]
                 if len(files) == 0:
+                    print("No files found")
                     ctk.CTkLabel(files_frame,
                         text="No files found",
                         fg_color="#E3F5FD",
