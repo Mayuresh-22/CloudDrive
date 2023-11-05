@@ -148,7 +148,7 @@ def get_all_files():
     # get the files of the user
     file_owner = request.json['file_owner']
     cloud_provider_api_key = request.json['cloud_provider_api_key']
-    files = FilesDB.query.filter_by(file_owner=file_owner, cloud_provider_api_key=cloud_provider_api_key).all()
+    files = FilesDB.query.filter_by(file_owner=file_owner).all()
     # check if files exists
     if files is None:
         return {"status": os.getenv("FAIL"),
