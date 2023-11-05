@@ -97,4 +97,11 @@ class HomeLogic:
             and populates the files in the files frame.
     """
         # Get the files from the server for the user
-        url = os.getenv("APP_BASE_URL")+os.getenv("FILE_ENDPOINT")+os.getenv("GET_FILES_ENDPOINT")
+        url = os.getenv("APP_BASE_URL")+os.getenv("FILE_ENDPOINT")
+        resp = requests.post(url,
+            headers={"Content-Type": "application/json"},
+            json={
+                "file_owner" : self.userObj["id"],
+                "cloud_provider_api_key" : self.userObj["cloud_provider_api_key"]
+            }
+        )
