@@ -1,6 +1,7 @@
 """
     This file contains the logic for the cloud cloud provider setup.
 """
+from re import T
 from tkinter import filedialog
 from filestack import Client
 import os
@@ -95,3 +96,4 @@ class Filestack():
             f.write(resp.content)
         
         print("File downloaded successfully")
+        return True
