@@ -29,6 +29,7 @@ class App:
         AuthFrame(self.root)
         self.root.mainloop()
     
+    
     def app_config(self):
         """
             This method is used to set the theme of the app.
