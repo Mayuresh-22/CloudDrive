@@ -151,6 +151,8 @@ class HomeFrame():
             fg_color="#ffffff",
             corner_radius=10
         )
+        # populate files
+        self.homeLogic.populate_files(self.files)
         self.files.pack_propagate(False)
         self.files.pack(side=tk.TOP, pady=10, padx=10)
         self.files.tkraise()
