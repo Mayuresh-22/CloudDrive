@@ -234,7 +234,7 @@ class HomeLogic:
                         fg_color="transparent",
                         bg_color="transparent",
                         hover=False,
-                        command=partial(self.delete_file, file["file_handle"], files_frame)
+                        command=lambda: print("Delete button clicked")
                     ) 
                     delete_button.pack(side=tk.LEFT, padx=5, pady=5)
 
