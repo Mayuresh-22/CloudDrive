@@ -9,8 +9,8 @@ frame.pack()
 
 scrollable_frame = ctk.CTkScrollableFrame(frame, width=500, height=500)
 
-for i in range(50):
-    ctk.CTkLabel(scrollable_frame, text=f"Label {i}").pack()
+# for i in range(50):
+#     ctk.CTkLabel(scrollable_frame, text=f"Label {i}").pack()
 
 scrollable_frame.pack()
 
