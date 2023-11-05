@@ -213,8 +213,6 @@ class HomeLogic:
                     # download button
                     download_icon = ctk.CTkImage(Image.open(os.getenv("DOWNLOAD_ICON")), size=(30, 30))
                     download_button = ctk.CTkButton(file_actions,
-                        height=100,
-                        width=50,
                         image=download_icon,
                         text="",
                         fg_color="transparent",
@@ -223,7 +221,7 @@ class HomeLogic:
                         font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10)),
                         command=partial(self.download_file, file["file_url"], file["file_name"])
                     )
-                    download_button.pack(side=tk.LEFT, padx=5, pady=5)
+                    download_button.pack(side=tk.LEFT, padx=5)
 
                     col += 1
                     if col == max_col:
