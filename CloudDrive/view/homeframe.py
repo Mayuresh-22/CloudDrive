@@ -152,7 +152,7 @@ class HomeFrame():
             corner_radius=25
         )
         # populate files
-        self.homeLogic.populate_files(self.files)
+        self.homeLogic.populate_files()
 
         # configure the grid
         self.files.pack(side=tk.TOP, pady=10, padx=10)
