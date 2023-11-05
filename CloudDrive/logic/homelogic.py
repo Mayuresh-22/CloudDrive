@@ -90,7 +90,7 @@ class HomeLogic:
             else:
                 print(resp.json()["message"])
 
-    def populate_files(self, files_frame):
+    def populate_files(self):
         """
             This method populates the files in the files frame.
             - files_frame: the frame to populate the files
@@ -101,7 +101,7 @@ class HomeLogic:
         # Clear the files frame
         for widget in files_frame.winfo_children():
             widget.destroy()
-            
+
         # Get the files from the server for the user
         url = os.getenv("APP_BASE_URL")+os.getenv("FILE_ENDPOINT")
         try:
