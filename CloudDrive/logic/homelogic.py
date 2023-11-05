@@ -7,7 +7,6 @@ import os
 from urllib import response
 from dotenv import load_dotenv
 from tkinter import filedialog
-from view.homeframe import HomeFrame
 import requests
 from logic.cloud import CloudSetup, Filestack
 import customtkinter as ctk
@@ -91,7 +90,7 @@ class HomeLogic:
             else:
                 print(resp.json()["message"])
 
-    def populate_files(self):
+    def populate_files(self, files_frame):
         """
             This method populates the files in the files frame.
             - files_frame: the frame to populate the files
@@ -115,7 +114,7 @@ class HomeLogic:
                 col = 0
                 max_col = 4
                 for file in files:
-                    file_frame = ctk.CTkFrame(HomeFrame.files_frame,
+                    file_frame = ctk.CTkFrame(files_frame,
                         width=200,
                         height=200,
                         fg_color="#E3F5FD",
@@ -137,6 +136,7 @@ class HomeLogic:
                     if col == max_col:
                         row += 1
                         col = 0
+                files_frame.pack()
                         
    
         except Exception as e:
