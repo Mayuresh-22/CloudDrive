@@ -121,10 +121,10 @@ class HomeLogic:
                 }
             )
             if resp.status_code == 200 and resp.json()["status"] == "success":
-                print(resp.json()["message"])
-                self.populate_files(files_frame)
                 # update the progress bar
                 progress_bar.configure(text="")
+                print(resp.json()["message"])
+                self.populate_files(files_frame)
             else:
                 print(resp.json()["message"])
         else:
