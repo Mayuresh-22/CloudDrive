@@ -212,8 +212,6 @@ class HomeLogic:
                     download_button = ctk.CTkButton(file_actions,
                         image=download_icon,
                         text="",
-                        fg_color="transparent",
-                        bg_color="transparent",
                         hover_color="transparent",
                         font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10)),
                         command=lambda: self.filehandler.download_file(file["file_handle"])
