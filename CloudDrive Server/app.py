@@ -56,14 +56,14 @@ def index():
 def get_all_users():
     # authenticate user
     if not request.json or not 'cloud_provider_api_key' in request.json:
-        return {"status": os.getenv("FAIL"),
-                "message": os.getenv("MISSING_PARAMETERS")}
+        return {"status": "fail",
+                "message": "Missing Parameters"}
     else:
         cloud_provider_api_key = request.json['cloud_provider_api_key']
         # check if user exists
         user = UserDB.query.filter_by(cloud_provider_api_key=cloud_provider_api_key).first()
         if user is None:
-            return {"status": os.getenv("FAIL"),
+            return {"status": "fail",
                     "message": os.getenv("AUTH_ERROR")}
         
     # get all users after authentication
@@ -100,7 +100,7 @@ def auth_user_login():
                 "username": user.username, 
                 "password": user.password_hash}
     else:
-        return {"status": os.getenv("FAIL"),
+        return {"status": "fail",
                 "message": os.getenv("LOGIN_ERROR")}
 
 
@@ -147,7 +147,7 @@ def register_user():
 def get_all_files():
     # authenticate user
     if not request.json or not 'file_owner' in request.json or not 'cloud_provider_api_key' in request.json:
-        return {"status": os.getenv("FAIL"),
+        return {"status": "fail",
                 "message": os.getenv("MISSING_PARAMETERS")}
     else:
         file_owner = request.json['file_owner']
@@ -155,7 +155,7 @@ def get_all_files():
         # check if user exists
         user = UserDB.query.filter_by(id=file_owner, cloud_provider_api_key=cloud_provider_api_key).first()
         if user is None:
-            return {"status": os.getenv("FAIL"),
+            return {"status": "fail",
                     "message": os.getenv("AUTH_ERROR")}
     
     # get the files of the user after authentication
@@ -189,7 +189,7 @@ def get_all_files():
 def upload_file():
     # authenticate user
     if not request.json or not 'file_owner' in request.json or not 'file_name' in request.json or not 'file_size' in request.json or not 'file_type' in request.json or not 'file_url_pub' in request.json or not 'file_handle' in request.json or not 'file_status' in request.json:
-        return {"status" : os.getenv("FAIL"),
+        return {"status" : "fail",
             "message" : os.getenv("MISSING_PARAMETERS")
         }
     else:
@@ -198,7 +198,7 @@ def upload_file():
         # check if user exists
         user = UserDB.query.filter_by(id=file_owner, cloud_provider_api_key=cloud_provider_api_key).first()
         if user is None:
-            return {"status" : os.getenv("FAIL"),
+            return {"status" : "fail",
                 "message" : os.getenv("AUTH_ERROR")
             }
     
@@ -216,7 +216,7 @@ def upload_file():
     file = FilesDB.query.filter_by(file_name=file_name).first()
     if file is not None:
         return {
-            "status" : os.getenv("FAIL"),
+            "status" : "fail",
             "message": "File Already Exists"
             }
     elif file is None:
