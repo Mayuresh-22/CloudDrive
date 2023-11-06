@@ -182,7 +182,7 @@ def get_all_files():
         output.append(file_data)
     return {"files": output,
             "status": "success",
-            "message": os.getenv("GET_FILES_SUCCESS")}
+            "message": "Files Retrieved Successfully"}
 
 
 # api endpoint to upload file
