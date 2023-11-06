@@ -102,7 +102,7 @@ def auth_user_login():
                 "password": user.password_hash}
     else:
         return {"status": "fail",
-                "message": os.getenv("LOGIN_ERROR")}
+                "message": "Logout Failed"}
 
 
 # api endpoint to register user
