@@ -230,7 +230,7 @@ def upload_file():
         db.session.add(new_file)
         db.session.commit()
         return {"status" : "success",
-            "message": os.getenv("UPLOAD_SUCCESS")}
+            "message": "File Uploaded Successfully"}
 
 
 # fallback route for 404
