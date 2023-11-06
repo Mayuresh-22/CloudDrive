@@ -134,7 +134,7 @@ def register_user():
         new_usr = UserDB.query.filter_by(username=username, password_hash=password).first()
         
         return {"status": os.getenv("success"),
-                "message": os.getenv("REGISTER_SUCCESS"),
+                "message": "Registration Successful",
                 "id": new_usr.id,
                 "name": name, 
                 "cloud_provider": cloud_provider, 
