@@ -86,7 +86,7 @@ def get_all_users():
 def auth_user_login():
     if not request.json or not 'username' in request.json or not 'password' in request.json:
         return {"message":"Missing Parameters",
-                "status": "fail"}
+                "status":"fail"}
     username = request.json['username'].strip()
     password = request.json['password'].strip()
     # check if user exists
