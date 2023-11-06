@@ -64,7 +64,7 @@ def get_all_users():
         user = UserDB.query.filter_by(cloud_provider_api_key=cloud_provider_api_key).first()
         if user is None:
             return {"status": "fail",
-                    "message": os.getenv("AUTH_ERROR")}
+                    "message":  "Authentication Failed"}
         
     # get all users after authentication
     users = UserDB.query.all()
@@ -156,7 +156,7 @@ def get_all_files():
         user = UserDB.query.filter_by(id=file_owner, cloud_provider_api_key=cloud_provider_api_key).first()
         if user is None:
             return {"status": "fail",
-                    "message": os.getenv("AUTH_ERROR")}
+                    "message":  "Authentication Failed"}
     
     # get the files of the user after authentication
     file_owner = request.json['file_owner']
@@ -199,7 +199,7 @@ def upload_file():
         user = UserDB.query.filter_by(id=file_owner, cloud_provider_api_key=cloud_provider_api_key).first()
         if user is None:
             return {"status" : "fail",
-                "message" : os.getenv("AUTH_ERROR")
+                "message" :  "Authentication Failed"
             }
     
     # get the file parameters after authentication
