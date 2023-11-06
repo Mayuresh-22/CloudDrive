@@ -85,7 +85,8 @@ def get_all_users():
 @app.route('/users/login/', methods=['GET', 'POST'])
 def auth_user_login():
     if not request.json or not 'username' in request.json or not 'password' in request.json:
-        return {os.getenv("MISSING_PARAMETERS")}
+        return {"message":"Missing Parameters",
+                "status": "fail"}
     username = request.json['username'].strip()
     password = request.json['password'].strip()
     # check if user exists
@@ -148,7 +149,7 @@ def get_all_files():
     # authenticate user
     if not request.json or not 'file_owner' in request.json or not 'cloud_provider_api_key' in request.json:
         return {"status": "fail",
-                "message": os.getenv("MISSING_PARAMETERS")}
+                "message": "Missing Parameters"}
     else:
         file_owner = request.json['file_owner']
         cloud_provider_api_key = request.json['cloud_provider_api_key']
@@ -190,7 +191,7 @@ def upload_file():
     # authenticate user
     if not request.json or not 'file_owner' in request.json or not 'file_name' in request.json or not 'file_size' in request.json or not 'file_type' in request.json or not 'file_url_pub' in request.json or not 'file_handle' in request.json or not 'file_status' in request.json:
         return {"status" : "fail",
-            "message" : os.getenv("MISSING_PARAMETERS")
+            "message" : "Missing Parameters"
         }
     else:
         file_owner = request.json['file_owner']
