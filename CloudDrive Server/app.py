@@ -166,7 +166,7 @@ def get_all_files():
     # check if files exists
     if files is None:
         return {"status": "success",
-                "message": os.getenv("GET_FILES_ERROR")}
+                "message": "Files Retrieval Failed"}
     output = []
     # create the json response
     for file in files:
