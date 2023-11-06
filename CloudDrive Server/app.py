@@ -92,7 +92,7 @@ def auth_user_login():
     # check if user exists
     user = UserDB.query.filter_by(username=username, password_hash=password).first()
     if user is not None:
-        return {"status": os.getenv("SUCCESS"),
+        return {"status": "success",
                 "message": os.getenv("LOGIN_SUCCESS"),
                 "id": user.id,
                 "name": user.name, 
@@ -133,7 +133,7 @@ def register_user():
 
         new_usr = UserDB.query.filter_by(username=username, password_hash=password).first()
         
-        return {"status": os.getenv(os.getenv("SUCCESS")),
+        return {"status": os.getenv("success"),
                 "message": os.getenv("REGISTER_SUCCESS"),
                 "id": new_usr.id,
                 "name": name, 
@@ -165,7 +165,7 @@ def get_all_files():
     files = FilesDB.query.filter_by(file_owner=file_owner).all()
     # check if files exists
     if files is None:
-        return {"status": os.getenv("SUCCESS"),
+        return {"status": "success",
                 "message": os.getenv("GET_FILES_ERROR")}
     output = []
     # create the json response
@@ -181,7 +181,7 @@ def get_all_files():
         file_data['file_status'] = file.file_status
         output.append(file_data)
     return {"files": output,
-            "status": os.getenv("SUCCESS"),
+            "status": "success",
             "message": os.getenv("GET_FILES_SUCCESS")}
 
 
@@ -229,7 +229,7 @@ def upload_file():
         )
         db.session.add(new_file)
         db.session.commit()
-        return {"status" : os.getenv("SUCCESS"),
+        return {"status" : "success",
             "message": os.getenv("UPLOAD_SUCCESS")}
 
 
