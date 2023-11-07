@@ -23,8 +23,10 @@ class App:
         """
         self.root = ctk.CTk()
         self.root.title(os.getenv("APP_TITLE"))
+
         self.root.geometry(f"{os.getenv('DEFAULT_APP_WIDTH')}x{os.getenv('DEFAULT_APP_HEIGHT')}")
         self.root.resizable(False, False)
+        self.root.iconbitmap(os.getenv("APP_ICON"))
         # Build the Auth frame
         AuthFrame(self.root)
         self.root.mainloop()
