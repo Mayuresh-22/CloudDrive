@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 import os
-from dotenv import load_dotenv
 
 load_dotenv(".env")
 
