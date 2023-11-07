@@ -7,7 +7,7 @@ from view.authframe import AuthFrame
 import os
 import customtkinter as ctk
 from dotenv import load_dotenv
-load_dotenv("_internal/.env")
+load_dotenv(".env")
 
 
 class App:
