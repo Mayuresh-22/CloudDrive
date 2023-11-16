@@ -2,6 +2,8 @@
 
 CloudDrive is a versatile desktop application that acts as a middleware between cloud storage providers and users. It enables users to seamlessly upload their files and photos to their preferred cloud storage platforms and access these files across multiple devices.
 
+### To install the CloudDrive visit "Release" tab.
+
 ## Features
 
 - **Seamless Integration**: Connect with popular cloud storage services such as Dropbox, Google Drive, and more, all in one place.
