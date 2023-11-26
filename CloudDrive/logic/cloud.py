@@ -130,8 +130,8 @@ class Filestack():
             resp = requests.post(url,
                 headers={"Content-Type": "application/json"},
                 json={
-                    "file_owner" : self.userObj["id"],
-                    "cloud_provider_api_key" : self.userObj["cloud_provider_api_key"]
+                    "file_owner" : userObj["id"],
+                    "cloud_provider_api_key" : userObj["cloud_provider_api_key"]
                 }
             )
             if resp.status_code == 200 and resp.json()["status"] == "success":
