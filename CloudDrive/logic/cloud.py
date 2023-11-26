@@ -50,6 +50,7 @@ class Filestack():
             - cloudSetObj: the cloud provider setup object (CloudSetup)
         """
         self.api_key = api_key
+                self.filelink = None
         self.filetypes = {
             "pdf" : ("PDF files","*.pdf"),
             "docx" : ("DOCX files","*.docx"),
