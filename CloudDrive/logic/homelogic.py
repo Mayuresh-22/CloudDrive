@@ -99,38 +99,6 @@ class HomeLogic:
         # start the thread to upload the file
         thread = threading.Thread(target=self.cloud.upload_file, args=(file))
         thread.start()
-        
-        # Creating the file link object
-        filelink = self.cloud.filelink
-        
-        # Checking if the file is uploaded successfully
-        if filelink.upload_response["status"] == "Stored":
-            """
-                If the file is uploaded successfully,
-                Now, storing the file details in the database.
-            """
-            url = os.getenv("APP_BASE_URL")+os.getenv("FILE_ENDPOINT")+os.getenv("UPLOAD_ENDPOINT")
-            resp = requests.post(url,
-                headers={"Content-Type": "application/json"},
-                json={
-                    "file_owner" : self.userObj["id"],
-                    "cloud_provider_api_key" : self.userObj["cloud_provider_api_key"],
-                    "file_name" : filelink.upload_response["filename"],
-                    "file_size" : filelink.upload_response["size"],
-                    "file_type" : filelink.upload_response["mimetype"],
-                    "file_url_pub" : filelink.upload_response["url"],
-                    "file_url_pvt" : "",
-                    "file_handle" : filelink.upload_response["handle"],
-                    "file_status" : filelink.upload_response["status"]
-                }
-            )
-            if resp.status_code == 200 and resp.json()["status"] == "success":
-                # print(resp.json()["message"])
-                self.populate_files(files_frame)
-            else:
-                # print(resp.json()["message"])
-                pass
-
 
     def populate_files(self, files_frame):
         """
