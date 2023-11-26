@@ -77,6 +77,7 @@ class Filestack():
             - file: the file to be uploaded
         """
         filelink = self.client.upload(filepath=file)
+        print("File uploaded: Filestack")
         return filelink
     
 
