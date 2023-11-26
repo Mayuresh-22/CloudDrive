@@ -96,9 +96,9 @@ class HomeLogic:
         """
 
         # Calling the upload_file() method of the respective cloud provider
-        # start the thread to upload the file
-        thread = threading.Thread(target=self.cloud.upload_file, args=(file))
-        thread.start()
+        # start the thread to upload the file and then populate the files
+        threading.Thread(target=self.cloud.upload_file, args=(file))
+
         
         
         # Checking if the file is uploaded successfully
