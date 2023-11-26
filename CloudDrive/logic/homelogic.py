@@ -126,6 +126,7 @@ class HomeLogic:
             if resp.status_code == 200 and resp.json()["status"] == "success":
                 # print(resp.json()["message"])
                 self.populate_files(files_frame)
+                self.progress.configure(text="File uploaded successfully")
             else:
                 # print(resp.json()["message"])
                 pass
