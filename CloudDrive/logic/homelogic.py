@@ -3,6 +3,7 @@
 """
 
 # Import the required modules
+from cgitb import text
 import os
 from dotenv import load_dotenv
 from tkinter import filedialog
@@ -84,6 +85,7 @@ class HomeLogic:
                 If the file is selected,
                 This method calls the global method upload_file() to upload the file to the cloud.
             """
+            progress.configure(text="Uploading file...")
             threading.Thread(target=self.upload_file, args=(file, files_frame)).start()
 
 
