@@ -3,7 +3,6 @@
 """
 
 # Import the required modules
-from cgitb import text
 import os
 from dotenv import load_dotenv
 from tkinter import filedialog
