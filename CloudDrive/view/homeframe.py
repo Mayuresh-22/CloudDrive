@@ -27,7 +27,6 @@ class HomeFrame():
             - prev: the previous frame
             - userObj: the user object, which contains the user details
         """
-        # Initialize HomeLogic class
         # Initialize the frame
         self.remove_frame(prev)
         self.parent = parent
