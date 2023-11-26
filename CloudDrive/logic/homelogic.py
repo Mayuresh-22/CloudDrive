@@ -100,6 +100,7 @@ class HomeLogic:
         thread = threading.Thread(target=self.cloud.upload_file, args=(file, files_frame))
         thread.start()
 
+
     def populate_files(self, files_frame):
         """
             This method populates the files in the files frame.
