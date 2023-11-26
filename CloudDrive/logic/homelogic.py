@@ -84,7 +84,7 @@ class HomeLogic:
                 If the file is selected,
                 This method calls the global method upload_file() to upload the file to the cloud.
             """
-            self.upload_file(file, files_frame)
+            threading.Thread(target=self.upload_file, args=(file, files_frame)).start()
 
 
     def upload_file(self, file, files_frame):
