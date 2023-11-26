@@ -23,8 +23,6 @@ class CloudSetup():
         self.cloud_provider = cloud_provider
         self.api_key = api_key
         self.kwargs = kwargs
-        self.filelink = None
-
 
     def setup(self, **kwargs):
         """
