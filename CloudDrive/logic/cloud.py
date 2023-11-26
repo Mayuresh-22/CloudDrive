@@ -111,7 +111,7 @@ class Filestack():
                 pass
     
 
-    def populate_files(self, files_frame):
+    def populate_files(self, files_frame, userObj):
         """
             This method populates the files in the files frame.
             - files_frame: the frame to populate the files
