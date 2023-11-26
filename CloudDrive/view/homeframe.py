@@ -151,7 +151,7 @@ class HomeFrame():
             corner_radius=25
         )
         # populate files
-        Filestack.populate_files(self.files, self.)
+        Filestack.populate_files(Filestack, self.files)
 
         # configure the grid
         self.files.pack(side=tk.TOP, pady=10, padx=10)
