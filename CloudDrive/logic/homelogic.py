@@ -97,8 +97,7 @@ class HomeLogic:
 
         # Calling the upload_file() method of the respective cloud provider
         # start the thread to upload the file and then store the file details in the database
-        threading.Thread(target=self.cloud.upload_file, args=(file,)).start()
-        filelink = self.cloud.filelink
+        filelink = self.cloud.upload_file(file)
         
         # Checking if the file is uploaded successfully
         if filelink.upload_response["status"] == "Stored" and filelink is not None:
