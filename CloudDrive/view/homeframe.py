@@ -91,12 +91,13 @@ class HomeFrame():
             command=lambda: self.homeLogic.launch_file_explorer(self.files)
         ).pack(padx=10, pady=20)
 
-        # Separator
-        ctk.CTkSeparator(self.left_sidebar,
-            orient=tk.HORIZONTAL,
+        # pgrogress text
+        self.progress_text = ctk.CTkLabel(self.left_sidebar,
+            text="",
             fg_color=os.getenv("WHITE_COLOR"),
-            bg_color=os.getenv("WHITE_COLOR")
-        ).pack(fill=tk.X, padx=10, pady=10)
+            font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 12))
+        )
+        self.progress_text.pack(padx=10, pady=10)
 
         # My Account
         self.my_account = ctk.CTkFrame(self.left_sidebar,
