@@ -101,7 +101,7 @@ class HomeLogic:
         filelink = self.cloud.upload_file(file)
         
         # Checking if the file is uploaded successfully
-        if filelink.upload_response["status"] == "Stored":
+        if filelink.upload_response["status"] == "Stored" and filelink is not None:
             """
                 If the file is uploaded successfully,
                 Now, storing the file details in the database.
