@@ -6,6 +6,7 @@ from filestack import Client
 import os
 import customtkinter as ctk
 import tkinter as tk
+from PIL import Image
 from dotenv import load_dotenv
 import requests
 load_dotenv(".env")
