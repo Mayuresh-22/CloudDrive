@@ -172,7 +172,7 @@ class HomeLogic:
                 row = 0
                 col = 0
                 max_col = 4
-                for file in files:
+                for file in files[::-1]:
                     file_type = file["file_type"].split("/")[1]
                     """
                         Creating the file block
