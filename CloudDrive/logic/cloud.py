@@ -75,6 +75,7 @@ class Filestack():
         """
             This method uploads the file to the cloud.
             - file: the file to be uploaded
+            - file_frame: the frame where uploaded files are populated
         """
         self.filelink = self.client.upload(filepath=file)
 
