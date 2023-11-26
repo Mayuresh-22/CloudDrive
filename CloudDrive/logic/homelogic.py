@@ -101,7 +101,7 @@ class HomeLogic:
         thread.start()
         
         # Creating the file link object
-        filelink = self.cloud.filelink
+        filelink = self.cloud.filetypes
         
         # Checking if the file is uploaded successfully
         if filelink.upload_response["status"] == "Stored":
