@@ -103,7 +103,7 @@ class Filestack():
             )
             if resp.status_code == 200 and resp.json()["status"] == "success":
                 # print(resp.json()["message"])
-                HomeLogic.populate_files(files_frame)
+                self.populate_files(files_frame)
             else:
                 # print(resp.json()["message"])
                 pass
