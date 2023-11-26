@@ -6,12 +6,7 @@
 import os
 from dotenv import load_dotenv
 from tkinter import filedialog
-from functools import partial
-from PIL import Image
-import requests
 from logic.cloud import CloudSetup
-import customtkinter as ctk
-import tkinter as tk
 import threading
 
 load_dotenv(".env")
@@ -99,7 +94,7 @@ class HomeLogic:
         # start the thread to upload the file
         thread = threading.Thread(target=self.cloud.upload_file, args=(file, files_frame))
         thread.start()
-        
+
         
     def download_file(self, file_url, file_name):
         """
