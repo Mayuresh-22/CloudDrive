@@ -2,7 +2,6 @@ import os
 from dotenv import load_dotenv
 from logic.cloud import CloudSetup
 from logic.homelogic import HomeLogic
-from logic.cloud import Filestack
 import tkinter as tk
 import customtkinter as ctk
 from PIL import Image
@@ -153,7 +152,7 @@ class HomeFrame():
             corner_radius=25
         )
         # populate files
-        Filestack.populate_files(Filestack, self.files, self.userObj)
+        self.homeLogic.populate_files(self.files)
 
         # configure the grid
         self.files.pack(side=tk.TOP, pady=10, padx=10)
