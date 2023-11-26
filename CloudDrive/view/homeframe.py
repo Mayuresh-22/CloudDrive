@@ -91,6 +91,13 @@ class HomeFrame():
             command=lambda: self.homeLogic.launch_file_explorer(self.files)
         ).pack(padx=10, pady=20)
 
+        # Separator
+        ctk.CTkSeparator(self.left_sidebar,
+            orient=tk.HORIZONTAL,
+            fg_color=os.getenv("WHITE_COLOR"),
+            bg_color=os.getenv("WHITE_COLOR")
+        ).pack(fill=tk.X, padx=10, pady=10)
+
         # My Account
         self.my_account = ctk.CTkFrame(self.left_sidebar,
             width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.18,
