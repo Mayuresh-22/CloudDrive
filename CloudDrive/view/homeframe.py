@@ -88,7 +88,7 @@ class HomeFrame():
             fg_color=os.getenv("HOME_SCREEN_BG_COLOR"),
             hover_color="#0077B6",
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 15)),
-            command=lambda: self.homeLogic.launch_file_explorer(self.files)
+            command=lambda: self.homeLogic.launch_file_explorer(self.files, self.progress_text)
         ).pack(padx=10, pady=20)
 
         # pgrogress text
