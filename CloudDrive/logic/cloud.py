@@ -7,6 +7,7 @@ from filestack import Client
 import os
 from dotenv import load_dotenv
 import requests
+import homelogic
 load_dotenv(".env")
 
 class CloudSetup():
