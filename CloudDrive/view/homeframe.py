@@ -94,7 +94,7 @@ class HomeFrame():
         # pgrogress text
         self.progress_text = ctk.CTkLabel(self.left_sidebar,
             text="Upload Progress",
-            bg_color=os.getenv("WHITE_COLOR"),
+            bg_color=os.getenv("HOME_SCREEN_BG_COLOR"),
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10))
         )
         self.progress_text.pack(padx=10, pady=10)
