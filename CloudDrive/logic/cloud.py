@@ -77,6 +77,34 @@ class Filestack():
             - file: the file to be uploaded
         """
         self.filelink = self.client.upload(filepath=file)
+
+                # Checking if the file is uploaded successfully
+        if self.filelink.upload_response["status"] == "Stored":
+            """
+                If the file is uploaded successfully,
+                Now, storing the file details in the database.
+            """
+            url = os.getenv("APP_BASE_URL")+os.getenv("FILE_ENDPOINT")+os.getenv("UPLOAD_ENDPOINT")
+            resp = requests.post(url,
+                headers={"Content-Type": "application/json"},
+                json={
+                    "file_owner" : self.userObj["id"],
+                    "cloud_provider_api_key" : self.userObj["cloud_provider_api_key"],
+                    "file_name" : self.filelink.upload_response["filename"],
+                    "file_size" : self.filelink.upload_response["size"],
+                    "file_type" : self.filelink.upload_response["mimetype"],
+                    "file_url_pub" : self.filelink.upload_response["url"],
+                    "file_url_pvt" : "",
+                    "file_handle" : self.filelink.upload_response["handle"],
+                    "file_status" : self.filelink.upload_response["status"]
+                }
+            )
+            if resp.status_code == 200 and resp.json()["status"] == "success":
+                # print(resp.json()["message"])
+                self.populate_files(files_frame)
+            else:
+                # print(resp.json()["message"])
+                pass
     
 
     def download_file(self, fileurl, filename):
