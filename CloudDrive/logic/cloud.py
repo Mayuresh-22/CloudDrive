@@ -71,7 +71,7 @@ class Filestack():
         # print("Filestack setup done")
 
 
-    def upload_file(self, file):
+    def upload_file(self, file, file_frame):
         """
             This method uploads the file to the cloud.
             - file: the file to be uploaded
