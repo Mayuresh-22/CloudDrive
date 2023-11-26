@@ -72,7 +72,7 @@ class HomeLogic:
             }
         
 
-    def launch_file_explorer(self, files_frame) -> None:
+    def launch_file_explorer(self, files_frame, progress) -> None:
         """
             This method launches the file explorer of the system.
             Opens the file dialog to select the file.
