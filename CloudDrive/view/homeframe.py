@@ -57,7 +57,7 @@ class HomeFrame():
         self.left_sidebar = ctk.CTkFrame(self.frame,
             width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.2,
             height=int(os.getenv("DEFAULT_APP_HEIGHT")),
-            fg_color=os.getenv("WHITE_COLOR"),
+            fg_color=os.getenv("HOME_SCREEN_BG_COLOR"),
             corner_radius=0
         )
 
@@ -76,7 +76,7 @@ class HomeFrame():
             text=os.getenv("APP_TITLE"),
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT4_SIZE"), 12)),
             text_color=os.getenv("WHITE_COLOR")
-        ).pack(pady=60, side=tk.TOP, padx=10, anchor = tk.N)
+        ).pack(pady=60, side=tk.TOP, padx=10)
 
         # Upload Button
         upload_img = ctk.CTkImage(Image.open(os.getenv("UPLOAD_ICON")), size=(int(os.getenv("DEFAULT_ICON_SIZE")), int(os.getenv("DEFAULT_ICON_SIZE"))))
@@ -121,10 +121,10 @@ class HomeFrame():
             hover_color=os.getenv("HOME_SCREEN_BG_COLOR"),
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 12)),
             command=lambda: ()
-        ).pack(padx=10, side=tk.BOTTOM)
+        ).pack(padx=10)
 
         self.left_sidebar.pack_propagate(False)
-        self.left_sidebar.pack(side=tk.LEFT, padx=5, ipady=0, fill=tk.BOTH)
+        self.left_sidebar.pack(side=tk.LEFT, pady=10, padx=10, fill=tk.BOTH)
         self.left_sidebar.tkraise()
 
 
