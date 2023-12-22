@@ -90,7 +90,6 @@ class Filestack():
         if filename == "":
             return
         
-        print("Downloading...")
         file_type = filename.split(".")[-1]
 
         # send the GET request to the file url
