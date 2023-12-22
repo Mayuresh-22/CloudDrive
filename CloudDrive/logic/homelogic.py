@@ -87,7 +87,8 @@ class HomeLogic:
                 This method calls the global method upload_file() to upload the file to the cloud.
             """
             self.progress.configure(text="Uploading file...")
-            threading.Thread(target=self.upload_file, args=(file, files_frame)).start() # start the thread to upload the file
+            # start the thread to upload the file
+            threading.Thread(target=self.upload_file, args=(file, files_frame)).start() 
 
 
     def upload_file(self, file, files_frame) -> None:
@@ -99,7 +100,7 @@ class HomeLogic:
         """
 
         # Calling the upload_file() method of the respective cloud provider
-        # start the thread to upload the file and then store the file details in the database
+        # start to upload the file and then store the file details in the database
         filelink = self.cloud.upload_file(file)
         
         # Checking if the file is uploaded successfully
