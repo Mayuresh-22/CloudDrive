@@ -97,7 +97,7 @@ class AuthFrame():
             text_color="#E3F5FD",
             hover_color="#1B387C",
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"))),
-            command=lambda: threading.Thread(target=AuthLogic.auth_user_login, args=(self.parent, self.frame, username = self.auth_username.get(), password = self.auth_password.get(), errorlabel = self.error_msg)).start()
+            command=lambda: threading.Thread(target=AuthLogic.auth_user_login, args=(self.parent, self.frame), kwargs=(username = self.auth_username.get(), password = self.auth_password.get(), errorlabel = self.error_msg)).start()
         )
         self.login_btn.pack(pady=5)
         
