@@ -76,7 +76,7 @@ class HomeFrame():
             text=os.getenv("APP_TITLE"),
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT4_SIZE"), 12)),
             text_color=os.getenv("WHITE_COLOR")
-        ).pack(pady=0, side=tk.TOP, padx=10)
+        ).pack(pady=60, side=tk.TOP, padx=10)
 
         # Upload Button
         upload_img = ctk.CTkImage(Image.open(os.getenv("UPLOAD_ICON")), size=(int(os.getenv("DEFAULT_ICON_SIZE")), int(os.getenv("DEFAULT_ICON_SIZE"))))
