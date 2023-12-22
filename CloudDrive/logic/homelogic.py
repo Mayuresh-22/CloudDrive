@@ -245,8 +245,9 @@ class HomeLogic:
         """
             This method downloads the file from the cloud.
             This method call the download_file() method of the respective cloud provider.
+
+            - file_url: the file url to be downloaded
+            - file_name: the file name to be downloaded
         """
-        # calling the download_file() method of the respective cloud provider
-        # start to download the file thread
         threading.Thread(target=self.cloud.download_file_thread, args=(file_url, file_name)).start()
 
