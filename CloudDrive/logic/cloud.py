@@ -106,6 +106,5 @@ class Filestack():
         
         with open(f"{new_filename}.{file_type}", "wb") as f:
             f.write(resp.content)
-
-        return True
+    
     
