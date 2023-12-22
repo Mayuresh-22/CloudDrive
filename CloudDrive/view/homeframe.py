@@ -91,7 +91,7 @@ class HomeFrame():
             command=lambda: self.homeLogic.launch_file_explorer(self.files, self.progress_text)
         ).pack(padx=10, pady=20)
 
-        # pgrogress bar GIF
+        # pgrogress bar
         self.progress_text = ctk.CTkLabel(self.left_sidebar,
             text="",
             fg_color=os.getenv("HOME_SCREEN_BG_COLOR"),
