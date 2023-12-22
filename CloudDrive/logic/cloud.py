@@ -62,7 +62,7 @@ class Filestack():
         }
         
 
-    def setup(self, **kwargs) -> None:
+    def setup(self, **kwargs):
         """
             This method setups the Filestack cloud provider.
         """
@@ -106,5 +106,4 @@ class Filestack():
         
         with open(f"{new_filename}.{file_type}", "wb") as f:
             f.write(resp.content)
-    
     
