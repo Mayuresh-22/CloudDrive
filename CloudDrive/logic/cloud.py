@@ -87,6 +87,9 @@ class Filestack():
             It sends the GET request to the file url and downloads the file.
             - fileurl: the file url to be downloaded
         """
+        if filename == "":
+            return
+        
         print("Downloading...")
         file_type = filename.split(".")[-1]
 
