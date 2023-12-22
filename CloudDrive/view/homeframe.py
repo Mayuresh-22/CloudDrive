@@ -124,7 +124,7 @@ class HomeFrame():
         ).pack(padx=10, side=tk.BOTTOM)
 
         self.left_sidebar.pack_propagate(False)
-        self.left_sidebar.pack(side=tk.LEFT, padx=10, ipady=0)
+        self.left_sidebar.pack(side=tk.LEFT, padx=5, ipady=0)
         self.left_sidebar.tkraise()
 
 
