@@ -249,5 +249,5 @@ class HomeLogic:
             - file_url: URL of the file to be downloaded
             - file_name: name of the file to be downloaded
         """
-        threading.Thread(target=self.cloud.download_file_thread, args=(file_url, file_name)).start()
+        threading.Thread(target=self.cloud.download_file, args=(file_url, file_name)).start()
 
