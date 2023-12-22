@@ -60,10 +60,7 @@ class HomeFrame():
             fg_color=os.getenv("HOME_SCREEN_BG_COLOR"),
             corner_radius=0
         )
-        self.left_sidebar.pack_propagate(False)
-        self.left_sidebar.pack(side=tk.LEFT, pady=10, padx=10)
-        self.left_sidebar.tkraise()
-        
+
         """
             Left Sidebar Content
             - App Title Logo
@@ -79,7 +76,7 @@ class HomeFrame():
             text=os.getenv("APP_TITLE"),
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT4_SIZE"), 12)),
             text_color=os.getenv("WHITE_COLOR")
-        ).pack(pady=60, side=tk.TOP, padx=10, anchor = tk.N, after = self.left_sidebar)
+        ).pack(pady=60, side=tk.TOP, padx=10, anchor = tk.N)
 
         # Upload Button
         upload_img = ctk.CTkImage(Image.open(os.getenv("UPLOAD_ICON")), size=(int(os.getenv("DEFAULT_ICON_SIZE")), int(os.getenv("DEFAULT_ICON_SIZE"))))
@@ -92,7 +89,7 @@ class HomeFrame():
             hover_color="#0077B6",
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 15)),
             command=lambda: self.homeLogic.launch_file_explorer(self.files, self.progress_text)
-        ).pack(padx=10, pady=20, after = self.left_sidebar)
+        ).pack(padx=10, pady=20)
 
         # pgrogress bar
         self.progress_text = ctk.CTkLabel(self.left_sidebar,
@@ -100,7 +97,7 @@ class HomeFrame():
             fg_color=os.getenv("HOME_SCREEN_BG_COLOR"),
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 12))
         )
-        self.progress_text.pack(padx=10, pady=20, after = self.left_sidebar)
+        self.progress_text.pack(padx=10, pady=20)
     
                                         
         # My Account
@@ -111,7 +108,7 @@ class HomeFrame():
             corner_radius=10
         )
         self.my_account.pack_propagate(False)
-        self.my_account.pack(side=tk.BOTTOM, pady=10, after = self.left_sidebar)
+        self.my_account.pack(side=tk.BOTTOM, pady=10)
         self.my_account.tkraise()
 
         # My Account Label
@@ -124,7 +121,11 @@ class HomeFrame():
             hover_color=os.getenv("HOME_SCREEN_BG_COLOR"),
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 12)),
             command=lambda: ()
-        ).pack(padx=10, side=tk.BOTTOM, after = self.my_account)
+        ).pack(padx=10, side=tk.BOTTOM)
+
+        self.left_sidebar.pack_propagate(False)
+        self.left_sidebar.pack(side=tk.LEFT, pady=10, padx=10)
+        self.left_sidebar.tkraise()
 
 
     def build_main_content(self):
