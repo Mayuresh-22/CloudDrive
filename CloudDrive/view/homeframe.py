@@ -57,7 +57,7 @@ class HomeFrame():
         self.left_sidebar = ctk.CTkFrame(self.frame,
             width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.2,
             height=int(os.getenv("DEFAULT_APP_HEIGHT")),
-            fg_color=os.getenv("HOME_SCREEN_BG_COLOR"),
+            fg_color=os.getenv("WHITE_COLOR"),
             corner_radius=0
         )
 
