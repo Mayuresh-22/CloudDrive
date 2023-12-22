@@ -87,13 +87,7 @@ class Filestack():
             It sends the GET request to the file url and downloads the file.
             - fileurl: the file url to be downloaded
         """
-        if filename == "":
-            return
-        
         file_type = filename.split(".")[-1]
-
-        # send the GET request to the file url
-        resp = requests.get(fileurl)
 
         # write the response content to the file
         new_filename =  filedialog.asksaveasfilename(initialdir="/Downloads", title="Save file",
@@ -101,8 +95,11 @@ class Filestack():
         
         # if the user cancels the save file dialog
         if new_filename == "":
-            return False
+            return
         
+        # send the GET request to the file url
+        resp = requests.get(fileurl)
+
         with open(f"{new_filename}.{file_type}", "wb") as f:
             f.write(resp.content)
     
