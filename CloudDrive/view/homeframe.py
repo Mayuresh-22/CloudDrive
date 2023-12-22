@@ -90,6 +90,17 @@ class HomeFrame():
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 15)),
             command=lambda: self.homeLogic.launch_file_explorer(self.files, self.progress_text)
         ).pack(padx=10, pady=20)
+
+        # pgrogress bar GIF
+        self.progress_bar_gif = ctk.CTkImage(Image.open(os.getenv("PROGRESS_BAR_GIF")), size=(220, 25))
+        self.progress_text = ctk.CTkLabel(self.left_sidebar,
+            text="",
+            image=self.progress_bar_gif,
+            fg_color=os.getenv("HOME_SCREEN_BG_COLOR"),
+            font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 12))
+        )
+        self.progress_text.pack(padx=10, pady=20)
+    
                                         
         # My Account
         self.my_account = ctk.CTkFrame(self.left_sidebar,
