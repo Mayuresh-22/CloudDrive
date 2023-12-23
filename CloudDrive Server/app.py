@@ -35,7 +35,7 @@ class FilesDB(db.Model):
     file_type = db.Column(db.String(20), nullable=False)
     file_url_pub = db.Column(db.String(250), nullable=False)
     file_url_pvt = db.Column(db.String(500), nullable=False)
-    file_handle = db.Column(db.String(100), unique=True, nullable=False)
+    file_handle = db.Column(db.String(100), nullable=False)
     file_status = db.Column(db.String(20), nullable=False)
     
     def __repr__(self):
