@@ -39,5 +39,8 @@ class App:
 
 
 if __name__ == "__main__":
+    """
+        This is the main function of the app.
+    """
     app = App()
     
