@@ -99,25 +99,21 @@ def auth_user_login():
                 "password": user.password_hash}
     else:
         return {"status": "fail",
-                "message": "Logout Failed"}
+                "message": "Login Failed, try again"}
 
 
 # api endpoint to register user
 @app.route('/users/register/', methods=['GET', 'POST'])
 def register_user():
-    # if not request.json or not 'username' in request.json or not 'password' in request.json or not 'name' in request.json or not 'cloud_provider' in request.json or not 'cloud_provider_api_key' in request.json:
-    #     return {"please provide required parameters."}
-
     username = request.json['username'].strip()
     password = request.json['password'].strip()
     name = request.json['name'].strip()
     cloud_provider = request.json['cloud_provider'].strip()
     cloud_provider_api_key = request.json['cloud_provider_api_key'].strip()
-
     # check if user exists
     user = UserDB.query.filter_by(username=username).first()
     if user is not None:
-        return {"status": "User Already Exists"}
+        return {"status": "User Already Exists, Select another Username"}
     else:
         # Insert New User in DB
         new_usr = UserDB(
@@ -127,17 +123,15 @@ def register_user():
         )
         db.session.add(new_usr)
         db.session.commit()
-
         new_usr = UserDB.query.filter_by(username=username, password_hash=password).first()
-        
         return {"status": os.getenv("success"),
-                "message": "Registration Successful",
-                "id": new_usr.id,
-                "name": name, 
-                "cloud_provider": cloud_provider, 
-                "cloud_provider_api_key": cloud_provider_api_key, 
-                "username": username, 
-                "password": password}
+            "message": "Registration Successful",
+            "id": new_usr.id,
+            "name": name, 
+            "cloud_provider": cloud_provider, 
+            "cloud_provider_api_key": cloud_provider_api_key, 
+            "username": username, 
+            "password": password}
 
 
 # api endpoint to get all files
@@ -155,7 +149,6 @@ def get_all_files():
         if user is None:
             return {"status": "fail",
                     "message":  "Authentication Failed"}
-    
     # get the files of the user after authentication
     file_owner = request.json['file_owner']
     cloud_provider_api_key = request.json['cloud_provider_api_key']
@@ -199,10 +192,16 @@ def upload_file():
             return {"status" : "fail",
                 "message" :  "Authentication Failed"
             }
-    
     # get the file parameters after authentication
     file_owner = request.json['file_owner']
     file_name = request.json['file_name'].strip()
+    # check if file already exists
+    file = FilesDB.query.filter_by(file_name=file_name).first()
+    if file is not None:
+        return {
+        "status" : "fail",
+        "message": "File Already Exists"
+        }
     file_size = request.json['file_size']
     file_type = request.json['file_type'].strip()
     file_url_pub = request.json['file_url_pub'].strip()
@@ -210,14 +209,7 @@ def upload_file():
     file_handle = request.json['file_handle'].strip()
     file_status = request.json['file_status'].strip()
 
-    # check if file already exists
-    file = FilesDB.query.filter_by(file_name=file_name).first()
-    if file is not None:
-        return {
-            "status" : "fail",
-            "message": "File Already Exists"
-            }
-    elif file is None:
+    if file is None:
         new_file = FilesDB(
             file_owner=file_owner, file_name=file_name, 
             file_size=file_size, file_type=file_type, 
@@ -233,8 +225,9 @@ def upload_file():
 # fallback route for 404
 @app.errorhandler(404)
 def not_found(e):
-    return "Wow! such a 404!"
+    return render_template("404.html")
  
+
 # main driver function
 if __name__ == '__main__':
     # create the database
