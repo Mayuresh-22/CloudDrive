@@ -38,7 +38,7 @@ class AuthLogic():
                 else:
                     kwargs["errorlabel"].configure(text=resp.json()["message"])
         except KeyError as e:
-            kwargs["errorlabel"].configure(text="Software Failure. Please contact the developer.")
+            kwargs["errorlabel"].configure(text="Server Failure. Please contact the developer.")
 
 
     def auth_user_register(parent, current, **kwargs):
@@ -71,5 +71,5 @@ class AuthLogic():
                 else:
                     kwargs["errorlabel"].configure(text=resp.json()["message"])
         except KeyError as e:
-            kwargs["errorlabel"].configure(text="Software Failure. Please contact the developer.")
+            kwargs["errorlabel"].configure(text="Server Failure. Please contact the developer.")
 
