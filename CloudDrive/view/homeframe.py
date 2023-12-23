@@ -1,7 +1,5 @@
 import os
 from dotenv import load_dotenv
-from logic.cloud import CloudSetup
-from logic.homelogic import HomeLogic
 import tkinter as tk
 import customtkinter as ctk
 from PIL import Image
@@ -27,7 +25,9 @@ class HomeFrame():
             - userObj: the user object, which contains the user details
         """
         # Initialize HomeLogic class
+        from logic.homelogic import HomeLogic
         self.homeLogic = HomeLogic(userObj)
+
         # Initialize the frame
         self.remove_frame(prev)
         self.parent = parent
@@ -36,7 +36,7 @@ class HomeFrame():
         self.frame.grid(row=0, column=0)
         self.frame.pack_propagate(False)
         self.frame.tkraise()
-        self.build()
+        # self.build()
 
 
     def build(self):
@@ -120,7 +120,7 @@ class HomeFrame():
             fg_color=os.getenv("HOME_SCREEN_BG_COLOR"),
             hover_color=os.getenv("HOME_SCREEN_BG_COLOR"),
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 12)),
-            command=lambda: ()
+            command=lambda: self.homeLogic.load_account_frame(self.parent, self.frame, self.userObj)
         ).pack(padx=10)
 
         self.left_sidebar.pack_propagate(False)
@@ -140,6 +140,9 @@ class HomeFrame():
             fg_color="#f7fcfe",
             corner_radius=25
         )
+        # configure the main content
+        self.main_content.pack(side=tk.RIGHT, pady=10, padx=10)
+        self.main_content.tkraise()
 
         ctk.CTkLabel(self.main_content,
             text="My Cloud",
@@ -166,10 +169,6 @@ class HomeFrame():
         # configure the grid
         self.files.pack(side=tk.TOP, pady=10, padx=10)
         self.files.pack_propagate(False)
-
-        # configure the main content
-        self.main_content.pack(side=tk.RIGHT, pady=10, padx=10)
-        self.main_content.tkraise()
 
 
     def remove_frame(self, frame):
