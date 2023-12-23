@@ -68,16 +68,20 @@ class Filestack():
         """
         # Initialize the Filestack Setup
         self.client = Client(self.api_key)
-        # print("Filestack setup done")
 
 
-    def upload_file(self, file):
+    def upload_file(self, file, existing_filelist):
         """
             This method uploads the file to the cloud.
             - file: the file to be uploaded
+
+            returns the file link, which contains the file details.
+            returns False if the file already exists in the cloud.
         """
+        # check if the file already exists in the cloud
+        if file.split("/")[-1] in existing_filelist:
+            return False
         filelink = self.client.upload(filepath=file)
-        print("File uploaded: Filestack")
         return filelink
     
 
