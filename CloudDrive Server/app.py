@@ -194,7 +194,6 @@ def upload_file():
             }
     # get the file parameters after authentication
     file_owner = request.json['file_owner']
-    file_name = request.json['file_name'].strip()
     file_size = request.json['file_size']
     file_type = request.json['file_type'].strip()
     file_url_pub = request.json['file_url_pub'].strip()
@@ -212,6 +211,24 @@ def upload_file():
     db.session.commit()
     return {"status" : "success",
         "message": "File Uploaded Successfully"}
+
+
+@app.route('/files/upload/check/', methods=['POST'])
+def check_upload():
+    # check if file exists
+    file_name = request.json['file_name'].strip()
+    file_owner = request.json['file_owner']
+    file = FilesDB.query.filter_by(file_name=file_name, file_owner=file_owner).first()
+    if file is not None:
+        return {"status" : "success",
+            "file_exists": "True",
+            "message" : "File Already Exists"
+        }
+    else:
+        return {"status" : "fail",
+            "file_exists": "False",
+            "message" : "File Does Not Exist"
+        }
 
 
 # fallback route for 404
