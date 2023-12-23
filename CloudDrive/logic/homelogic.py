@@ -40,12 +40,13 @@ class HomeLogic:
         """
         self.userObj = userObj
         self.progress = None
+        self.files = None
         self.cloud = CloudSetup(userObj["cloud_provider"], userObj["cloud_provider_api_key"]).setup()
         if self.cloud != None:
             self.cloud.setup()
 
         # Set the file icons
-        file_icons_theme = os.getenv("FILE_ICON_PLAIN")
+        file_icons_theme = os.getenv("FILE_ICON_3D")
         if file_icons_theme == os.getenv("FILE_ICON_PLAIN"):
             self.file_icons = {
                 "pdf" : os.getenv("PDF_ICON_PLAIN"),
@@ -88,51 +89,10 @@ class HomeLogic:
                 If the file is selected,
                 This method calls the global method upload_file() to upload the file to the cloud.
             """
+            print(file)
             self.progress.configure(text="Uploading file...")
             # start the thread to upload the file
             threading.Thread(target=self.upload_file, args=(file, files_frame)).start() 
-
-
-    def upload_file(self, file, files_frame) -> None:
-        """
-            This method is the global method to upload the file to the cloud.
-            - file: the file to be uploaded
-
-            This method calls the upload_file() method of the respective cloud provider.
-        """
-
-        # Calling the upload_file() method of the respective cloud provider
-        # start to upload the file and then store the file details in the database
-        filelink = self.cloud.upload_file(file)
-        
-        # Checking if the file is uploaded successfully
-        if filelink.upload_response["status"] == "Stored" and filelink is not None:
-            """
-                If the file is uploaded successfully,
-                Now, storing the file details in the database.
-            """
-            url = os.getenv("APP_BASE_URL")+os.getenv("FILE_ENDPOINT")+os.getenv("UPLOAD_ENDPOINT")
-            resp = requests.post(url,
-                headers={"Content-Type": "application/json"},
-                json={
-                    "file_owner" : self.userObj["id"],
-                    "cloud_provider_api_key" : self.userObj["cloud_provider_api_key"],
-                    "file_name" : filelink.upload_response["filename"],
-                    "file_size" : filelink.upload_response["size"],
-                    "file_type" : filelink.upload_response["mimetype"],
-                    "file_url_pub" : filelink.upload_response["url"],
-                    "file_url_pvt" : "",
-                    "file_handle" : filelink.upload_response["handle"],
-                    "file_status" : filelink.upload_response["status"]
-                }
-            )
-            if resp.status_code == 200 and resp.json()["status"] == "success":
-                # print(resp.json()["message"])
-                self.populate_files(files_frame)
-                self.progress.configure(text="File uploaded successfully")
-            else:
-                # print(resp.json()["message"])
-                pass
 
 
     def populate_files(self, files_frame):
@@ -159,23 +119,22 @@ class HomeLogic:
                 }
             )
             if resp.status_code == 200 and resp.json()["status"] == "success":
-                files = resp.json()["files"]
-                if len(files) == 0:
+                self.files = resp.json()["files"]
+                if len(self.files) == 0:
                     no_file_label = ctk.CTkLabel(files_frame,
                         text="No files found",
-                        fg_color="#E3F5FD",
-                        text_color="#1B387C",
-                        font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 10))
+                        text_color=os.getenv("PRIMARY_COLOR_MED"),
+                        font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT5_SIZE"), 12))
                     )
-                    no_file_label.grid(fill=tk.BOTH, expand = True, rowspan=4, columnspan=4, padx=10, pady=10)
+                    no_file_label.grid(row=0, column=0, rowspan=4, columnspan=4, padx=10, pady=10)
                     no_file_label.pack_propagate(False)
                     no_file_label.grid_propagate(False)
-                    return None
+                    return
                 
                 row = 0
                 col = 0
                 max_col = 4
-                for file in files[::-1]:
+                for file in self.files[::-1]:
                     file_type = file["file_type"].split("/")[1]
                     """
                         Creating the file block
@@ -238,9 +197,52 @@ class HomeLogic:
                     if col == max_col:
                         row += 1
                         col = 0
-
         except Exception as e:
             print(e)
+
+
+
+
+    def upload_file(self, file, files_frame) -> None:
+        """
+            This method is the global method to upload the file to the cloud.
+            - file: the file to be uploaded
+
+            This method calls the upload_file() method of the respective cloud provider.
+            then filelink object is used to store the file details in the database.
+        """
+        filelink = self.cloud.upload_file(file, self.files)
+
+        # if filelink is Fasle, then the file is already uploaded
+        if filelink == False:
+            self.progress.configure(text="File already exists")
+            return
+        
+        # Checking if the file is uploaded successfully
+        if filelink.upload_response["status"] == "Stored" and filelink is not None:
+            """
+                If the file is uploaded successfully,
+                Now, storing the file details in the database.
+            """
+            url = os.getenv("APP_BASE_URL")+os.getenv("FILE_ENDPOINT")+os.getenv("UPLOAD_ENDPOINT")
+            resp = requests.post(url,
+                headers={"Content-Type": "application/json"},
+                json={
+                    "file_owner" : self.userObj["id"],
+                    "cloud_provider_api_key" : self.userObj["cloud_provider_api_key"],
+                    "file_name" : filelink.upload_response["filename"],
+                    "file_size" : filelink.upload_response["size"],
+                    "file_type" : filelink.upload_response["mimetype"],
+                    "file_url_pub" : filelink.upload_response["url"],
+                    "file_url_pvt" : "",
+                    "file_handle" : filelink.upload_response["handle"],
+                    "file_status" : filelink.upload_response["status"]
+                }
+            )
+            if resp.status_code == 200 and resp.json()["status"] == "success":
+                # print(resp.json()["message"])
+                self.populate_files(files_frame)
+                self.progress.configure(text="File uploaded successfully")
 
         
     def download_file(self, file_url, file_name):
