@@ -124,7 +124,7 @@ def register_user():
         db.session.add(new_usr)
         db.session.commit()
         new_usr = UserDB.query.filter_by(username=username, password_hash=password).first()
-        return {"status": os.getenv("success"),
+        return {"status": "success",
             "message": "Registration Successful",
             "id": new_usr.id,
             "name": name, 
@@ -155,7 +155,7 @@ def get_all_files():
     files = FilesDB.query.filter_by(file_owner=file_owner).all()
     # check if files exists
     if files is None:
-        return {"status": "success",
+        return {"status": "fail",
                 "message": "Files Retrieval Failed"}
     output = []
     # create the json response
