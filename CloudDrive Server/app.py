@@ -30,12 +30,12 @@ class FilesDB(db.Model):
     """
     id = db.Column(db.Integer, primary_key=True)
     file_owner = db.Column(db.Integer, nullable=False)
-    file_name = db.Column(db.String(20), unique=True, nullable=False)
+    file_name = db.Column(db.String(20), nullable=False)
     file_size = db.Column(db.Integer, nullable=False)
     file_type = db.Column(db.String(20), nullable=False)
     file_url_pub = db.Column(db.String(250), nullable=False)
     file_url_pvt = db.Column(db.String(500), nullable=False)
-    file_handle = db.Column(db.String(100), nullable=False)
+    file_handle = db.Column(db.String(100), unique=True, nullable=False)
     file_status = db.Column(db.String(20), nullable=False)
     
     def __repr__(self):
@@ -192,14 +192,6 @@ def upload_file():
             return {"status" : "fail",
                 "message" :  "Authentication Failed"
             }
-    # check if file exists
-    file_name = request.json['file_name'].strip()
-    file = FilesDB.query.filter_by(file_name=file_name).first()
-    if file is not None:
-        return {"status" : "fail",
-            "message" : "File Already Exists"
-        }
-
     # get the file parameters after authentication
     file_owner = request.json['file_owner']
     file_name = request.json['file_name'].strip()
@@ -209,7 +201,7 @@ def upload_file():
     file_url_pvt = request.json['file_url_pvt'].strip()
     file_handle = request.json['file_handle'].strip()
     file_status = request.json['file_status'].strip()
-
+    # Insert New File in DB
     new_file = FilesDB(
         file_owner=file_owner, file_name=file_name, 
         file_size=file_size, file_type=file_type, 
