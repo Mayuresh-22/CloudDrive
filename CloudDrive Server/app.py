@@ -90,7 +90,7 @@ def auth_user_login():
     user = UserDB.query.filter_by(username=username, password_hash=password).first()
     if user is not None:
         return {"status": "success",
-                "message": "Logout Successful",
+                "message": "Login Successful",
                 "id": user.id,
                 "name": user.name, 
                 "cloud_provider": user.cloud_provider, 
