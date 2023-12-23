@@ -36,7 +36,6 @@ class HomeFrame():
         self.frame.grid(row=0, column=0)
         self.frame.pack_propagate(False)
         self.frame.tkraise()
-        # self.build()
 
 
     def build(self):
@@ -60,7 +59,6 @@ class HomeFrame():
             fg_color=os.getenv("HOME_SCREEN_BG_COLOR"),
             corner_radius=0
         )
-
         """
             Left Sidebar Content
             - App Title Logo
@@ -98,8 +96,7 @@ class HomeFrame():
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 12))
         )
         self.progress_text.pack(padx=10, pady=20)
-    
-                                        
+                     
         # My Account
         self.my_account = ctk.CTkFrame(self.left_sidebar,
             width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.18,
@@ -122,7 +119,7 @@ class HomeFrame():
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 12)),
             command=lambda: self.homeLogic.load_account_frame(self.parent, self.frame, self.userObj)
         ).pack(padx=10)
-
+        # configure the left sidebar
         self.left_sidebar.pack_propagate(False)
         self.left_sidebar.pack(side=tk.LEFT, pady=10, padx=10, fill=tk.BOTH)
         self.left_sidebar.tkraise()
@@ -144,12 +141,12 @@ class HomeFrame():
         self.main_content.pack(side=tk.RIGHT, pady=10, padx=10)
         self.main_content.tkraise()
 
+        # Welcoming labels
         ctk.CTkLabel(self.main_content,
             text="My Cloud",
             fg_color="#f7fcfe",
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT4_SIZE"), 12))
         ).pack(pady=30, padx=30, side=tk.TOP, anchor=tk.W)
-
         ctk.CTkLabel(self.main_content,
             text="Hi "+self.userObj["name"]+", Welcome to your CloudDrive!",
             fg_color="#f7fcfe",
@@ -161,14 +158,15 @@ class HomeFrame():
             width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.8,
             height=int(os.getenv("DEFAULT_APP_HEIGHT"))*0.7,
             fg_color="#ffffff",
+            border_color=os.getenv("PRIMARY_COLOR_MED"),
+            border_width=1,
             corner_radius=25
         )
-        # populate files
-        self.homeLogic.populate_files(self.files)
-
         # configure the grid
         self.files.pack(side=tk.TOP, pady=10, padx=10)
         self.files.pack_propagate(False)
+        # populate files function call
+        self.homeLogic.populate_files(self.files)
 
 
     def remove_frame(self, frame):
