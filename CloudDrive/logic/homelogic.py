@@ -5,14 +5,16 @@
 # Import the required modules
 import os
 from dotenv import load_dotenv
+from logic.cloud import CloudSetup
+from view.accountframe import AccountFrame
 from tkinter import filedialog
 from functools import partial
 from PIL import Image
 import requests
-from logic.cloud import CloudSetup
 import customtkinter as ctk
 import tkinter as tk
 import threading
+
 
 load_dotenv(".env")
 
@@ -251,3 +253,7 @@ class HomeLogic:
         """
         threading.Thread(target=self.cloud.download_file, args=(file_url, file_name)).start()
 
+
+    def load_account_frame(self, parent, current, userobj):
+        # load Account Frame
+        AccountFrame(parent, current, userobj).build()
