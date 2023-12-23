@@ -57,7 +57,6 @@ class AccountFrame():
             build_sidebar() method builds the sidebar of the Home frame.
             This sidebar contains the My Account tab and Upload button.
         """
-
         # Left Sidebar
         self.left_sidebar = ctk.CTkFrame(self.frame,
             width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.2,
@@ -65,7 +64,6 @@ class AccountFrame():
             fg_color=os.getenv("HOME_SCREEN_BG_COLOR"),
             corner_radius=0
         )
-
         """
             Left Sidebar Content
             - App Title Logo
@@ -82,17 +80,13 @@ class AccountFrame():
             text_color=os.getenv("WHITE_COLOR")
         ).pack(pady=60, side=tk.TOP, padx=10)
                                         
-        # Home Button
+        # Home Button Widget
         self.home_btn = ctk.CTkFrame(self.left_sidebar,
             width=int(os.getenv("DEFAULT_APP_WIDTH"))*0.18,
             height=int(os.getenv("DEFAULT_APP_HEIGHT"))*0.1,
             fg_color=os.getenv("HOME_SCREEN_BG_COLOR"),
             corner_radius=10
         )
-        self.home_btn.pack_propagate(False)
-        self.home_btn.pack(side=tk.BOTTOM, pady=10)
-        self.home_btn.tkraise()
-
         # Home Button
         user_icon_img = ctk.CTkImage(Image.open(os.getenv("HOME_ICON")), size=(int(os.getenv("DEFAULT_ICON_SIZE")), int(os.getenv("DEFAULT_ICON_SIZE"))))
         ctk.CTkButton(self.home_btn,
@@ -104,7 +98,10 @@ class AccountFrame():
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 12)),
             command=lambda: self.accountlogic.load_home_frame(self.parent, self.frame, self.userObj)
         ).pack(padx=10)
-
+        self.home_btn.pack_propagate(False)
+        self.home_btn.pack(side=tk.BOTTOM, pady=10)
+        self.home_btn.tkraise()
+        # configure the left sidebar
         self.left_sidebar.pack_propagate(False)
         self.left_sidebar.pack(side=tk.LEFT, pady=10, padx=10, fill=tk.BOTH)
         self.left_sidebar.tkraise()
