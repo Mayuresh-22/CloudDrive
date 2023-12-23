@@ -195,13 +195,6 @@ def upload_file():
     # get the file parameters after authentication
     file_owner = request.json['file_owner']
     file_name = request.json['file_name'].strip()
-    # check if file already exists
-    file = FilesDB.query.filter_by(file_name=file_name).first()
-    if file is not None:
-        return {
-        "status" : "fail",
-        "message": "File Already Exists"
-        }
     file_size = request.json['file_size']
     file_type = request.json['file_type'].strip()
     file_url_pub = request.json['file_url_pub'].strip()
@@ -209,17 +202,16 @@ def upload_file():
     file_handle = request.json['file_handle'].strip()
     file_status = request.json['file_status'].strip()
 
-    if file is None:
-        new_file = FilesDB(
-            file_owner=file_owner, file_name=file_name, 
-            file_size=file_size, file_type=file_type, 
-            file_url_pub=file_url_pub, file_url_pvt=file_url_pvt,
-            file_handle=file_handle, file_status=file_status
-        )
-        db.session.add(new_file)
-        db.session.commit()
-        return {"status" : "success",
-            "message": "File Uploaded Successfully"}
+    new_file = FilesDB(
+        file_owner=file_owner, file_name=file_name, 
+        file_size=file_size, file_type=file_type, 
+        file_url_pub=file_url_pub, file_url_pvt=file_url_pvt,
+        file_handle=file_handle, file_status=file_status
+    )
+    db.session.add(new_file)
+    db.session.commit()
+    return {"status" : "success",
+        "message": "File Uploaded Successfully"}
 
 
 # fallback route for 404
