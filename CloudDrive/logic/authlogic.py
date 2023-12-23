@@ -1,14 +1,12 @@
 """
-    AuthLogic class is used to implement user authentication logic
+    AuthLogic class is used to implement user authentication logic,
+    And handles the routing after the successfull authentication.
 """
-
-# import modules
 import os
-from view.homeframe import HomeFrame
 from dotenv import load_dotenv
+from view.homeframe import HomeFrame
 import requests
 
-from view.homeframe import HomeFrame
 load_dotenv(".env")
 
 class AuthLogic():
@@ -36,7 +34,7 @@ class AuthLogic():
                 if resp.status_code == 200 and resp.json()["status"] == "success":
                     print(resp.text)
                     # Redirect to Home frame
-                    HomeFrame(parent, current, resp.json())
+                    HomeFrame(parent, current, resp.json()).build()
                 else:
                     kwargs["errorlabel"].configure(text=resp.json()["message"])
         except KeyError as e:
@@ -69,7 +67,7 @@ class AuthLogic():
                 if resp.status_code == 200 and resp.json()["status"] == "success":
                     print(resp.text)
                     # Redirect to Home frame
-                    HomeFrame(parent, current, resp.json())
+                    HomeFrame(parent, current, resp.json()).build()
                 else:
                     kwargs["errorlabel"].configure(text=resp.json()["message"])
         except KeyError as e:
