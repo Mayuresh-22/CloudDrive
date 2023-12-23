@@ -193,6 +193,7 @@ def upload_file():
                 "message" :  "Authentication Failed"
             }
     # get the file parameters after authentication
+    file_name = request.json['file_name'].strip()
     file_owner = request.json['file_owner']
     file_size = request.json['file_size']
     file_type = request.json['file_type'].strip()
