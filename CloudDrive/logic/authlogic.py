@@ -65,7 +65,6 @@ class AuthLogic():
                             }
                         )
                 if resp.status_code == 200 and resp.json()["status"] == "success":
-                    print(resp.text)
                     # Redirect to Home frame
                     HomeFrame(parent, current, resp.json()).build()
                 else:
