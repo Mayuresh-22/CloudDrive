@@ -12,5 +12,8 @@ class AccountLogic:
         Displaying user information and modifying it.
     """
     def load_home_frame(self, parent, current, userobj):
-        # build the home frame
+        """
+            This method is used to load the Home Frame
+            and pass the user object to it.
+        """
         HomeFrame(parent, current, userobj).build()
