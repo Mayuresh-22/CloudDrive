@@ -218,7 +218,7 @@ def upload_file():
 def check_upload():
     # check if file exists
     file_name = request.json['file_name'].strip()
-    file_owner = request.json['file_owner']
+    file_owner = request.json['file_owner'].strip()
     file = FilesDB.query.filter_by(file_name=file_name, file_owner=file_owner).first()
     if file is not None:
         return {"status" : "success",
