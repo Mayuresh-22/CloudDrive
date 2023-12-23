@@ -192,6 +192,14 @@ def upload_file():
             return {"status" : "fail",
                 "message" :  "Authentication Failed"
             }
+    # check if file exists
+    file_name = request.json['file_name'].strip()
+    file = FilesDB.query.filter_by(file_name=file_name).first()
+    if file is not None:
+        return {"status" : "fail",
+            "message" : "File Already Exists"
+        }
+
     # get the file parameters after authentication
     file_owner = request.json['file_owner']
     file_name = request.json['file_name'].strip()
