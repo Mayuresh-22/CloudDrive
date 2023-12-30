@@ -40,7 +40,6 @@ class HomeLogic:
         """
         self.userObj = userObj
         self.progress = None
-        self.files = None
         self.cloud = CloudSetup(userObj["cloud_provider"], userObj["cloud_provider_api_key"]).setup()
         if self.cloud != None:
             self.cloud.setup()
@@ -89,7 +88,6 @@ class HomeLogic:
                 If the file is selected,
                 This method calls the global method upload_file() to upload the file to the cloud.
             """
-            print(file)
             self.progress.configure(text="Uploading file...")
             # start the thread to upload the file
             threading.Thread(target=self.upload_file, args=(file, files_frame)).start() 
@@ -119,8 +117,8 @@ class HomeLogic:
                 }
             )
             if resp.status_code == 200 and resp.json()["status"] == "success":
-                self.files = resp.json()["files"]
-                if len(self.files) == 0:
+                user_files_list = resp.json()["files"]
+                if len(user_files_list) == 0:
                     no_file_label = ctk.CTkLabel(files_frame,
                         text="No files found",
                         text_color=os.getenv("PRIMARY_COLOR_MED"),
@@ -134,7 +132,7 @@ class HomeLogic:
                 row = 0
                 col = 0
                 max_col = 4
-                for file in self.files[::-1]:
+                for file in user_files_list[::-1]:
                     file_type = file["file_type"].split("/")[1]
                     """
                         Creating the file block
@@ -201,8 +199,6 @@ class HomeLogic:
             print(e)
 
 
-
-
     def upload_file(self, file, files_frame) -> None:
         """
             This method is the global method to upload the file to the cloud.
@@ -211,12 +207,22 @@ class HomeLogic:
             This method calls the upload_file() method of the respective cloud provider.
             then filelink object is used to store the file details in the database.
         """
-        filelink = self.cloud.upload_file(file, self.files)
-
-        # if filelink is Fasle, then the file is already uploaded
-        if filelink == False:
-            self.progress.configure(text="File already exists")
-            return
+        # check if the file already exists for the user
+        url = os.getenv("APP_BASE_URL")+os.getenv("FILE_ENDPOINT")+os.getenv("UPLOAD_ENDPOINT")+"check/"
+        resp = requests.post(url,
+            headers={"Content-Type": "application/json"},
+            json={
+                "file_owner" : self.userObj["id"],
+                "file_name" : os.path.basename(file)
+            }
+        )
+        if resp.status_code == 200 and resp.json()["status"] == "success":
+            if resp.json()["file_exists"] == "True":
+                print("File already exists...Duplicate")
+                self.progress.configure(text=resp.json()["message"])
+                return
+        # upload the file to the cloud by calling the upload_file() method of the respective cloud provider
+        filelink = self.cloud.upload_file(file)
         
         # Checking if the file is uploaded successfully
         if filelink.upload_response["status"] == "Stored" and filelink is not None:
@@ -240,9 +246,8 @@ class HomeLogic:
                 }
             )
             if resp.status_code == 200 and resp.json()["status"] == "success":
-                # print(resp.json()["message"])
                 self.populate_files(files_frame)
-                self.progress.configure(text="File uploaded successfully")
+                self.progress.configure(text=resp.json()["message"])
 
         
     def download_file(self, file_url, file_name):
