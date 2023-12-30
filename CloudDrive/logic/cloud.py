@@ -70,7 +70,7 @@ class Filestack():
         self.client = Client(self.api_key)
 
 
-    def upload_file(self, file, existing_filelist):
+    def upload_file(self, file):
         """
             This method uploads the file to the cloud.
             - file: the file to be uploaded
@@ -78,9 +78,6 @@ class Filestack():
             returns the file link, which contains the file details.
             returns False if the file already exists in the cloud.
         """
-        # check if the file already exists in the cloud
-        if file.split("/")[-1] in existing_filelist:
-            return False
         filelink = self.client.upload(filepath=file)
         return filelink
     
@@ -90,6 +87,7 @@ class Filestack():
             This method downloads the file from the cloud.
             It sends the GET request to the file url and downloads the file.
             - fileurl: the file url to be downloaded
+            - filename: the file name of the file to be downloaded
         """
         file_type = filename.split(".")[-1]
 
