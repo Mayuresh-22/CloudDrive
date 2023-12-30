@@ -87,6 +87,10 @@ class AccountFrame():
             fg_color=os.getenv("HOME_SCREEN_BG_COLOR"),
             corner_radius=10
         )
+        self.home_btn.pack_propagate(False)
+        self.home_btn.pack(side=tk.BOTTOM, pady=10)
+        self.home_btn.tkraise()
+        
         # Home Button
         user_icon_img = ctk.CTkImage(Image.open(os.getenv("HOME_ICON")), size=(int(os.getenv("DEFAULT_ICON_SIZE")), int(os.getenv("DEFAULT_ICON_SIZE"))))
         ctk.CTkButton(self.home_btn,
@@ -98,9 +102,7 @@ class AccountFrame():
             font=(os.getenv("DEFAULT_FONT"), int(os.getenv("HEADING_FONT6_SIZE"), 12)),
             command=lambda: self.accountlogic.load_home_frame(self.parent, self.frame, self.userObj)
         ).pack(padx=10)
-        self.home_btn.pack_propagate(False)
-        self.home_btn.pack(side=tk.BOTTOM, pady=10)
-        self.home_btn.tkraise()
+
         # configure the left sidebar
         self.left_sidebar.pack_propagate(False)
         self.left_sidebar.pack(side=tk.LEFT, pady=10, padx=10, fill=tk.BOTH)
