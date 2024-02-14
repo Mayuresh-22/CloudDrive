@@ -8,8 +8,9 @@ from dotenv import load_dotenv
 from logic.cloud import CloudSetup
 from view.accountframe import AccountFrame
 from tkinter import filedialog
-from functools import partial
+from functools import lru_cache, partial
 from PIL import Image
+from functools import partial, lru_cache
 import requests
 import customtkinter as ctk
 import tkinter as tk
@@ -73,8 +74,9 @@ class HomeLogic:
                 "jpeg" : os.getenv("JPEG_ICON_MED"),
                 "plain" : os.getenv("TXT_ICON_MED")
             }
-        
 
+ 
+    @lru_cache
     def launch_file_explorer(self, files_frame, progress) -> None:
         """
             This method launches the file explorer of the system.
