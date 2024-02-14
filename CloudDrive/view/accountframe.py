@@ -1,5 +1,6 @@
 import os
 from dotenv import load_dotenv
+from functools import lru_cache
 import tkinter as tk
 import customtkinter as ctk
 from PIL import Image
@@ -43,6 +44,7 @@ class AccountFrame():
         self.frame.tkraise()
 
 
+    @lru_cache
     def build(self):
         """
             build() method builds the Home frame.
